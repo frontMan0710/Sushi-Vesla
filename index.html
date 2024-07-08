@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+
+<header>
+    <div class="contentBorder headerContent">
+        <div class="logo">
+            <img src="./img/logo.svg" alt="" width="225" height="80">
+        </div>
+        <ul class="headerNav">
+            <li class="active"><a href="javascript:void(0)">Меню</a></li>
+            <li><a href="javascript:void(0)">Акции</a></li>
+            <li><a href="javascript:void(0)">Новости</a></li>
+            <li><a href="javascript:void(0)">О нас</a></li>
+            <li><a href="javascript:void(0)">Карьера</a></li>
+            <li><a href="javascript:void(0)">Отзывы</a></li>
+            <li class="profile"><a href="javascript:void(0)">Личный кабинет</a></li>
+        </ul>
+        <div class="callUs">
+            <a class="phone" href="javascript:void(0)">
+                <span class="phoneIcon">
+                    <img src="./img/phone.svg" alt="" width="26" height="26">
+                </span>
+            </a>
+            <div class="phoneNumbers">
+                <a href="javascript:void(0)">+375 (29) 321 00 00</a>
+                <a href="javascript:void(0)">+375 (33) 321 00 00</a>
+            </div>
+        </div>
+        <div class="userMenu">
+            <div class="search">
+                <button type="submit" aria-label="Искать"><img src="./img/search.svg" width="26" height="26"></button>
+                <input type="text" placeholder="Поиск" class="searchInput">
+            </div>
+            <a class="profile" href="javascript:void(0)">
+                <span class="userIcon">
+                    <img src="./img/user.svg" alt="" width="30" height="30">
+                </span>
+            </a>
+        </div>
+        <button type="button" class="burgerIcon">
+            <span></span>
+        </button>
+    </div>
+</header>
+<div class="wrapper">
+    <div class="contentBorder mainContent">
+        <main>
+            <section class="tagBlock">
+                <img src="./img/mainBack.jpg" width="1410" height="300" alt="">
+            </section>
+            <section class="categories">
+                <div class="sectionTitle">
+                    <h1>Наши категории</h1>
+                    <span>Посмотреть всё</span>
+                </div>
+                <ul class="categoryList">
+                    <li class="categoryCard">
+                        <img src="./img/category1.png" width="100" height="100" alt="">
+                        <span>Обеденное меню</span>
+                    </li>
+                    <li class="categoryCard">
+                        <img src="./img/category2.png" width="100" height="100" alt="">
+                        <span>Hot Box WOK</span>
+                    </li>
+                    <li class="categoryCard">
+                        <img src="./img/category3.png" width="100" height="100" alt="">
+                        <span>Cool Box WOT</span>
+                    </li>
+                    <li class="categoryCard">
+                        <img src="./img/category4.png" width="100" height="100" alt="">
+                        <span>Супы WOK</span>
+                    </li>
+                    <li class="categoryCard">
+                        <img src="./img/category5.png" width="100" height="100" alt="">
+                        <span>Маки</span>
+                    </li>
+                    <li class="categoryCard">
+                        <img src="./img/category6.png" width="100" height="100" alt="">
+                        <span>Ура Маки</span>
+                    </li>
+                    <li class="categoryCard">
+                        <img src="./img/category7.png" width="100" height="100" alt="">
+                        <span>Футо Маки</span>
+                    </li>
+                    <li class="categoryCard">
+                        <img src="./img/category9.png" width="100" height="100" alt="">
+                        <span>Гунканы</span>
+                    </li>
+                    <li class="categoryCard">
+                        <img src="./img/category10.png" width="100" height="100" alt="">
+                        <span>Нигири</span>
+                    </li>
+                    <li class="categoryCard">
+                        <img src="./img/category8.png" width="100" height="100" alt="">
+                        <span>СушиРрито</span>
+                    </li>
+                    <li class="categoryCard">
+                        <img src="./img/category11.png" width="100" height="100" alt="">
+                        <span>Сеты</span>
+                    </li>
+                    <li class="categoryCard">
+                        <img src="./img/category12.png" width="100" height="100" alt="">
+                        <span>Супы</span>
+                    </li>
+                    <li class="categoryCard">
+                        <img src="./img/category13.png" width="100" height="100" alt="">
+                        <span>Салаты</span>
+                    </li>
+                    <li class="categoryCard">
+                        <img src="./img/category14.png" width="100" height="100" alt="">
+                        <span>Десерты</span>
+                    </li>
+                    <li class="categoryCard">
+                        <img src="./img/category15.png" width="100" height="100" alt="">
+                        <span>Напитки</span>
+                    </li>
+                </ul>
+            </section>
+            <section class="catalogue">
+                <div class="sectionTitle">
+                    <h1>Раздел подкаталога</h1>
+                </div>
+                <div class="catalogueList">
+                    <div class="catalogueCard">
+                        <img src="./img/catalogue4.png" width="181" height="180" alt="">
+                        <span class="prodName">Нигири с тунцом опаленным</span>
+                        <div class="catalogueCardPanel">
+                            <ul class="prodPrices">
+                                <li class="prodPrice">2.90<span class="prodDesc"> грн. за порцию (1 шт)</span></li>
+                            </ul>
+                            <div class="itemChanges">
+                                <button type="button" class="decrease">−</button>
+                                <span class="counter" data-range="1">2</span>
+                                <button type="button" class="increase">+</button>
+                            </div>
+                        </div>
+                        <div class="modalWrapper">
+                            <div class="modal lazy">
+                                <img src="./img/modalPrev.png" width="480" height="480" alt="">
+                                <button type="button" class="close">
+                                    <img src="./img/cross.svg" alt="">
+                                </button>
+                                <div class="cardDesc">
+                                    <div class="modalContent">
+                                        <span class="prodName">Нигири с тунцом опаленным</span>
+                                        <p class="prodDesc">Тунец опаленный, стружка тунца, майонез, соус тайский сладкий чили, васаби 0,5 г</p>
+                                        <span class="weight">Вес одной порции 38 г</span>
+                                        <ul class="energyValue">
+                                            <span>Пищевая ценность на 100 г:</span>
+                                            <li><span>Энерг.ценность</span><span>164.10 ккал</span></li>
+                                            <li><span>Белки</span><span>10.80 г</span></li>
+                                            <li><span>Жиры</span><span>2.50 г</span></li>
+                                            <li><span>Углеводы</span><span>24.20 г</span></li>
+                                        </ul>
+                                        <ul class="prodPrices">
+                                            <li class="prodPrice">2.90грн. за порцию (1 шт)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="itemChanges">
+                                        <button type="button" class="decrease">−</button>
+                                        <span class="counter" data-range="1">2</span>
+                                        <button type="button" class="increase">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalogueCard">
+                        <img src="./img/catalogue3.png" width="181" height="180" alt="">
+                        <span class="prodName">Спайси текка маки</span>
+                        <div class="catalogueCardPanel">
+                            <ul class="prodPrices">
+                                <li class="prodPrice">5.60<span class="prodDesc"> грн. за 1 порцию (8шт)</span></li>
+                                <li class="prodPrice">3.10<span class="prodDesc"> грн. за 1/2 порцию (4шт)</span></li>
+                            </ul>
+                            <div class="itemChanges">
+                                <button type="button" class="decrease disable">−</button>
+                                <span class="counter" data-range="0.5">0.5</span>
+                                <button type="button" class="increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalogueCard">
+                        <img src="./img/catalogue2.png" width="181" height="180" alt="">
+                        <span class="prodName">Корпоративный переполох на 22 человек</span>
+                        <div class="catalogueCardPanel">
+                            <ul class="prodPrices">
+                                <li class="prodPrice">255.00 <span class="prodDesc"> грн. за 1 порцию (1шт)</span></li>
+                            </ul>
+                            <div class="itemChanges">
+                                <button type="button" class="decrease">−</button>
+                                <span class="counter" data-range="1">2</span>
+                                <button type="button" class="increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalogueCard">
+                        <img src="./img/catalogue1.png" width="181" height="180" alt="">
+                        <span class="prodName">Нигири с тунцом маринованным</span>
+                        <div class="catalogueCardPanel">
+                            <ul class="prodPrices">
+                                <li class="prodPrice">2.90<span class="prodDesc"> грн. за порцию (1 шт)</span></li>
+                            </ul>
+                            <div class="itemChanges">
+                                <button type="button" class="decrease">−</button>
+                                <span class="counter" data-range="1">2</span>
+                                <button type="button" class="increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalogueCard">
+                        <img src="./img/catalogue4.png" width="181" height="180" alt="">
+                        <span class="prodName">Нигири с тунцом опаленным</span>
+                        <div class="catalogueCardPanel">
+                            <ul class="prodPrices">
+                                <li class="prodPrice">2.90<span class="prodDesc"> грн. за порцию (1 шт)</span></li>
+                            </ul>
+                            <div class="itemChanges">
+                                <button type="button" class="decrease">−</button>
+                                <span class="counter" data-range="1">2</span>
+                                <button type="button" class="increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalogueCard">
+                        <img src="./img/catalogue3.png" width="181" height="180" alt="">
+                        <span class="prodName">Спайси текка маки</span>
+                        <div class="catalogueCardPanel">
+                            <ul class="prodPrices">
+                                <li class="prodPrice">5.60<span class="prodDesc"> грн. за 1 порцию (8шт)</span></li>
+                                <li class="prodPrice">3.10<span class="prodDesc"> грн. за 1/2 порцию (4шт)</span></li>
+                            </ul>
+                            <div class="itemChanges">
+                                <button type="button" class="decrease disable">−</button>
+                                <span class="counter" data-range="0.5">0.5</span>
+                                <button type="button" class="increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalogueCard">
+                        <img src="./img/catalogue2.png" width="181" height="180" alt="">
+                        <span class="prodName">Корпоративный переполох на 22 человек</span>
+                        <div class="catalogueCardPanel">
+                            <ul class="prodPrices">
+                                <li class="prodPrice">255.00 <span class="prodDesc"> грн. за 1 порцию (1шт)</span></li>
+                            </ul>
+                            <div class="itemChanges">
+                                <button type="button" class="decrease">−</button>
+                                <span class="counter" data-range="1">2</span>
+                                <button type="button" class="increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalogueCard">
+                        <img src="./img/catalogue1.png" width="181" height="180" alt="">
+                        <span class="prodName">Нигири с тунцом маринованным</span>
+                        <div class="catalogueCardPanel">
+                            <ul class="prodPrices">
+                                <li class="prodPrice">2.90<span class="prodDesc"> грн. за порцию (1 шт)</span></li>
+                            </ul>
+                            <div class="itemChanges">
+                                <button type="button" class="decrease">−</button>
+                                <span class="counter" data-range="1">2</span>
+                                <button type="button" class="increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalogueCard">
+                        <img src="./img/catalogue4.png" width="181" height="180" alt="">
+                        <span class="prodName">Нигири с тунцом опаленным</span>
+                        <div class="catalogueCardPanel">
+                            <ul class="prodPrices">
+                                <li class="prodPrice">2.90<span class="prodDesc"> грн. за порцию (1 шт)</span></li>
+                            </ul>
+                            <div class="itemChanges">
+                                <button type="button" class="decrease">−</button>
+                                <span class="counter" data-range="1">2</span>
+                                <button type="button" class="increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalogueCard">
+                        <img src="./img/catalogue3.png" width="181" height="180" alt="">
+                        <span class="prodName">Спайси текка маки</span>
+                        <div class="catalogueCardPanel">
+                            <ul class="prodPrices">
+                                <li class="prodPrice">5.60<span class="prodDesc"> грн. за 1 порцию (8шт)</span></li>
+                                <li class="prodPrice">3.10<span class="prodDesc"> грн. за 1/2 порцию (4шт)</span></li>
+                            </ul>
+                            <div class="itemChanges">
+                                <button type="button" class="decrease disable">−</button>
+                                <span class="counter" data-range="0.5">0.5</span>
+                                <button type="button" class="increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalogueCard">
+                        <img src="./img/catalogue2.png" width="181" height="180" alt="">
+                        <span class="prodName">Корпоративный переполох на 22 человек</span>
+                        <div class="catalogueCardPanel">
+                            <ul class="prodPrices">
+                                <li class="prodPrice">255.00 <span class="prodDesc"> грн. за 1 порцию (1шт)</span></li>
+                            </ul>
+                            <div class="itemChanges">
+                                <button type="button" class="decrease">−</button>
+                                <span class="counter" data-range="1">2</span>
+                                <button type="button" class="increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalogueCard">
+                        <img src="./img/catalogue1.png" width="181" height="180" alt="">
+                        <span class="prodName">Нигири с тунцом маринованным</span>
+                        <div class="catalogueCardPanel">
+                            <ul class="prodPrices">
+                                <li class="prodPrice">2.90<span class="prodDesc"> грн. за порцию (1 шт)</span></li>
+                            </ul>
+                            <div class="itemChanges">
+                                <button type="button" class="decrease">−</button>
+                                <span class="counter" data-range="1">2</span>
+                                <button type="button" class="increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <aside>
+            <div class="promoCode">
+                <input type="text" placeholder="Введите промокод">
+                <button>Ввести</button>
+            </div>
+            <div class="cart">
+                <div class="cartList">
+                    <h2>Корзина</h2>
+                    <div class="cartItem">
+                        <div class="itemHeader">
+                            <span class="itemName">Сет "Только мне" <span class="itemWeight">(554гр)</span></span>
+                            <button class="remove"><img src="./img/cross.svg" width="10" height="10" alt=""></button>
+                        </div>
+                        <ul class="itemDetails">
+                            <li><span>Сяке ясай маки 8 шт</span></li>
+                            <li><span>Тояма маки 8 шт</span></li>
+                            <li><span>Авокадо маки 8 шт</span></li>
+                        </ul>
+                        <span class="itemPrice" data-price="8.25">16.50 грн.</span>
+                        <div class="itemChanges">
+                            <button type="button" class="decrease">−</button>
+                            <span class="counter">2</span>
+                            <button type="button" class="increase">+</button>
+                        </div>
+                    </div>
+                    <div class="cartItem">
+                        <div class="itemHeader">
+                            <span class="itemName">Сет "Море рыбы" <span class="itemWeight">(964гр)</span></span>
+                            <button class="remove"><img src="./img/cross.svg" width="10" height="10" alt=""></button>
+                        </div>
+                        <ul class="itemDetails">
+                            <li><span>Манго сяке маки 8 шт.</span></li>
+                            <li><span>Магуро фреш маки 8 шт.</span></li>
+                            <li><span>Манго тай маки 8 шт.</span></li>
+                            <li><span>Умаи фреш маки 8 шт.</span></li>
+                        </ul>
+                        <span class="itemPrice" data-price="16.75">33.50 грн.</span>
+                        <div class="itemChanges">
+                            <button type="button" class="decrease">−</button>
+                            <span class="counter">2</span>
+                            <button type="button" class="increase">+</button>
+                        </div>
+                    </div>
+                    <div class="cartItem">
+                        <div class="itemHeader">
+                            <span class="itemName">Нигири с тунцом опаленным <span class="itemWeight">(1 шт - 38гр)</span></span>
+                            <button class="remove"><img src="./img/cross.svg" width="10" height="10" alt=""></button>
+                        </div>
+                        <p class="itemDetails">
+                            Тунец опаленный, стружка тунца, майонез, соус тайский сладкий чили, васаби 0,5 г
+                        </p>
+                        <span class="itemPrice" data-price="2.90">5.80 грн.</span>
+                        <div class="itemChanges">
+                            <button type="button" class="decrease">−</button>
+                            <span class="counter">2</span>
+                            <button type="button" class="increase">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartFooter">
+                    <div class="totalPrice">
+                        <span>Сумма заказа</span>
+                        <span class="totalSum">60.80 грн.</span>
+                    </div>
+                    <button class="checkout"><span>Оформить заказ</span></button>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<script src="./libs/jQuery/jquery-3.7.1.min.js"></script>
+<script src="./libs/lazy/jquery.lazy.min.js"></script>
+<script src="./js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+$(function () {
+    if ($(window).width() < 1440) {
+        $(".burgerIcon").on("click", function () {
+            $(this).toggleClass("active")
+            $(".headerNav").toggleClass("active")
+        })
+        $(".phone").on("click", function () {
+            $(".phoneNumbers").toggleClass("active")
+            $(".search").removeClass("active")
+        })
+        $(".userMenu .profile").on("click", function () {
+            $(".search").toggleClass("active")
+            $(".phoneNumbers").removeClass("active")
+        })
+    } else {
+        $(".headerContent .burgerIcon").remove()
+        $(".headerNav .profile").remove()
+    }
+})
+$(function () {
+    /*$(".decrease").on("click", function() {
+        let $counter = $(this).siblings(".counter")
+        let $price = $(this).closest(".cartItem").find(".itemPrice")
+        let price = $price.attr("data-price")
+        let counter = parseInt($counter.text(), 10)
+        if (counter > 0) {
+            counter--
+            var returnPrice = (price * counter).toFixed(2)
+            $counter.text(counter)
+            $price.text(returnPrice + " грн.")
+        }
+        if (counter === 0) {
+            $(this).parents(".cartItem").remove()
+        }
+    })
+    $(".increase").on("click", function() {
+        let $counter = $(this).siblings(".counter")
+        let $price = $(this).closest(".cartItem").find(".itemPrice")
+        let price = $price.attr("data-price")
+        let counter = parseInt($counter.text(), 10)
+        counter++
+        var returnPrice = (price * counter).toFixed(2)
+        $price.text(returnPrice + " грн.")
+        $counter.text(counter)
+    })*/
+})
+$(function () {
+    /*let visibleCount = 9
+    let cardsVisible = false
+    $(".categoryCard").each(function(index) {
+        if (index < 9) {
+            $(this).show()
+        } else {
+            $(this).hide()
+        }
+    })
+    $(".sectionTitle span").on("click", function () {
+        if (cardsVisible) {
+            $(".categoryCard").each(function(index) {
+                if (index >= visibleCount) {
+                    $(this).hide()
+                }
+            })
+            cardsVisible = false
+        } else {
+            $(".categoryCard").show()
+            cardsVisible = true
+        }
+    })*/
+
+    var areHiddenElementsVisible = false
+    function adjustElements() {
+        let containerWidth = $(".categoryList").width()
+        let totalWidth = 0
+        let firstRowTop = null
+        $(".categoryList .categoryCard").each(function() {
+            let $element = $(this)
+            let elementWidth = $element.outerWidth(true)
+            if (firstRowTop === null) {
+                firstRowTop = $element.offset().top
+            }
+            if (totalWidth + elementWidth > containerWidth || $element.offset().top !== firstRowTop) {
+                $element.hide().addClass("invisible")
+            } else {
+                $element.show().removeClass("invisible")
+                totalWidth += elementWidth
+            }
+        })
+    }
+    function toggleHiddenElements() {
+        if (areHiddenElementsVisible) {
+            $(".invisible").hide()
+            areHiddenElementsVisible = false
+        } else {
+            $(".invisible").show()
+            areHiddenElementsVisible = true
+        }
+    }
+    adjustElements()
+    $(window).on("resize", adjustElements)
+    $(".sectionTitle span").on("click", function () {
+        toggleHiddenElements()
+        $(this).toggleClass("active")
+    })
+})
+$(function () {
+    var $target = $(".catalogueList .catalogueCard")
+    $(window).on("scroll", function() {
+        var scrollTop = $(window).scrollTop()
+        var windowHeight = $(window).height()
+        $target.each(function() {
+            var $el = $(this)
+            var targetOffset = $el.offset().top
+            if (scrollTop + windowHeight >= targetOffset && $el.css("visibility") === "hidden") {
+                $el.css("visibility", "visible").css("opacity", "1")
+            }
+        })
+    })
+})
+$(function () {
+    $(".lazy").Lazy({
+        bind: "event",
+        threshold: 0,
+        afterLoad: function(element) {
+            element.parent().show()
+            element.parent().addClass("active")
+        }
+    })
+    $(".catalogueCard").on("click", function () {
+        var $modal = $(this).find(".modalWrapper")
+        if ($modal.length) {
+            $("body").addClass("lock")
+            $modal.addClass("active")
+            $modal.show()
+        }
+    })
+    $(document).on("click", ".modalWrapper.active .modal .close", function () {
+        let $modal = $(this).closest(".modalWrapper")
+        $("body").removeClass("lock")
+        $modal.removeClass("active")
+        $modal.hide()
+    })
+    $(".modalWrapper").hide()
+})
+$(function () {
+    $("img").Lazy()
+})

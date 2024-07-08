@@ -1,0 +1,364 @@
+@mixin roundIcon {
+  background-color: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  @media screen and (max-width: 1439px) {
+    width: clamp(40px, 3.47vw, 50px);
+    height: clamp(40px, 3.47vw, 50px);
+  }
+}
+@mixin burgerIcon {
+  @include roundIcon;
+  span {
+    background-color: var(--white);
+    position: relative;
+    width: 14px;
+    height: 3px;
+    margin-right: 4px;
+    transition: background-color 0.4s;
+    &::before, &::after {
+      content: "";
+      background-color: var(--white);
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      left: 0;
+      transition: 0.3s;
+    }
+    &::before {
+      bottom: -6px;
+    }
+    &::after {
+      top: -6px;
+    }
+  }
+  &.active {
+    span {
+      background-color: transparent;
+      transition: background-color 0.2s;
+      &::before, &::after {
+        left: -1px;
+        transition: 0.3s;
+      }
+      &::before {
+        transform: rotate(-45deg);
+        bottom: -0;
+      }
+      &::after {
+        transform: rotate(45deg);
+        top: -0;
+      }
+    }
+  }
+}
+@mixin logo {
+  display: flex;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+@mixin headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  gap: 30px;
+}
+@media screen and (min-width: 1440px) {
+  header {
+    height: 122px;
+    .headerContent {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px var(--grey) solid;
+      .logo {
+        @include logo;
+        max-width: 225px;
+        width: 11.71vw;
+      }
+      .headerNav {
+        display: flex;
+        align-items: center;
+        gap: clamp(20px, 1.66vw, 32px);
+        height: 100%;
+        li {
+          font-family: var(--normal);
+          color: var(--black);
+          height: inherit;
+          align-content: center;
+          font-weight: 400;
+          line-height: 29px;
+          width: max-content;
+          font-size: clamp(16px, 1.25vw, 24px);
+          &.active {
+            border-bottom: 2px var(--red) solid;
+          }
+        }
+      }
+      .callUs {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        .phoneIcon {
+          @include roundIcon;
+          width: 50px;
+          height: 50px;
+        }
+        .phoneNumbers {
+          font-family: var(--normal);
+          color: var(--black);
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          text-align: center;
+          line-height: 19px;
+          gap: 10px;
+          width: 184px;
+          height: inherit;
+        }
+      }
+      .userMenu {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        max-width: 360px;
+        height: inherit;
+        a {
+          .userIcon {
+            @include roundIcon;
+            width: 50px;
+            height: 50px;
+          }
+        }
+        .search {
+          background-color: var(--grey);
+          display: flex;
+          overflow: hidden;
+          width: 280px;
+          height: 50px;
+          border-radius: 20px;
+          button, input {
+            background-color: inherit;
+            height: inherit;
+          }
+          button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+          }
+          input {
+            font-family: var(--normal);
+            color: var(--black);
+            outline: none;
+            font-size: 18px;
+            padding-left: 12px;
+            &::placeholder {
+              color: var(--black-opacity);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1439px) and (min-width: 720px) {
+  header {
+    height: 90px;
+    .headerContent {
+      @include headerContent;
+      border-bottom: 1px var(--grey) solid;
+      .logo {
+        @include logo;
+        position: absolute;
+        width: clamp(107px, 11.71vw, 225px);
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .headerNav {
+        display: none;
+        top: 0;
+        left: 0;
+        &.active {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          gap: 32px;
+          height: 90px;
+          width: 100%;
+          top: 90px;
+          li {
+            font-family: var(--normal);
+            color: var(--black);
+            height: inherit;
+            align-content: center;
+            font-weight: 400;
+            line-height: 29px;
+            width: max-content;
+            font-size: clamp(16px, 1.66vw, 24px);
+            &.active {
+              border-bottom: 2px var(--red) solid;
+            }
+          }
+        }
+      }
+      .callUs {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        a {
+          .phoneIcon {
+            @include roundIcon;
+            width: 50px;
+            height: 50px;
+          }
+        }
+        .phoneNumbers {
+          display: none;
+          &.active {
+            font-family: var(--normal);
+            color: var(--black);
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+            width: 184px;
+            height: inherit;
+          }
+        }
+      }
+      .userMenu {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        max-width: 360px;
+        height: inherit;
+        a {
+          .userIcon {
+            @include roundIcon;
+          }
+        }
+        .search {
+          display: none;
+          &.active {
+            background-color: var(--grey);
+            display: flex;
+            overflow: hidden;
+            width: 280px;
+            height: 50px;
+            border-radius: 20px;
+            button, input {
+              background-color: inherit;
+              height: inherit;
+            }
+            button {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 50px;
+            }
+            input {
+              font-family: var(--normal);
+              color: var(--black);
+              outline: none;
+              font-size: 18px;
+              padding-left: 12px;
+              &::placeholder {
+                color: var(--black-opacity);
+              }
+            }
+          }
+        }
+      }
+      .burgerIcon {
+        @include burgerIcon;
+      }
+    }
+  }
+}
+@media screen and (max-width: 719px) and (min-width: 320px) {
+  header {
+    height: 80px;
+    .headerContent {
+      @include headerContent;
+      .logo {
+        @include logo;
+        position: absolute;
+        width: 107px;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .headerNav {
+        display: none;
+        top: 0;
+        left: 0;
+        &.active {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          position: absolute;
+          gap: 10px;
+          height: calc(100vh - 90px);
+          width: 100%;
+          top: 90px;
+          padding: 30px 0 30px 0;
+          li {
+            font-family: var(--semiBold);
+            color: var(--black);
+            text-align: center;
+            font-weight: 600;
+            line-height: 29px;
+            width: 100%;
+            font-size: 24px;
+            &.active {
+              color: var(--red);
+            }
+            &:last-child {
+              border-bottom: 2px var(--red) solid;
+              padding-bottom: 20px;
+            }
+          }
+        }
+      }
+      .callUs {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        a {
+          .phoneIcon {
+            @include roundIcon;
+            width: 50px;
+            height: 50px;
+          }
+        }
+        .phoneNumbers {
+          display: none;
+          &.active {
+            font-family: var(--normal);
+            color: var(--black);
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+            width: 184px;
+            height: inherit;
+          }
+        }
+      }
+      .userMenu {
+        display: none;
+      }
+      .burgerIcon {
+        @include burgerIcon;
+      }
+    }
+  }
+}
