@@ -106,6 +106,7 @@
               align-items: center;
               flex-direction: column;
               text-align: center;
+              cursor: pointer;
               gap: 20px;
               width: 138px;
               height: 190px;
@@ -308,6 +309,7 @@
             }
           }
           button {
+            @include hoverForRed;
             font-family: var(--semiBold);
             background-color: var(--red);
             color: var(--white);
@@ -326,20 +328,31 @@
           background-color: var(--white);
           box-shadow: 10px 10px 10px 0 var(--dark-opacity);
           width: 100%;
+          height: calc(100vh - 202px);
           padding: 20px 15px;
           margin-top: 20px;
           border-radius: 20px;
+          h2 {
+            font-weight: 700;
+            line-height: 22px;
+            font-size: 18px;
+            margin: 0 0 15px 10px;
+          }
           .cartList {
             display: flex;
             flex-direction: column;
             text-align: left;
-            gap: 15px;
-            h2 {
-              font-weight: 700;
-              line-height: 22px;
-              font-size: 18px;
-              margin-left: 10px;
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+              background-color: var(--white);
+              width: 5px;
             }
+            &::-webkit-scrollbar-thumb {
+              background-color: var(--grey);
+              border-radius: 10px;
+            }
+            max-height: calc(100% - 106px);
+            gap: 15px;
             .cartItem {
               background-color: var(--grey-light);
               display: flex;
@@ -423,6 +436,13 @@
               height: 50px;
               font-size: 18px;
               border-radius: 10px;
+              &:hover {
+                span {
+                  &::before {
+                    content: url("../img/cartHover.svg");
+                  }
+                }
+              }
               span {
                 &::before {
                   content: url("../img/cart.svg");

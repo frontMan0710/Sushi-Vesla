@@ -67,6 +67,13 @@
   position: relative;
   gap: 30px;
 }
+@mixin searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 50px;
+}
 @media screen and (min-width: 1440px) {
   header {
     height: 122px;
@@ -146,10 +153,7 @@
             height: inherit;
           }
           button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
+            @include searchButton;
           }
           input {
             font-family: var(--normal);
@@ -258,10 +262,7 @@
               height: inherit;
             }
             button {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              width: 50px;
+              @include searchButton;
             }
             input {
               font-family: var(--normal);
