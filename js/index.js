@@ -3,6 +3,9 @@ $(function () {
         $(".burgerIcon").on("click", function () {
             $(this).toggleClass("active")
             $(".headerNav").toggleClass("active")
+            if ($(window).width() < 720) {
+                $("body").toggleClass("lock")
+            }
         })
         $(".phone").on("click", function () {
             $(".phoneNumbers").toggleClass("active")
@@ -14,7 +17,17 @@ $(function () {
         })
     } else {
         $(".headerContent .burgerIcon").remove()
+    }
+    if ($(window).width() >= 720) {
         $(".headerNav .profile").remove()
+
+    }
+    let $header = $("header")
+    if ($header) {
+        $(".wrapper").css("padding-top", $header.height() + 20)
+        if ($(window).width() < 720) {
+            $(".wrapper").css("padding-top", $header.height())
+        }
     }
 })
 $(function () {
@@ -45,29 +58,6 @@ $(function () {
     })*/
 })
 $(function () {
-    /*let visibleCount = 9
-    let cardsVisible = false
-    $(".categoryCard").each(function(index) {
-        if (index < 9) {
-            $(this).show()
-        } else {
-            $(this).hide()
-        }
-    })
-    $(".sectionTitle span").on("click", function () {
-        if (cardsVisible) {
-            $(".categoryCard").each(function(index) {
-                if (index >= visibleCount) {
-                    $(this).hide()
-                }
-            })
-            cardsVisible = false
-        } else {
-            $(".categoryCard").show()
-            cardsVisible = true
-        }
-    })*/
-
     var areHiddenElementsVisible = false
     function adjustElements() {
         let containerWidth = $(".categoryList").width()
@@ -118,6 +108,22 @@ $(function () {
     })
 })
 $(function () {
+    if ($(window).width() < 1120) {
+        $("aside").remove()
+    }
+    if ($(window).width() < 720) {
+        $(".catalogueCard").find(".prodName").remove()
+        $(".modal .close img").attr("src", "./img/mobileClose.svg")
+    } else {
+        $(".catalogueCard .mobileProdContent").remove()
+        $(".categoryListMobile").remove()
+        $(".promoCodeMobile").remove()
+        $(".mobileProdName").remove()
+        $(".mobileProdPrice").remove()
+        $(".mobileAddCart").remove()
+    }
+})
+$(function () {
     $(".lazy").Lazy({
         bind: "event",
         threshold: 0,
@@ -133,15 +139,31 @@ $(function () {
             $modal.addClass("active")
             $modal.show()
         }
+        if ($(".modal.active")) {
+            $("a.openCart").removeClass("active")
+        }
     })
     $(document).on("click", ".modalWrapper.active .modal .close", function () {
         let $modal = $(this).closest(".modalWrapper")
         $("body").removeClass("lock")
         $modal.removeClass("active")
         $modal.hide()
+        if ($modal) {
+            $("a.openCart").addClass("active")
+        }
     })
     $(".modalWrapper").hide()
 })
 $(function () {
     $("img").Lazy()
+})
+$(function () {
+    if ($(window).width() < 720) {
+        new Swiper(".swiper", {
+            direction: "horizontal",
+            slidesPerView: "auto",
+            spaceBetween: 20,
+            preloadImages: false,
+        })
+    }
 })

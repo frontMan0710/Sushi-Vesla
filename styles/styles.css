@@ -69,6 +69,7 @@ a {
     --dark: rgba(0, 0, 0, 0.1);
     --dark-opacity: rgba(0, 0, 0, 0.05);
     --red: rgba(227, 30, 36, 1);
+    --red-opacity: rgba(227, 30, 36, 0.5);
     --white: rgba(255, 255, 255, 1);
     --white-mix: rgba(230, 230, 230, 1);
     --grey: rgba(229, 229, 229, 1);
@@ -84,7 +85,12 @@ a {
     --popup-layer: 3;
 }
 .contentBorder {
-    width: clamp(320px, 93.75vw, 1800px);
+    width: clamp(675px, 93.75vw, 1800px);
     height: 100%;
     margin: 0 auto;
+}
+@media screen and (max-width: 719px) {
+    .contentBorder {
+        width: 88.88vw;
+    }
 }
