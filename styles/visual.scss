@@ -1,0 +1,213 @@
+@mixin section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: max-content;
+}
+@mixin itemChanges {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 130px;
+  button {
+    cursor: pointer;
+    font-weight: 600;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    font-size: 24px;
+    @media screen and (max-width: 719px){
+      &.decrease, &.increase {
+        background-color: var(--red);
+        color: var(--white);
+        border: none;
+        width: clamp(25px, 4.17vw, 30px);
+        height: 40px;
+        font-size: 18px;
+        border-radius: 5px;
+      }
+      &.decrease {
+        &.disable {
+          opacity: 0.5;
+        }
+      }
+      &~.counter {
+        font-size: clamp(16px, 2.78vw, 20px);
+      }
+    }
+  }
+  .counter {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .decrease {
+    background-color: var(--white);
+    color: var(--red);
+    border: 3px var(--red) solid;
+    @media screen and (min-width: 720px) {
+      &.disable {
+        color: var(--grey);
+        border: 3px var(--grey) solid;
+      }
+    }
+  }
+  .increase {
+    background-color: var(--red);
+    color: var(--white);
+  }
+}
+@mixin roundIcon {
+  background-color: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+@mixin hoverForRed {
+  &:hover {
+    background-color: var(--white);
+    border: 1px var(--red) solid;
+    color: var(--red);
+    transition: 0.2s background-color;
+  }
+}
+@mixin hoverShadow {
+  &:hover {
+    box-shadow: 5px 5px 10px 0 var(--dark);
+    transition: 0.3s;
+  }
+}
+@mixin promoCode {
+  display: flex;
+  width: 100%;
+  height: 35px;
+  input {
+    font-family: var(--medium);
+    color: var(--red);
+    border: 1px var(--red) solid;
+    outline: none;
+    height: inherit;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 10px;
+    &::placeholder {
+      color: var(--red);
+      font-weight: 500;
+      transition: 0.2s opacity;
+    }
+    &:focus {
+      &::placeholder {
+        opacity: 0.3;
+        transition: 0.1s opacity;
+      }
+    }
+  }
+  button {
+    @include hoverForRed;
+    font-family: var(--semiBold);
+    background-color: var(--red);
+    color: var(--white);
+    position: absolute;
+    cursor: pointer;
+    font-weight: 600;
+    width: 135px;
+    height: inherit;
+    top: 0;
+    right: 0;
+    font-size: 16px;
+    border-radius: 10px;
+    transition: 0.2s background-color;
+    @media screen and (max-width: 719px) {
+      background-color: var(--white);
+      color: var(--red);
+      border: 1px var(--red) solid;
+      &:focus {
+        background-color: var(--red);
+        color: var(--white);
+        border: none;
+        transition: 0.2s background-color;
+      }
+    }
+  }
+}
+@mixin buttonAnc {
+  @include hoverForRed;
+  background-color: var(--red);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 10px;
+  transition: 0.2s background-color;
+}
+@mixin catalogueCard {
+  @include hoverShadow;
+  background-color: var(--white);
+  border: 1px var(--dark-opacity) solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  visibility: hidden;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.6s;
+  width: clamp(301px, 17.96vw, 345px);
+  height: 300px;
+  border-radius: 20px;
+  padding: 15px;
+  img {
+    width: clamp(125px, 8.68vw, 181px);
+    height: auto;
+  }
+  span {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .catalogueCardPanel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    width: 100%;
+    .prodPrices {
+      text-align: left;
+      font-weight: 600;
+      width: 50%;
+      font-size: 16px;
+      li {
+        display: flex;
+        align-items: flex-end;
+        gap: 3px;
+        height: 20px;
+        .prodDesc {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          font-weight: 500;
+          font-size: 12px;
+        }
+      }
+    }
+    .itemChanges {
+      @include itemChanges;
+      width: 118px;
+      .decrease {
+        &.disable {
+          color: var(--black-opacity);
+          border: 3px var(--black-opacity) solid;
+          &~.counter {
+            color: var(--black-opacity);
+          }
+        }
+      }
+    }
+  }
+}

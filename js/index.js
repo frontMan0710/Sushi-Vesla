@@ -8,8 +8,10 @@ $(function () {
             }
         })
         $(".phone").on("click", function () {
-            $(".phoneNumbers").toggleClass("active")
-            $(".search").removeClass("active")
+            if ($(window).width() >= 720) {
+                $(".phoneNumbers").toggleClass("active")
+                $(".search").removeClass("active")
+            }
         })
         $(".userMenu .profile").on("click", function () {
             $(".search").toggleClass("active")
@@ -20,7 +22,7 @@ $(function () {
     }
     if ($(window).width() >= 720) {
         $(".headerNav .profile").remove()
-
+        $(".phone").attr("href", "javascript:void(0)")
     }
     let $header = $("header")
     if ($header) {
@@ -106,6 +108,14 @@ $(function () {
             }
         })
     })
+    if ($(window).width() < 1120) {
+        $(".openCart").fadeOut(0)
+        $(window).on("scroll", function () {
+            $(".openCart").fadeIn(500)
+        })
+    } else {
+        $(".openCart").remove()
+    }
 })
 $(function () {
     if ($(window).width() < 1120) {
@@ -121,6 +131,7 @@ $(function () {
         $(".mobileProdName").remove()
         $(".mobileProdPrice").remove()
         $(".mobileAddCart").remove()
+        $(".openCart").remove()
     }
 })
 $(function () {
@@ -153,6 +164,33 @@ $(function () {
         }
     })
     $(".modalWrapper").hide()
+})
+$(function () {
+    let $trash = $(".cartItem").find(".removeItem")
+    $trash.on("click", function () {
+        $(this).closest(".cartItem").fadeOut(300, function() {
+            $(this).remove()
+            cartCheck()
+        })
+    })
+    function cartCheck() {
+        if ($(".cartItem").length) {
+            $(".emptyMessage").hide()
+        } else {
+            $(".emptyMessage").show()
+        }
+    }
+    cartCheck()
+})
+$(function () {
+    $(".counter").each(function () {
+        let counter = parseInt($(this).text())
+        if (counter === 0) {
+            $(this).siblings(".decrease").addClass("disable")
+        } else {
+            $(this).siblings(".decrease").removeClass("disable")
+        }
+    })
 })
 $(function () {
     $("img").Lazy()

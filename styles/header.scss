@@ -286,7 +286,9 @@
 }
 @media screen and (max-width: 719px) and (min-width: 320px) {
   header {
+    background-color: var(--white);
     box-shadow: 0 4px 10px 0 var(--dark);
+    z-index: var(--header-layer);
     height: 80px;
     .headerContent {
       @include headerContent;
@@ -300,38 +302,39 @@
         transform: translateY(-50%);
       }
       .headerNav {
-        display: none;
-        top: 0;
-        left: 0;
+        background-color: var(--white);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        position: fixed;
+        z-index: -1;
+        height: 100vh;
+        width: 100%;
         min-width: 100vw;
+        top: -100%;
+        left: 0;
+        padding: 30px 0 30px 0;
+        transition: top 0.4s;
         &.active {
-          background-color: var(--white);
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-          position: absolute;
-          gap: 10px;
-          height: 100vh;
-          width: 100%;
+          z-index: -1;
           top: 80px;
-          left: -5.56vw;
-          padding: 30px 0 30px 0;
-          
-          li {
-            font-family: var(--semiBold);
-            color: var(--black);
-            text-align: center;
-            font-weight: 600;
-            line-height: 29px;
-            width: 100%;
-            font-size: 24px;
-            &.active {
-              color: var(--red);
-            }
-            &:last-child {
-              border-bottom: 2px var(--red) solid;
-              padding-bottom: 20px;
-            }
+          transition: top 0.5s;
+        }
+        li {
+          font-family: var(--semiBold);
+          color: var(--black);
+          text-align: center;
+          font-weight: 600;
+          line-height: 29px;
+          width: 100%;
+          font-size: 24px;
+          &.active {
+            color: var(--red);
+          }
+          &:last-child {
+            border-bottom: 2px var(--red) solid;
+            padding-bottom: 20px;
           }
         }
       }

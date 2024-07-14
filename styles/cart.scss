@@ -1,0 +1,164 @@
+@import "visual";
+@media screen and (max-width: 719px) {
+  .wrapper {
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      .cart {
+        .cartContent {
+          .cartHeader {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 15px;
+            height: 135px;
+            h1 {
+              font-weight: 600;
+              font-size: 24px;
+            }
+            .promoCode {
+              @include promoCode;
+              position: relative;
+              button {
+                font-size: clamp(12px, 1.96vw, 14px);
+              }
+            }
+          }
+          .cartList {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 15px 0;
+            .emptyMessage {
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              gap: 25px;
+              span {
+                font-weight: 600;
+                line-height: 30px;
+                font-size: 16px;
+              }
+              a {
+                @include buttonAnc;
+                width: 100%;
+              }
+            }
+            .cartItem {
+              background-color: var(--grey-light);
+              display: flex;
+              justify-content: space-between;
+              position: relative;
+              width: 100%;
+              min-height: 120px;
+              height: max-content;
+              border-radius: 10px;
+              padding: 15px 15px 60px 15px;
+              .itemDesc {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-weight: 600;
+                .itemName {
+                  max-width: 195px;
+                  font-size: clamp(18px, 3.05vw, 22px);
+                }
+                .itemComposition {
+                  font-size: clamp(12px, 1.94vw, 14px);
+                }
+              }
+              .price {
+                font-weight: 600;
+                font-size: clmap(16px, 2.5vw, 18px);
+              }
+              .removeItem, .itemChanges {
+                position: absolute;
+                bottom: 15px;
+              }
+              .removeItem {
+                background-color: inherit;
+                left: 15px;
+              }
+              .itemChanges {
+                @include itemChanges;
+                width: clamp(80px, 15.02vw, 108px);
+                right: 15px;
+              }
+            }
+          }
+          .orderInfo {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+            font-weight: 600;
+            font-size: 16px;
+            padding-top: 15px;
+          }
+        }
+      }
+      .sauces, .devices {
+        .saucesContent, .devicesContent {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          .sectionTitle {
+            h1 {
+              font-weight: 600;
+              font-size: 22px;
+            }
+          }
+          .saucesList, .deviceList {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            .sauceItem, .deviceItem {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 100%;
+              .price, .sauceName, .deviceName {
+                font-size: clamp(12px, 2.22vw, 16px);
+                &.sauceName, &.deviceName {
+                  hyphens: auto;
+                  width: clamp(100px, 17.38vw, 125px);
+                }
+              }
+              .itemChanges {
+                @include itemChanges;
+                width: clamp(80px, 15.02vw, 108px);
+              }
+            }
+          }
+        }
+      }
+      .orderDelivery {
+        background-color: var(--grey-light);
+        padding: 20px 0 25px 0;
+        .deliveryContent {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          .sectionTitle, .deliveryButtons {
+            display: flex;
+            justify-content: space-between;
+          }
+          .sectionTitle {
+            h1, .pricesSum {
+              font-weight: 600;
+              font-size: clamp(18px, 3.05vw, 22px);
+            }
+          }
+          .deliveryButtons {
+            gap: 20px;
+            a {
+              @include buttonAnc;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

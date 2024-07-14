@@ -1,165 +1,4 @@
-@mixin section {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  height: max-content;
-}
-@mixin itemChanges {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 130px;
-  button {
-    cursor: pointer;
-    font-weight: 600;
-    width: 37px;
-    height: 37px;
-    border-radius: 50%;
-    font-size: 24px;
-    @media screen and (max-width: 719px){
-      &.decrease, &.increase {
-        background-color: var(--red);
-        color: var(--white);
-        border: none;
-        border-radius: 5px;
-      }
-    }
-  }
-  .counter {
-    font-weight: 600;
-    font-size: 18px;
-  }
-  .decrease {
-    background-color: var(--white);
-    color: var(--red);
-    border: 3px var(--red) solid;
-  }
-  .increase {
-    background-color: var(--red);
-    color: var(--white);
-  }
-}
-@mixin roundIcon {
-  background-color: var(--red);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-@mixin hoverForRed {
-  &:hover {
-    background-color: var(--white);
-    border: 1px var(--red) solid;
-    color: var(--red);
-  }
-}
-@mixin hoverShadow {
-  &:hover {
-    box-shadow: 5px 5px 10px 0 var(--dark);
-    transition: 0.3s;
-  }
-}
-@mixin promoCode {
-  display: flex;
-  width: 100%;
-  height: 35px;
-  input {
-    font-family: var(--medium);
-    color: var(--red);
-    border: 1px var(--red) solid;
-    outline: none;
-    height: inherit;
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 10px;
-    &::placeholder {
-      color: var(--red);
-      font-weight: 500;
-    }
-  }
-  button {
-    @include hoverForRed;
-    font-family: var(--semiBold);
-    background-color: var(--red);
-    color: var(--white);
-    position: absolute;
-    cursor: pointer;
-    font-weight: 600;
-    width: 135px;
-    height: inherit;
-    top: 0;
-    right: 0;
-    font-size: 16px;
-    border-radius: 10px;
-  }
-}
-@mixin catalogueCard {
-  @include hoverShadow;
-  background-color: var(--white);
-  border: 1px var(--dark-opacity) solid;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  text-align: center;
-  position: relative;
-  visibility: hidden;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.6s;
-  width: clamp(301px, 16.52vw, 345px);
-  height: 300px;
-  border-radius: 20px;
-  padding: 15px;
-  img {
-    width: clamp(125px, 8.68vw, 181px);
-    height: auto;
-  }
-  span {
-    font-weight: 600;
-    font-size: 16px;
-  }
-  .catalogueCardPanel {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 5px;
-    width: 100%;
-    .prodPrices {
-      text-align: left;
-      font-weight: 600;
-      width: 50%;
-      font-size: 16px;
-      li {
-        display: flex;
-        align-items: flex-end;
-        gap: 3px;
-        height: 20px;
-        .prodDesc {
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          font-weight: 500;
-          font-size: 12px;
-        }
-      }
-    }
-    .itemChanges {
-      @include itemChanges;
-      width: 118px;
-      .decrease {
-        &.disable {
-          color: var(--black-opacity);
-          border: 3px var(--black-opacity) solid;
-          &~.counter {
-            color: var(--black-opacity);
-          }
-        }
-      }
-    }
-  }
-}
+@import "visual";
 @media screen and (min-width: 1120px) {
   .wrapper {
     background-color: var(--grey-light);
@@ -449,17 +288,10 @@
               }
             }
             .checkout {
-              @include hoverForRed;
-              background-color: var(--red);
-              color: var(--white);
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              cursor: pointer;
+              @include buttonAnc;
               width: 100%;
               height: 50px;
               font-size: 18px;
-              border-radius: 10px;
               &:hover {
                 span {
                   &::before {
@@ -685,7 +517,6 @@
             display: none;
           }
           .categoryListMobile {
-            width: 100%;
             li {
               color: var(--black);
               display: flex;
@@ -707,9 +538,6 @@
           position: relative;
           font-size: clamp(12px, 2.22vw, 16px);
           button {
-            background-color: var(--white);
-            color: var(--red);
-            border: 1px var(--red) solid;
             width: max-content;
             font-size: inherit;
             padding: 0 15px;
@@ -757,14 +585,10 @@
                   font-size: 10px;
                 }
                 .addToCart {
-                  background-color: var(--red);
-                  color: var(--white);
+                  @include buttonAnc;
                   white-space: nowrap;
-                  font-weight: 500;
                   width: clamp(170px, 30.59vw, 220px);
-                  height: 40px;
                   font-size: clamp(12px, 1.94vw, 14px);
-                  border-radius: 10px;
                   padding: 0 10px;
                 }
               }
@@ -863,14 +687,8 @@
                       }
                     }
                     .mobileAddCart {
-                      background-color: var(--red);
-                      color: var(--white);
-                      align-content: center;
-                      text-align: center;
-                      font-weight: 600;
+                      @include buttonAnc;
                       width: 100%;
-                      height: 40px;
-                      font-size: 14px;
                       border-radius: 10px;
                     }
                     .itemChanges {
@@ -879,15 +697,6 @@
                       top: 0;
                       right: 0;
                       width: clamp(80px, 15.02vw, 108px);
-                      .counter {
-                        font-size: clamp(16px, 2.78vw, 20px);
-                      }
-                      button {
-                        width: clamp(25px, 4.17vw, 30px);
-                        height: 40px;
-                        font-size: 18px;
-                        border-radius: 5px;
-                      }
                     }
                   }
                 }
@@ -900,7 +709,7 @@
   }
 }
 @media screen and (max-width: 1119px) {
-  a.openCart.active {
+  a.openCart {
     @include roundIcon;
     position: fixed;
     box-shadow: 0 4px 50px 0 var(--red-opacity);

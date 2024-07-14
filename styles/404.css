@@ -1,0 +1,89 @@
+@media screen and (min-width: 320px) {
+  .contentWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    width: clamp(280px, 87.5vw, 425px);
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    margin-top: 30px;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .contentWrapper .title h1 {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .contentWrapper .picture {
+    background-image: url(../img/404@2x.png);
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    position: relative;
+    width: clamp(280px, 87.5vw, 320px);
+    height: auto;
+    margin-top: 30px;
+  }
+  .contentWrapper .picture .errorCode {
+    color: var(--white);
+    position: absolute;
+    text-align: center;
+    font-weight: 700;
+    width: 100%;
+    top: 35px;
+    font-size: 72px;
+  }
+  .contentWrapper .picture img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 33px;
+  }
+  .contentWrapper .info {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .contentWrapper .info p, .contentWrapper .info p ~ span {
+    font-weight: 600;
+    font-size: clamp(14px, 0.93vw, 18px);
+  }
+  .contentWrapper .info a {
+    background-color: var(--red);
+    color: var(--white);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    cursor: pointer;
+    font-weight: 600;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 10px;
+    -webkit-transition: 0.2s background-color;
+    transition: 0.2s background-color;
+    margin-top: 15px;
+  }
+  .contentWrapper .info a:hover {
+    background-color: var(--white);
+    border: 1px var(--red) solid;
+    color: var(--red);
+    -webkit-transition: 0.2s background-color;
+    transition: 0.2s background-color;
+  }
+}
