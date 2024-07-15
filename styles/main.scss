@@ -214,8 +214,20 @@
               background-color: var(--grey);
               border-radius: 10px;
             }
-            max-height: calc(100% - 106px);
+            max-height: calc(100% - 151px);
             gap: 15px;
+            .emptyMessage {
+              @include emptyMessage;
+              span {
+                text-align: left;
+                font-weight: 500;
+                font-size: 20px;
+              }
+              a {
+                height: 50px;
+                font-size: 18px;
+              }
+            }
             .cartItem {
               background-color: var(--grey-light);
               display: flex;

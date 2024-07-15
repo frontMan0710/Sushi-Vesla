@@ -211,3 +211,18 @@
     }
   }
 }
+@mixin emptyMessage {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 25px;
+  span {
+    font-weight: 600;
+    line-height: 30px;
+    font-size: 16px;
+  }
+  a {
+    @include buttonAnc;
+    width: 100%;
+  }
+}

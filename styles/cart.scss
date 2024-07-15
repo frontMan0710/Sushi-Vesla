@@ -31,19 +31,7 @@
             gap: 15px;
             padding: 15px 0;
             .emptyMessage {
-              display: flex;
-              flex-direction: column;
-              text-align: center;
-              gap: 25px;
-              span {
-                font-weight: 600;
-                line-height: 30px;
-                font-size: 16px;
-              }
-              a {
-                @include buttonAnc;
-                width: 100%;
-              }
+              @include emptyMessage;
             }
             .cartItem {
               background-color: var(--grey-light);
@@ -68,7 +56,7 @@
                   font-size: clamp(12px, 1.94vw, 14px);
                 }
               }
-              .price {
+              .itemPrice {
                 font-weight: 600;
                 font-size: clmap(16px, 2.5vw, 18px);
               }
@@ -145,7 +133,7 @@
             justify-content: space-between;
           }
           .sectionTitle {
-            h1, .pricesSum {
+            h1, .totalSum {
               font-weight: 600;
               font-size: clamp(18px, 3.05vw, 22px);
             }

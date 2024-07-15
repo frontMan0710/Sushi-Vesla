@@ -33,31 +33,87 @@ $(function () {
     }
 })
 $(function () {
-    /*$(".decrease").on("click", function() {
+    function animateNumber(element, start, end, duration) {
+        const range = end - start
+        const startTime = performance.now()
+        function updateNumber(currentTime) {
+            const elapsedTime = currentTime - startTime
+            const progress = Math.min(elapsedTime / duration, 1)
+            const currentNumber = start + range * progress
+            element.text(currentNumber.toFixed(2) + " грн.")
+            if (progress < 1) {
+                requestAnimationFrame(updateNumber)
+            } else {
+                element.text(end.toFixed(2) + " грн.")
+            }
+        }
+        requestAnimationFrame(updateNumber)
+    }
+    $(".decrease").on("click", function() {
         let $counter = $(this).siblings(".counter")
-        let $price = $(this).closest(".cartItem").find(".itemPrice")
-        let price = $price.attr("data-price")
+        let $price = $(this).closest(".cartItem, [class*='Item']").find(".itemPrice")
+        let price = parseFloat($price.data("price"))
         let counter = parseInt($counter.text(), 10)
         if (counter > 0) {
             counter--
-            var returnPrice = (price * counter).toFixed(2)
+            let itemTotal = (price * counter).toFixed(2)
             $counter.text(counter)
-            $price.text(returnPrice + " грн.")
+            $price.text(itemTotal + " грн.")
         }
         if (counter === 0) {
-            $(this).parents(".cartItem").remove()
+            $(this).addClass("disable")
         }
+        totalPrice()
     })
     $(".increase").on("click", function() {
         let $counter = $(this).siblings(".counter")
-        let $price = $(this).closest(".cartItem").find(".itemPrice")
-        let price = $price.attr("data-price")
+        let $price = $(this).closest(".cartItem, [class*='Item']").find(".itemPrice")
+        let price = parseFloat($price.data("price"))
         let counter = parseInt($counter.text(), 10)
         counter++
-        var returnPrice = (price * counter).toFixed(2)
-        $price.text(returnPrice + " грн.")
+        var itemTotal = (price * counter).toFixed(2)
         $counter.text(counter)
-    })*/
+        $price.text(itemTotal + " грн.")
+        if (counter > 0) {
+            $(this).siblings(".decrease").removeClass("disable")
+        }
+        totalPrice()
+    })
+    let $trash = $(".cartItem").find(".removeItem")
+    $trash.on("click", function () {
+        $(this).closest(".cartItem").fadeOut(300, function() {
+            $(this).remove()
+            cartCheck()
+            totalPrice()
+        })
+    })
+    $(".remove").on("click", function () {
+        $(this).closest(".cartItem").fadeOut(400, function () {
+            $(this).remove()
+            cartCheck()
+            totalPrice()
+        })
+    })
+    function cartCheck() {
+        if ($(".cartItem").length) {
+            $(".emptyMessage").hide()
+        } else {
+            $(".emptyMessage").show()
+        }
+    }
+    function totalPrice() {
+        var total = 0
+        $(".itemPrice").each(function () {
+            var itemPrice = parseFloat($(this).text()) || 0
+            total += itemPrice
+        })
+
+        let $totalSum = $(".totalSum")
+        let currentTotal = parseFloat($totalSum.text()) || 0
+        animateNumber($totalSum, currentTotal, total, 600)
+    }
+    cartCheck()
+    totalPrice()
 })
 $(function () {
     var areHiddenElementsVisible = false
@@ -135,6 +191,14 @@ $(function () {
     }
 })
 $(function () {
+    new Swiper(".swiper", {
+        direction: "horizontal",
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        preloadImages: false,
+    })
+})
+$(function () {
     $(".lazy").Lazy({
         bind: "event",
         threshold: 0,
@@ -166,42 +230,5 @@ $(function () {
     $(".modalWrapper").hide()
 })
 $(function () {
-    let $trash = $(".cartItem").find(".removeItem")
-    $trash.on("click", function () {
-        $(this).closest(".cartItem").fadeOut(300, function() {
-            $(this).remove()
-            cartCheck()
-        })
-    })
-    function cartCheck() {
-        if ($(".cartItem").length) {
-            $(".emptyMessage").hide()
-        } else {
-            $(".emptyMessage").show()
-        }
-    }
-    cartCheck()
-})
-$(function () {
-    $(".counter").each(function () {
-        let counter = parseInt($(this).text())
-        if (counter === 0) {
-            $(this).siblings(".decrease").addClass("disable")
-        } else {
-            $(this).siblings(".decrease").removeClass("disable")
-        }
-    })
-})
-$(function () {
     $("img").Lazy()
-})
-$(function () {
-    if ($(window).width() < 720) {
-        new Swiper(".swiper", {
-            direction: "horizontal",
-            slidesPerView: "auto",
-            spaceBetween: 20,
-            preloadImages: false,
-        })
-    }
 })
