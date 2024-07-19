@@ -211,6 +211,15 @@
     }
   }
 }
+@mixin whiteButton {
+  background-color: var(--white);
+  color: var(--red);
+  border: 1px var(--red) solid;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 10px;
+}
 @mixin emptyMessage {
   display: flex;
   flex-direction: column;

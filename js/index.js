@@ -152,6 +152,31 @@ $(function () {
     })
 })
 $(function () {
+    $(".deliveryContent .collapsible").hide()
+    $(".deliveryContent .deliveryFor").on("click", function () {
+        $(".deliveryContent .collapsible").slideToggle(300)
+        $(this).toggleClass("active")
+        if ($(this).hasClass("active")) {
+            $(this).text("Сбросить")
+        } else {
+            $(this).text("Заказать ко времени")
+        }
+    })
+    $(".deliveryTime .showMore").hide().first().show()
+    $(".showMore").on("click", function () {
+        let $this = $(this)
+        let $buttons = $this.nextAll("button").slice(0, 6)
+        $buttons.addClass("visible")
+        let $nextShowMore = $buttons.nextAll(".showMore").first()
+        if ($nextShowMore.length) {
+            $this.hide()
+            $nextShowMore.show()
+        } else {
+            $this.remove()
+        }
+    })
+})
+$(function () {
     var $target = $(".catalogueList .catalogueCard")
     $(window).on("scroll", function() {
         var scrollTop = $(window).scrollTop()

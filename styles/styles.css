@@ -76,6 +76,7 @@ a {
     --white-mix: rgba(230, 230, 230, 1);
     --grey: rgba(229, 229, 229, 1);
     --grey-light: rgba(248, 249, 252, 1);
+    --grey-dark: rgba(161, 164, 177, 1);
 
     --normal: "Montserrat Normal", sans-serif;
     --medium: "Montserrat Medium", sans-serif;

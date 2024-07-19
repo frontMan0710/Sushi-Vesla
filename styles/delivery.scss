@@ -1,0 +1,115 @@
+@import "visual";
+@media screen and (max-width: 719px) {
+  .wrapper {
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding-top: 30px;
+      .address {
+        .addressContent {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          h1 {
+            font-weight: 600;
+            font-size: 24px;
+          }
+          form {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            label {
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              span {
+                font-weight: 600;
+                font-size: 12px;
+                &::after {
+                  content: "*";
+                }
+              }
+              &[for="entrance"], &[for="codeOfDoor"] {
+                span {
+                  &::after {
+                    content: none;
+                  }
+                }
+              }
+              input, textarea {
+                border: 1px var(--grey-dark) solid;
+                border-radius: 4px;
+                padding: 16px;
+                &:focus {
+                  outline: none;
+                }
+              }
+              input {
+                height: 35px;
+              }
+              #street {
+                width: 70vw;
+              }
+              #house {
+                width: 13.33vw;
+              }
+              #entrance, #place, #codeOfDoor, #floor {
+                width: 41.66vw;
+              }
+              &[for="comment"] {
+                width: 100%;
+                #comment {
+                  resize: none;
+                  height: max-content;
+                  min-height: 105px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .deliveryMenu {
+        .deliveryContent {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          padding-bottom: 25px;
+          .collapsible {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            span {
+              font-weight: 600;
+              font-size: 12px;
+            }
+            .deliveryTime {
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              gap: 15px;
+              button {
+                display: none;
+              }
+              button.visible, .showMore {
+                @include whiteButton;
+                width: 41.66vw;
+                height: 35px;
+              }
+            }
+          }
+          button {
+            @include whiteButton;
+            width: 100%;
+            height: 40px;
+          }
+          a {
+            @include buttonAnc;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
