@@ -144,6 +144,9 @@
   font-size: 14px;
   border-radius: 10px;
   transition: 0.2s background-color;
+  &.disable {
+    opacity: 0.5;
+  }
 }
 @mixin catalogueCard {
   @include hoverShadow;

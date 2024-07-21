@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/phone.css">
+</head>
+<body>
+<header>
+    <div class="contentBorder headerContent">
+        <a href="../index.html" class="logo">
+            <img src="../img/logo.svg" alt="" width="225" height="80">
+        </a>
+        <ul class="headerNav">
+            <li><a href="javascript:void(0)">Меню</a></li>
+            <li><a href="javascript:void(0)">Акции</a></li>
+            <li><a href="javascript:void(0)">Новости</a></li>
+            <li><a href="javascript:void(0)">О нас</a></li>
+            <li><a href="javascript:void(0)">Карьера</a></li>
+            <li><a href="javascript:void(0)">Отзывы</a></li>
+            <li class="profile"><a href="../subPages/404.html">Личный кабинет</a></li>
+        </ul>
+        <div class="callUs">
+            <a class="phone" href="javascript:void(0)">
+                <span class="phoneIcon">
+                    <img src="../img/phone.svg" alt="" width="26" height="26">
+                </span>
+            </a>
+            <div class="phoneNumbers">
+                <a href="javascript:void(0)">+380 (93) 000 00 00</a>
+                <a href="javascript:void(0)">+380 (91) 000 00 00</a>
+            </div>
+        </div>
+        <div class="userMenu">
+            <div class="search">
+                <button type="submit" aria-label="Искать"><img src="../img/search.svg" width="26" height="26"></button>
+                <input type="text" placeholder="Поиск" class="searchInput">
+            </div>
+            <a class="profile" href="../subPages/404.html">
+                <span class="userIcon">
+                    <img src="../img/user.svg" alt="" width="30" height="30">
+                </span>
+            </a>
+        </div>
+        <button type="button" class="burgerIcon">
+            <span></span>
+        </button>
+    </div>
+</header>
+<div class="wrapper">
+    <main>
+        <section class="phone">
+            <div class="contentBorder phoneContent">
+                <p>Укажите телефон, куда присылать СМС со статусом заказа</p>
+                <form action="">
+                    <input type="text" id="phone" placeholder="Введите Ваш номер телефона">
+                    <a href="javascript:history.back()">Назад</a>
+                    <button>Готово</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="../libs/jQuery/jquery-3.7.1.min.js"></script>
+<script src="../js/header.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+@media screen and (max-width: 719px) {
+  .wrapper main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+    padding-top: 30px;
+  }
+  .wrapper main .phone .phoneContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+    width: clamp(280px, 87.5vw, 425px);
+  }
+  .wrapper main .phone .phoneContent p {
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .wrapper main .phone .phoneContent form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 15px;
+  }
+  .wrapper main .phone .phoneContent form input {
+    border: 1px var(--grey-dark) solid;
+    width: 100%;
+    height: 35px;
+    padding-left: 15px;
+    border-radius: 4px;
+  }
+  .wrapper main .phone .phoneContent form input::-webkit-input-placeholder {
+    color: var(--grey-dark);
+  }
+  .wrapper main .phone .phoneContent form input::-moz-placeholder {
+    color: var(--grey-dark);
+  }
+  .wrapper main .phone .phoneContent form input:-ms-input-placeholder {
+    color: var(--grey-dark);
+  }
+  .wrapper main .phone .phoneContent form input::-ms-input-placeholder {
+    color: var(--grey-dark);
+  }
+  .wrapper main .phone .phoneContent form input::placeholder {
+    color: var(--grey-dark);
+  }
+  .wrapper main .phone .phoneContent form a, .wrapper main .phone .phoneContent form button {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+  }
+  .wrapper main .phone .phoneContent form a {
+    background-color: var(--white);
+    color: var(--red);
+    border: 1px var(--red) solid;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 10px;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .wrapper main .phone .phoneContent form button {
+    background-color: var(--red);
+    color: var(--white);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    cursor: pointer;
+    font-weight: 600;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 10px;
+    -webkit-transition: 0.2s background-color;
+    transition: 0.2s background-color;
+  }
+  .wrapper main .phone .phoneContent form button:hover {
+    background-color: var(--white);
+    border: 1px var(--red) solid;
+    color: var(--red);
+    -webkit-transition: 0.2s background-color;
+    transition: 0.2s background-color;
+  }
+  .wrapper main .phone .phoneContent form button.disable {
+    opacity: 0.5;
+  }
+}

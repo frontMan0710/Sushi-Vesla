@@ -1,0 +1,177 @@
+@import "visual";
+@media screen and (max-width: 719px) {
+  .wrapper {
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding-top: 30px;
+      .targets {
+        .targetsContent {
+          .controls {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            h1 {
+              font-weight: 600;
+              width: 100%;
+              font-size: 24px;
+            }
+            button {
+              border: 1px var(--black) solid;
+              opacity: 0.6;
+              font-weight: 600;
+              width: 41.66vw;
+              height: 35px;
+              font-size: 14px;
+              border-radius: 10px;
+              transition: all 0.3s;
+              &.active {
+                background-color: var(--red);
+                color: var(--white);
+                border: none;
+                opacity: 1;
+                transition: all 0.3s;
+              }
+            }
+          }
+          .targetList {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 30px 0;
+            .targetItem {
+              display: flex;
+              flex-direction: column;
+              gap: 5px;
+              position: relative;
+              width: 100%;
+              padding: 20px 15px;
+              span {
+                line-height: 15px;
+                font-size: clamp(12px, 1.94vw, 14px);
+                &.targetName, &.targetDeliveryTime {
+                  font-weight: 500;
+                }
+              }
+              .targetSelect {
+                position: absolute;
+                top: 50%;
+                right: 30px;
+                input {
+                  position: absolute;
+                  opacity: 0;
+                  &:checked {
+                    & ~ .checkmark {
+                      background-color: var(--red);
+                      transition: background-color 0.2s;
+                    }
+                    & ~ .targetInfo {
+                      opacity: 1;
+                      transition: opacity 0.3s;
+                    }
+                  }
+                }
+                .checkmark {
+                  border: 2px var(--red) solid;
+                  position: absolute;
+                  height: 15px;
+                  width: 15px;
+                  top: 0;
+                  left: 0;
+                  border-radius: 50%;
+                  transition: background-color 0.2s;
+                }
+                .targetInfo {
+                  background-color: var(--white);
+                  color: var(--red);
+                  border: 2px var(--red) solid;
+                  position: absolute;
+                  font-weight: 500;
+                  opacity: 0;
+                  height: max-content;
+                  width: clamp(200px, 41.72vw, 300px);
+                  font-size: clamp(10px, 1.94vw, 14px);
+                  padding: 10px;
+                  right: -31px;
+                  bottom: 16px;
+                  border-radius: 4px;
+                  transition: opacity 0.3s;
+                  &::after {
+                    background-color: inherit;
+                    border-right: inherit;
+                    border-bottom: inherit;
+                    content: "";
+                    position: absolute;
+                    width: 12px;
+                    height: 12px;
+                    bottom: -9px;
+                    right: 15px;
+                    transform: rotate(45deg);
+                  }
+                }
+              }
+            }
+          }
+          .targetMap {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+            padding: 30px 0 0;
+            .selectedTarget {
+              color: var(--red);
+              font-weight: 500;
+              line-height: 30px;
+              font-size: 14px;
+              &::first-line {
+                color: var(--black);
+              }
+            }
+          }
+        }
+      }
+      .pickup {
+        .pickupContent {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          padding-bottom: 25px;
+          .collapsible {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            span {
+              font-weight: 600;
+              font-size: 12px;
+            }
+            .pickupTime {
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              gap: 15px;
+              button {
+                display: none;
+              }
+              button.visible, .showMore {
+                @include whiteButton;
+                width: 41.66vw;
+                height: 35px;
+              }
+            }
+          }
+          button {
+            @include whiteButton;
+            width: 100%;
+            height: 40px;
+          }
+          a {
+            @include buttonAnc;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

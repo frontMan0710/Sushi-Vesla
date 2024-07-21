@@ -57,6 +57,7 @@
                 }
               }
               .itemPrice {
+                white-space: nowrap;
                 font-weight: 600;
                 font-size: clmap(16px, 2.5vw, 18px);
               }
@@ -106,11 +107,14 @@
               align-items: center;
               justify-content: space-between;
               width: 100%;
-              .price, .sauceName, .deviceName {
+              .itemPrice, .sauceName, .deviceName {
                 font-size: clamp(12px, 2.22vw, 16px);
                 &.sauceName, &.deviceName {
                   hyphens: auto;
                   width: clamp(100px, 17.38vw, 125px);
+                }
+                &.itemPrice {
+                  white-space: nowrap;
                 }
               }
               .itemChanges {

@@ -86,4 +86,7 @@
     -webkit-transition: 0.2s background-color;
     transition: 0.2s background-color;
   }
+  .contentWrapper .info a.disable {
+    opacity: 0.5;
+  }
 }

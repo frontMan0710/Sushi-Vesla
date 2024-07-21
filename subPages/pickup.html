@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Доставка</title>
+    <title>Title</title>
     <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../styles/delivery.css">
+    <link rel="stylesheet" href="../styles/pickup.css">
 </head>
 <body>
 <header>
@@ -14,7 +14,7 @@
             <img src="../img/logo.svg" alt="" width="225" height="80">
         </a>
         <ul class="headerNav">
-            <li><a href="javascript:void(0)">Меню</a></li>
+            <li class="active"><a href="javascript:void(0)">Меню</a></li>
             <li><a href="javascript:void(0)">Акции</a></li>
             <li><a href="javascript:void(0)">Новости</a></li>
             <li><a href="javascript:void(0)">О нас</a></li>
@@ -51,25 +51,69 @@
 </header>
 <div class="wrapper">
     <main>
-        <section class="address">
-            <div class="contentBorder addressContent">
-                <h1>Адрес доставки</h1>
-                <form action="">
-                    <label for="street"><span>Улица</span><input type="text" id="street"></label>
-                    <label for="house"><span>Дом</span><input type="text" id="house"></label>
-                    <label for="entrance"><span>Подъезд</span><input type="text" id="entrance"></label>
-                    <label for="place"><span>Квартира</span><input type="text" id="place"></label>
-                    <label for="codeOfDoor"><span>Код от двери</span><input type="text" id="codeOfDoor"></label>
-                    <label for="floor"><span>Этаж</span><input type="text" id="floor"></label>
-                    <label for="comment"><span>Комментарий</span><textarea id="comment" aria-grabbed="false" placeholder="Оставьте ваше сообщение" cols="30" rows="10"></textarea></label>
-                </form>
+        <section class="targets">
+            <div class="contentBorder targetsContent">
+                <div class="controls">
+                    <h1>Точки самовывоза</h1>
+                    <button type="button" data-tab="list">Список</button>
+                    <button type="button" data-tab="map">Карта</button>
+                </div>
+                <div class="targetList tabContent" id="list">
+                    <div class="targetItem">
+                        <span class="targetName">БЦ Словацкий</span>
+                        <span class="targetAddress">Адрес: ул. Словацкого, 4-6</span>
+                        <span class="targetWorkTime">Режим работы: 10:00 - 22:00</span>
+                        <span class="targetDeliveryTime">Суши - 15 мин, WOK - 15 мин</span>
+                        <label class="targetSelect">
+                            <input type="radio" name="target">
+                            <span class="checkmark"></span>
+                            <span class="targetInfo">Точка по адресу ул. Словацкого, 4-6 откроется сегодня в 10:00. Оформите отложенный заказ</span>
+                        </label>
+                    </div>
+                    <div class="targetItem">
+                        <span class="targetName">Мира</span>
+                        <span class="targetAddress">Адрес: пр-т. Мира, 10</span>
+                        <span class="targetWorkTime">Режим работы: 12:00 - 23:00</span>
+                        <span class="targetDeliveryTime">Суши - 15 мин, WOK - 15 мин</span>
+                        <label class="targetSelect">
+                            <input type="radio" name="target">
+                            <span class="checkmark"></span>
+                            <span class="targetInfo">Точка по адресу пр-т. Мира, 10 откроется сегодня в 12:00. Оформите отложенный заказ</span>
+                        </label>
+                    </div>
+                    <div class="targetItem">
+                        <span class="targetName">Александра Борисенка</span>
+                        <span class="targetAddress">Адрес: ул. Александра Борисенка, 1</span>
+                        <span class="targetWorkTime">Режим работы: 10:00 - 23:00</span>
+                        <span class="targetDeliveryTime">Суши - 15 мин, WOK - 15 мин</span>
+                        <label class="targetSelect">
+                            <input type="radio" name="target">
+                            <span class="checkmark"></span>
+                            <span class="targetInfo">Точка по адресу ул. Александра Борисенка, 1 откроется сегодня в 10:00. Оформите отложенный заказ</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="targetMap tabContent" id="map" style="display:none;">
+                    <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10125.827288737073!2d26.237996917382816!3d50.61862999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472f134d9d4b6e83%3A0x40fd5175bd4ced0f!2sNew%20York%20Street%20Pizza!5e0!3m2!1sru!2sua!4v1721572703695!5m2!1sru!2sua"
+                            width="100%"
+                            height="460"
+                            frameborder="0"
+                            style="border:0; border-radius:20px;"
+                            allowfullscreen=""
+                            aria-hidden="false"
+                            loading="lazy"
+                            tabindex="0">
+                    </iframe>
+                    <span class="selectedTarget">Выбранная точка: <br> ул. Мицкевича, 14</span>
+                </div>
             </div>
         </section>
-        <section class="delivery">
-            <div class="contentBorder deliveryContent">
+        <section class="pickup">
+            <div class="contentBorder pickupContent">
                 <div class="collapsible">
                     <span>Выберите подходящее время:</span>
-                    <div class="deliveryTime">
+                    <div class="pickupTime">
                         <button type="button" class="visible">10:45</button>
                         <button type="button" class="visible">11:00</button>
                         <button type="button" class="visible">11:15</button>
@@ -129,14 +173,13 @@
                         <button type="button">22:45</button>
                     </div>
                 </div>
-                <button type="button" class="deliveryFor">Заказать ко времени</button>
+                <button type="button" class="pickupFor">Заказать ко времени</button>
                 <a href="../subPages/phoneNumber.html">Далее</a>
             </div>
         </section>
     </main>
 </div>
 <script src="../libs/jQuery/jquery-3.7.1.min.js"></script>
-<script src="../libs/lazy/jquery.lazy.min.js"></script>
 <script src="../js/header.js"></script>
 <script src="../js/index.js"></script>
 </body>
