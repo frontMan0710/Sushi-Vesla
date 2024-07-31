@@ -56,60 +56,15 @@
                 }
               }
               .targetSelect {
+                @include radioButton;
                 position: absolute;
                 top: 50%;
                 right: 30px;
-                input {
-                  position: absolute;
-                  opacity: 0;
-                  &:checked {
-                    & ~ .checkmark {
-                      background-color: var(--red);
-                      transition: background-color 0.2s;
-                    }
-                    & ~ .targetInfo {
-                      opacity: 1;
-                      transition: opacity 0.3s;
-                    }
-                  }
-                }
-                .checkmark {
-                  border: 2px var(--red) solid;
-                  position: absolute;
-                  height: 15px;
-                  width: 15px;
-                  top: 0;
-                  left: 0;
-                  border-radius: 50%;
-                  transition: background-color 0.2s;
-                }
                 .targetInfo {
+                  @include targetAlert;
                   background-color: var(--white);
                   color: var(--red);
                   border: 2px var(--red) solid;
-                  position: absolute;
-                  font-weight: 500;
-                  opacity: 0;
-                  height: max-content;
-                  width: clamp(200px, 41.72vw, 300px);
-                  font-size: clamp(10px, 1.94vw, 14px);
-                  padding: 10px;
-                  right: -31px;
-                  bottom: 16px;
-                  border-radius: 4px;
-                  transition: opacity 0.3s;
-                  &::after {
-                    background-color: inherit;
-                    border-right: inherit;
-                    border-bottom: inherit;
-                    content: "";
-                    position: absolute;
-                    width: 12px;
-                    height: 12px;
-                    bottom: -9px;
-                    right: 15px;
-                    transform: rotate(45deg);
-                  }
                 }
               }
             }

@@ -64,11 +64,17 @@
   border-radius: 50%;
 }
 @mixin hoverForRed {
-  &:hover {
+  &:hover, &:focus {
     background-color: var(--white);
     border: 1px var(--red) solid;
     color: var(--red);
     transition: 0.2s background-color;
+    &.disable {
+      &:hover, &:focus {
+        background-color: var(--red);
+        color: var(--white);
+      }
+    }
   }
 }
 @mixin hoverShadow {
@@ -143,9 +149,10 @@
   height: 40px;
   font-size: 14px;
   border-radius: 10px;
-  transition: 0.2s background-color;
+  transition: 0.2s background-color, opacity;
   &.disable {
     opacity: 0.5;
+    transition: opacity 0.2s;
   }
 }
 @mixin catalogueCard {
@@ -236,5 +243,87 @@
   a {
     @include buttonAnc;
     width: 100%;
+  }
+}
+@mixin targetAlert {
+  position: absolute;
+  font-weight: 500;
+  opacity: 0;
+  height: max-content;
+  width: clamp(200px, 41.72vw, 300px);
+  font-size: clamp(10px, 1.94vw, 14px);
+  padding: 10px;
+  right: -31px;
+  bottom: 16px;
+  border-radius: 4px;
+  transition: opacity 0.3s;
+  &::after {
+    background-color: inherit;
+    border-right: inherit;
+    border-bottom: inherit;
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    bottom: -9px;
+    right: 15px;
+    transform: rotate(45deg);
+  }
+}
+@mixin radioButton {
+  input {
+    position: absolute;
+    opacity: 0;
+    &:checked {
+      & ~ .checkmark {
+        background-color: var(--red);
+        transition: background-color 0.2s;
+      }
+      & ~ .targetInfo {
+        opacity: 1;
+        transition: opacity 0.3s;
+      }
+    }
+  }
+  .checkmark {
+    border: 2px var(--red) solid;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+  }
+}
+@mixin checkbox {
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &:checked {
+      &~.checkmark::after {
+        display: block;
+      }
+    }
+  }
+  .checkmark {
+    border: 2px var(--red) solid;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 0;
+    left: 0;
+    &::after {
+      content: "";
+      border: solid var(--red);
+      border-width: 0 2px 2px 0;
+      position: absolute;
+      display: none;
+      width: 5px;
+      height: 10px;
+      left: 4px;
+      transform: rotate(45deg);
+    }
   }
 }

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/payment.css">
+</head>
+<body>
+<header>
+    <div class="contentBorder headerContent">
+        <a href="../index.html" class="logo">
+            <img src="../img/logo.svg" alt="" width="225" height="80">
+        </a>
+        <ul class="headerNav">
+            <li class="active"><a href="javascript:void(0)">Меню</a></li>
+            <li><a href="javascript:void(0)">Акции</a></li>
+            <li><a href="javascript:void(0)">Новости</a></li>
+            <li><a href="javascript:void(0)">О нас</a></li>
+            <li><a href="javascript:void(0)">Карьера</a></li>
+            <li><a href="javascript:void(0)">Отзывы</a></li>
+        </ul>
+        <div class="callUs">
+            <a class="phone" href="javascript:void(0)">
+                <span class="phoneIcon">
+                    <img src="../img/phone.svg" alt="" width="26" height="26">
+                </span>
+            </a>
+            <div class="phoneNumbers">
+                <a href="javascript:void(0)">+380 (93) 000 00 00</a>
+                <a href="javascript:void(0)">+380 (91) 000 00 00</a>
+            </div>
+        </div>
+        <div class="userMenu">
+            <div class="search">
+                <button type="submit" aria-label="Искать"><img src="../img/search.svg" width="26" height="26"></button>
+                <input type="text" placeholder="Поиск" class="searchInput">
+            </div>
+            <a class="profile" href="../subPages/404.html">
+                <span class="userIcon">
+                    <img src="../img/user.svg" alt="" width="30" height="30">
+                </span>
+            </a>
+        </div>
+        <button type="button" class="burgerIcon">
+            <span></span>
+        </button>
+    </div>
+</header>
+<div class="wrapper">
+    <main>
+        <section class="paymentTitle">
+            <div class="contentBorder titleContent">
+                <h1>Оплата</h1>
+            </div>
+        </section>
+        <section class="payMethod">
+            <div class="contentBorder payContent">
+
+                <div class="payCashHead">
+                    <span>Наличными</span>
+                    <label for="cashMethod">
+                        <input type="radio" name="paymentMethod" id="cashMethod">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="changeSelect">
+                    <input type="number" id="changeSum" placeholder="C какой суммы подготовить сдачу?">
+                    <div class="changeShortSelect">
+                        <label>
+                            <input type="radio" name="changeSelect">
+                            <span class="checkButton">620 грн</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="changeSelect">
+                            <span class="checkButton">1240 грн</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="changeSelect">
+                            <span class="checkButton">Без сдачи</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="payCardHead">
+                    <span>Картой курьеру</span>
+                    <label for="cardMethod">
+                        <input type="radio" name="paymentMethod" id="cardMethod">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+            </div>
+        </section>
+        <section class="paymentConditions">
+            <div class="contentBorder conditionsContent">
+                <label>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <span class="conditions">Я принимаю<a href="404.html"> условия оплаты и доставки</a></span>
+                <img src="../img/infoIcon.svg" width="25" height="25">
+            </div>
+        </section>
+        <section class="paymentConfirm">
+            <div class="contentBorder confirmContent">
+                <a href="../subPages/404.html">Подтвердить заказ на <span class="totalSum" data-currency="грн"> 280.20 грн.</span></a>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="../libs/jQuery/jquery-3.7.1.min.js"></script>
+<script src="../libs/lazy/jquery.lazy.min.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/index.js"></script>
+<script src="../js/confirmation.js"></script>
+</body>
+</html>

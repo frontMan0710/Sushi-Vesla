@@ -94,17 +94,23 @@
     height: 40px;
     font-size: 14px;
     border-radius: 10px;
-    -webkit-transition: 0.2s background-color;
-    transition: 0.2s background-color;
+    -webkit-transition: 0.2s background-color, opacity;
+    transition: 0.2s background-color, opacity;
   }
-  .wrapper main .phone .phoneContent form button:hover {
+  .wrapper main .phone .phoneContent form button:hover, .wrapper main .phone .phoneContent form button:focus {
     background-color: var(--white);
     border: 1px var(--red) solid;
     color: var(--red);
     -webkit-transition: 0.2s background-color;
     transition: 0.2s background-color;
   }
+  .wrapper main .phone .phoneContent form button:hover.disable:hover, .wrapper main .phone .phoneContent form button:hover.disable:focus, .wrapper main .phone .phoneContent form button:focus.disable:hover, .wrapper main .phone .phoneContent form button:focus.disable:focus {
+    background-color: var(--red);
+    color: var(--white);
+  }
   .wrapper main .phone .phoneContent form button.disable {
     opacity: 0.5;
+    -webkit-transition: opacity 0.2s;
+    transition: opacity 0.2s;
   }
 }

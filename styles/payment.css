@@ -1,0 +1,248 @@
+@media screen and (max-width: 719px) {
+  .wrapper main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+  }
+  .wrapper main .confirmTitle {
+    margin-top: 30px;
+  }
+  .wrapper main .confirmTitle .titleContent h1 {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .wrapper main .payMethod .payContent {
+    background-color: var(--grey-light);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+    padding: 15px;
+  }
+  .wrapper main .payMethod .payContent .payCashHead, .wrapper main .payMethod .payContent .payCardHead {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: relative;
+    width: 100%;
+  }
+  .wrapper main .payMethod .payContent .payCashHead span, .wrapper main .payMethod .payContent .payCardHead span {
+    font-weight: 500;
+    font-size: clamp(12px, 1.94vw, 14px);
+  }
+  .wrapper main .payMethod .payContent .payCashHead label, .wrapper main .payMethod .payContent .payCardHead label {
+    position: absolute;
+    right: 15px;
+    top: 0;
+  }
+  .wrapper main .payMethod .payContent .payCashHead label input, .wrapper main .payMethod .payContent .payCardHead label input {
+    position: absolute;
+    opacity: 0;
+  }
+  .wrapper main .payMethod .payContent .payCashHead label input:checked ~ .checkmark, .wrapper main .payMethod .payContent .payCardHead label input:checked ~ .checkmark {
+    background-color: var(--red);
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+  }
+  .wrapper main .payMethod .payContent .payCashHead label input:checked ~ .targetInfo, .wrapper main .payMethod .payContent .payCardHead label input:checked ~ .targetInfo {
+    opacity: 1;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .wrapper main .payMethod .payContent .payCashHead label .checkmark, .wrapper main .payMethod .payContent .payCardHead label .checkmark {
+    border: 2px var(--red) solid;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+  }
+  .wrapper main .payMethod .payContent .changeSelect {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 15px;
+  }
+  .wrapper main .payMethod .payContent .changeSelect #changeSum {
+    color: var(--red);
+    border: 1px var(--grey-dark) solid;
+    font-weight: 500;
+    width: 100%;
+    height: 35px;
+    padding-left: 15px;
+    border-radius: 4px;
+  }
+  .wrapper main .payMethod .payContent .changeSelect #changeSum:focus {
+    border-color: var(--red);
+    outline: none;
+  }
+  .wrapper main .payMethod .payContent .changeSelect #changeSum::-webkit-input-placeholder {
+    color: var(--grey-dark);
+  }
+  .wrapper main .payMethod .payContent .changeSelect #changeSum::-moz-placeholder {
+    color: var(--grey-dark);
+  }
+  .wrapper main .payMethod .payContent .changeSelect #changeSum:-ms-input-placeholder {
+    color: var(--grey-dark);
+  }
+  .wrapper main .payMethod .payContent .changeSelect #changeSum::-ms-input-placeholder {
+    color: var(--grey-dark);
+  }
+  .wrapper main .payMethod .payContent .changeSelect #changeSum::placeholder {
+    color: var(--grey-dark);
+  }
+  .wrapper main .payMethod .payContent .changeSelect .changeShortSelect {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 10px;
+  }
+  .wrapper main .payMethod .payContent .changeSelect .changeShortSelect label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 35px;
+  }
+  .wrapper main .payMethod .payContent .changeSelect .changeShortSelect label input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .wrapper main .payMethod .payContent .changeSelect .changeShortSelect label input:checked ~ .checkButton {
+    color: var(--red);
+    border-color: var(--red);
+  }
+  .wrapper main .payMethod .payContent .changeSelect .changeShortSelect label .checkButton {
+    border: 1px var(--black) solid;
+    color: var(--black);
+    -ms-flex-line-pack: center;
+        align-content: center;
+    white-space: nowrap;
+    font-weight: 500;
+    height: 35px;
+    width: auto;
+    font-size: clamp(12px, 1.94vw, 14px);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .wrapper main .paymentConditions .conditionsContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 20px;
+  }
+  .wrapper main .paymentConditions .conditionsContent label {
+    position: relative;
+    width: 18px;
+    height: 18px;
+  }
+  .wrapper main .paymentConditions .conditionsContent label input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .wrapper main .paymentConditions .conditionsContent label input:checked ~ .checkmark::after {
+    display: block;
+  }
+  .wrapper main .paymentConditions .conditionsContent label .checkmark {
+    border: 2px var(--red) solid;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 0;
+    left: 0;
+  }
+  .wrapper main .paymentConditions .conditionsContent label .checkmark::after {
+    content: "";
+    border: solid var(--red);
+    border-width: 0 2px 2px 0;
+    position: absolute;
+    display: none;
+    width: 5px;
+    height: 10px;
+    left: 4px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .wrapper main .paymentConditions .conditionsContent .conditions {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .wrapper main .paymentConditions .conditionsContent .conditions a {
+    color: var(--red);
+  }
+  .wrapper main .paymentConfirm {
+    padding: 20px 0 25px 0;
+  }
+  .wrapper main .paymentConfirm .confirmContent a {
+    background-color: var(--red);
+    color: var(--white);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    cursor: pointer;
+    font-weight: 600;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 10px;
+    -webkit-transition: 0.2s background-color, opacity;
+    transition: 0.2s background-color, opacity;
+    width: 100%;
+  }
+  .wrapper main .paymentConfirm .confirmContent a:hover, .wrapper main .paymentConfirm .confirmContent a:focus {
+    background-color: var(--white);
+    border: 1px var(--red) solid;
+    color: var(--red);
+    -webkit-transition: 0.2s background-color;
+    transition: 0.2s background-color;
+  }
+  .wrapper main .paymentConfirm .confirmContent a:hover.disable:hover, .wrapper main .paymentConfirm .confirmContent a:hover.disable:focus, .wrapper main .paymentConfirm .confirmContent a:focus.disable:hover, .wrapper main .paymentConfirm .confirmContent a:focus.disable:focus {
+    background-color: var(--red);
+    color: var(--white);
+  }
+  .wrapper main .paymentConfirm .confirmContent a.disable {
+    opacity: 0.5;
+    -webkit-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+  }
+  .wrapper main .paymentConfirm .confirmContent a .totalSum {
+    padding-left: 5px;
+  }
+}

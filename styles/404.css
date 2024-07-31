@@ -14,11 +14,11 @@
         -ms-flex-direction: column;
             flex-direction: column;
     position: absolute;
+    overflow: hidden;
     width: clamp(280px, 87.5vw, 425px);
-    height: 100%;
     top: 50%;
     left: 50%;
-    margin-top: 30px;
+    margin: 30px 0;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
@@ -75,18 +75,24 @@
     height: 40px;
     font-size: 14px;
     border-radius: 10px;
-    -webkit-transition: 0.2s background-color;
-    transition: 0.2s background-color;
+    -webkit-transition: 0.2s background-color, opacity;
+    transition: 0.2s background-color, opacity;
     margin-top: 15px;
   }
-  .contentWrapper .info a:hover {
+  .contentWrapper .info a:hover, .contentWrapper .info a:focus {
     background-color: var(--white);
     border: 1px var(--red) solid;
     color: var(--red);
     -webkit-transition: 0.2s background-color;
     transition: 0.2s background-color;
   }
+  .contentWrapper .info a:hover.disable:hover, .contentWrapper .info a:hover.disable:focus, .contentWrapper .info a:focus.disable:hover, .contentWrapper .info a:focus.disable:focus {
+    background-color: var(--red);
+    color: var(--white);
+  }
   .contentWrapper .info a.disable {
     opacity: 0.5;
+    -webkit-transition: opacity 0.2s;
+    transition: opacity 0.2s;
   }
 }

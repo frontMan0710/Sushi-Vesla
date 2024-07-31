@@ -22,7 +22,6 @@
             <li><a href="javascript:void(0)">О нас</a></li>
             <li><a href="javascript:void(0)">Карьера</a></li>
             <li><a href="javascript:void(0)">Отзывы</a></li>
-            <li class="profile"><a href="./subPages/404.html">Личный кабинет</a></li>
         </ul>
         <div class="callUs">
             <a class="phone" href="./subPages/404.html">
@@ -503,7 +502,7 @@
                 <div class="cartList">
                     <div class="emptyMessage">
                         <span>Ваша корзина пуста</span>
-                        <a href="#catalogue">Перейти к каталогу</a>
+                        <a href="javascript:void(0)" id="toCatalogue">Перейти к каталогу</a>
                     </div>
                     <div class="cartItem">
                         <div class="itemHeader">
@@ -515,7 +514,7 @@
                             <li><span>Тояма маки 8 шт</span></li>
                             <li><span>Авокадо маки 8 шт</span></li>
                         </ul>
-                        <span class="itemPrice" data-price="104.60">209.20 грн.</span>
+                        <span class="itemPrice" data-price="104.60" data-currency="грн">209.20 грн.</span>
                         <div class="itemChanges">
                             <button type="button" class="decrease">−</button>
                             <span class="counter">2</span>
@@ -533,7 +532,7 @@
                             <li><span>Манго тай маки 8 шт.</span></li>
                             <li><span>Умаи фреш маки 8 шт.</span></li>
                         </ul>
-                        <span class="itemPrice" data-price="212.30">424.60 грн.</span>
+                        <span class="itemPrice" data-price="212.30" data-currency="грн">424.60 грн.</span>
                         <div class="itemChanges">
                             <button type="button" class="decrease">−</button>
                             <span class="counter">2</span>
@@ -548,7 +547,7 @@
                         <p class="itemDetails">
                             Тунец опаленный, стружка тунца, майонез, соус тайский сладкий чили, васаби 0,5 г
                         </p>
-                        <span class="itemPrice" data-price="36.80">73.60 грн.</span>
+                        <span class="itemPrice" data-price="36.80" data-currency="грн">73.60 грн.</span>
                         <div class="itemChanges">
                             <button type="button" class="decrease">−</button>
                             <span class="counter">2</span>
@@ -559,7 +558,7 @@
                 <div class="cartFooter">
                     <div class="totalPrice">
                         <span>Сумма заказа</span>
-                        <span class="totalSum">707.40 грн.</span>
+                        <span class="totalSum" data-currency="грн">707.40 грн.</span>
                     </div>
                     <button class="checkout"><span>Оформить заказ</span></button>
                 </div>
@@ -574,5 +573,7 @@
 <script src="./js/header.js"></script>
 <script src="./js/index.js"></script>
 <script src="./js/main.js"></script>
+<script src="./js/scroll.js"></script>
+<script src="./js/buttons.js"></script>
 </body>
 </html>

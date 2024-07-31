@@ -1,0 +1,178 @@
+@import "visual";
+@media screen and (max-width: 719px) {
+  .wrapper {
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      .confirmTitle {
+        margin-top: 30px;
+        .titleContent {
+          h1 {
+            font-weight: 600;
+            font-size: 24px;
+          }
+        }
+      }
+      .cart {
+        .cartContent {
+          background-color: var(--grey-light);
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          border-radius: 10px;
+          padding: 15px;
+          .cartHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            span {
+              font-weight: 500;
+              font-size: 18px;
+            }
+          }
+          .cartList {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .emptyMessage {
+              @include emptyMessage;
+            }
+            .cartItem {
+              display: flex;
+              justify-content: space-between;
+              position: relative;
+              width: 100%;
+              height: max-content;
+              border-radius: 10px;
+              .itemDesc {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-weight: 600;
+                .itemName {
+                  max-width: 195px;
+                  font-size: clamp(12px, 1.94vw, 14px);
+                }
+                .itemComposition {
+                  font-size: clamp(12px, 1.94vw, 14px);
+                }
+              }
+              .itemPrice {
+                white-space: nowrap;
+                font-weight: 600;
+                font-size: clamp(12px, 1.94vw, 14px);
+              }
+              .removeItem, .itemChanges {
+                position: absolute;
+                bottom: 15px;
+              }
+              .removeItem {
+                background-color: inherit;
+                left: 15px;
+              }
+              .itemChanges {
+                @include itemChanges;
+                width: clamp(80px, 15.02vw, 108px);
+                right: 15px;
+              }
+            }
+          }
+          .orderInfo {
+            border-top: 2px var(--grey-dark) solid;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+            font-weight: 600;
+            font-size: 16px;
+            padding-top: 20px;
+            .orderSum {
+              font-size: clamp(12px, 1.94vw, 14px);
+            }
+            .promoCode {
+              @include promoCode;
+              position: relative;
+              input {
+                font-size: clamp(12px, 1.94vw, 14px);
+              }
+              button {
+                font-size: clamp(12px, 1.96vw, 14px);
+                width: 108px;
+              }
+            }
+          }
+        }
+      }
+      .orderConfirm {
+        background-color: var(--grey-light);
+        padding: 20px 0 25px 0;
+        .confirmContent {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          .clientData {
+            padding: 0 15px;
+            .clientRow {
+              border-top: 2px var(--grey-dark) solid;
+              &:first-child {
+                border-top: none;
+              }
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              padding: 20px 0;
+              .deliveryHead, .pickupHead {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                width: 100%;
+                span {
+                  font-weight: 500;
+                  font-size: clamp(12px, 1.94vw, 14px);
+                }
+                label {
+                  @include radioButton;
+                  position: absolute;
+                  top: 0;
+                  right: 15px;
+                }
+              }
+              .editData {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+            }
+            .clientRow, .deliveryRow, .pickupRow {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              position: relative;
+              span {
+                font-weight: 600;
+                font-size: clamp(12px, 1.94vw, 14px);
+              }
+              .editData {
+                position: absolute;
+                right: 0;
+              }
+            }
+          }
+          .confirmButton {
+            display: flex;
+            a {
+              @include buttonAnc;
+              width: 100%;
+              .totalSum {
+                padding-left: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

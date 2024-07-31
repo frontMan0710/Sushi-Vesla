@@ -21,7 +21,6 @@ $(function () {
         $(".headerContent .burgerIcon").remove()
     }
     if ($(window).width() >= 720) {
-        $(".headerNav .profile").remove()
         $(".phone").attr("href", "javascript:void(0)")
     }
     let $header = $("header")

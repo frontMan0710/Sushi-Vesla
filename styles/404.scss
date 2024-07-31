@@ -7,11 +7,11 @@
     justify-content: center;
     flex-direction: column;
     position: absolute;
+    overflow: hidden;
     width: clamp(280px, 87.5vw, 425px);
-    height: 100%;
     top: 50%;
     left: 50%;
-    margin-top: 30px;
+    margin: 30px 0;
     transform: translate(-50%, -50%);
     .title {
       h1 {

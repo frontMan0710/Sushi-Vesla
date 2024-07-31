@@ -4,25 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/confirmation.css">
 </head>
 <body>
+<header>
+    <div class="contentBorder headerContent">
+        <a href="../index.html" class="logo">
+            <img src="../img/logo.svg" alt="" width="225" height="80">
+        </a>
+        <ul class="headerNav">
+            <li class="active"><a href="javascript:void(0)">Меню</a></li>
+            <li><a href="javascript:void(0)">Акции</a></li>
+            <li><a href="javascript:void(0)">Новости</a></li>
+            <li><a href="javascript:void(0)">О нас</a></li>
+            <li><a href="javascript:void(0)">Карьера</a></li>
+            <li><a href="javascript:void(0)">Отзывы</a></li>
+        </ul>
+        <div class="callUs">
+            <a class="phone" href="javascript:void(0)">
+                <span class="phoneIcon">
+                    <img src="../img/phone.svg" alt="" width="26" height="26">
+                </span>
+            </a>
+            <div class="phoneNumbers">
+                <a href="javascript:void(0)">+380 (93) 000 00 00</a>
+                <a href="javascript:void(0)">+380 (91) 000 00 00</a>
+            </div>
+        </div>
+        <div class="userMenu">
+            <div class="search">
+                <button type="submit" aria-label="Искать"><img src="../img/search.svg" width="26" height="26"></button>
+                <input type="text" placeholder="Поиск" class="searchInput">
+            </div>
+            <a class="profile" href="../subPages/404.html">
+                <span class="userIcon">
+                    <img src="../img/user.svg" alt="" width="30" height="30">
+                </span>
+            </a>
+        </div>
+        <button type="button" class="burgerIcon">
+            <span></span>
+        </button>
+    </div>
+</header>
 <div class="wrapper">
-    <header>
-        <div class="contentBorder">
-
-        </div>
-    </header>
     <main>
-        <div class="contentBorder">
-
-        </div>
+        <section class="confirmTitle">
+            <div class="contentBorder titleContent">
+                <h1>Подтверждение</h1>
+            </div>
+        </section>
+        <section class="cart">
+            <div class="contentBorder cartContent">
+                <div class="cartHeader">
+                    <span>Ваш заказ</span>
+                    <a href="../subPages/cart.html"><img src="../img/editIcon.svg" width="26" height="26"></a>
+                </div>
+                <div class="cartList">
+                    <div class="emptyMessage">
+                        <span>Ваша корзина пуста</span>
+                        <a href="../index.html">Перейти в каталог</a>
+                    </div>
+                    <div class="cartItem">
+                        <div class="itemDesc">
+                            <span class="itemName">Сет "Только мне"</span>
+                            <ul class="itemComposition">
+                                <li>Сяке ясай маки 8 шт</li>
+                                <li>Тояма маки 8 шт</li>
+                                <li>Авокадо маки 8 шт</li>
+                            </ul>
+                        </div>
+                        <span class="itemPrice" data-price="104.60" data-currency="грн">209.20 грн.</span>
+                    </div>
+                    <div class="cartItem">
+                        <div class="itemDesc">
+                            <span class="itemName">Острый суп с жареным лососем</span>
+                            <ul class="itemComposition">
+                                <li>Жареный лосось</li>
+                                <li>яичная лапша</li>
+                                <li>зелёный лук</li>
+                                <li>острый соус</li>
+                            </ul>
+                        </div>
+                        <span class="itemPrice" data-price="35.50" data-currency="грн">71.00 грн.</span>
+                    </div>
+                </div>
+                <div class="orderInfo">
+                    <div class="orderSum">
+                        <span>Сумма к оплате</span>
+                        <span>
+                            <span class="totalSum">280.20 грн.</span>
+                            <br>
+                            <span class="promoMessage"> (промокод на 37.60 грн.)</span>
+                        </span>
+                    </div>
+                    <div class="promoCode">
+                        <input type="text" placeholder="Введите промокод">
+                        <button type="submit">Применить</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="orderConfirm">
+            <div class="contentBorder confirmContent">
+                <div class="clientData">
+                    <div class="clientRow">
+                        <span class="deliveryName">Антон</span>
+                        <span class="clientPhone">+380 (__) ___-__-__</span>
+                        <a href="javascript:void(0)" class="editData"><img src="../img/editIcon.svg" class="editIcon" width="26" height="26"></a>
+                    </div>
+                    <div class="clientRow">
+                        <div class="deliveryHead">
+                            <span>Доставка</span>
+                            <label for="delivery">
+                                <input type="radio" name="deliveryType" id="delivery">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="deliveryRow" id="deliveryInfo">
+                            <span class="deliveryAddress">
+                                Адрес доставки<br>
+                                Минск, улица Пушкина, 111, эт. 1, кв. 1
+                            </span>
+                            <span class="deliveryTime">
+                                Время - 18:30
+                            </span>
+                            <a href="javascript:void(0)" class="editData">
+                                <img src="../img/editIcon.svg" class="editIcon" width="26" height="26">
+                            </a>
+                        </div>
+                        <div class="pickupHead">
+                            <span>Самовывоз</span>
+                            <label for="pickup">
+                                <input type="radio" name="deliveryType" id="pickup">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="pickupRow" id="pickupInfo">
+                            <span class="pickupTarget">Точка самовывоза<br>Минск, улица Пушкина, 111, эт. 1, кв. 1</span>
+                            <span class="deliveryTime">Время - 18:30</span>
+                            <a href="javascript:void(0)" class="editData"><img src="../img/editIcon.svg" class="editIcon" width="26" height="26"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="confirmButton">
+                    <a href="../subPages/payment.html">Подтвердить заказ на <span class="totalSum" data-currency="грн"> 25.10 грн.</span></a>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer>
-        <div class="contentBorder">
-
-        </div>
-    </footer>
 </div>
 
+<script src="../libs/jQuery/jquery-3.7.1.min.js"></script>
+<script src="../libs/lazy/jquery.lazy.min.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/index.js"></script>
+<script src="../js/buttons.js"></script>
+<script src="../js/confirmation.js"></script>
 </body>
 </html>
