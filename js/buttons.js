@@ -21,7 +21,7 @@ $(function () {
         let $currency = $price.data("currency")
         let price = parseFloat($price.data("price"))
         let counter = parseInt($counter.text(), 10)
-        if (counter > 0) {
+        if (counter > 1) {
             counter--
             let itemTotal = (price * counter).toFixed(2)
             $counter.text(counter)
@@ -69,8 +69,7 @@ $(function () {
             $(".emptyMessage").hide()
         } else {
             $(".emptyMessage").show()
-            $(".deliveryButtons a").addClass("disable")
-            $(".deliveryButtons a").on("click", function (event) {
+            $(".deliveryButtons a, .checkout").addClass("disable").on("click", function (event) {
                 event.preventDefault()
             })
         }

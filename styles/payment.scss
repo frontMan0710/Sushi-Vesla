@@ -5,7 +5,7 @@
       display: flex;
       flex-direction: column;
       gap: 30px;
-      .confirmTitle {
+      .paymentTitle {
         margin-top: 30px;
         .titleContent {
           h1 {
@@ -21,6 +21,7 @@
           flex-direction: column;
           gap: 30px;
           padding: 15px;
+          border-radius: 10px;
           .payCashHead, .payCardHead {
             display: flex;
             align-items: center;
@@ -60,7 +61,6 @@
             }
             .changeShortSelect {
               display: flex;
-              justify-content: space-between;
               gap: 10px;
               label {
                 display: flex;
@@ -117,7 +117,7 @@
       .paymentConfirm {
         padding: 20px 0 25px 0;
         .confirmContent {
-          a {
+          button {
             @include buttonAnc;
             width: 100%;
             .totalSum {

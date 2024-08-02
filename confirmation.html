@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../styles/confirmation.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/confirmation.css">
 </head>
 <body>
 <header>
     <div class="contentBorder headerContent">
-        <a href="../index.html" class="logo">
-            <img src="../img/logo.svg" alt="" width="225" height="80">
+        <a href="index.html" class="logo">
+            <img src="img/logo.svg" alt="" width="225" height="80">
         </a>
         <ul class="headerNav">
             <li class="active"><a href="javascript:void(0)">Меню</a></li>
@@ -24,22 +24,22 @@
         <div class="callUs">
             <a class="phone" href="javascript:void(0)">
                 <span class="phoneIcon">
-                    <img src="../img/phone.svg" alt="" width="26" height="26">
+                    <img src="img/phone.svg" alt="" width="26" height="26">
                 </span>
             </a>
             <div class="phoneNumbers">
-                <a href="javascript:void(0)">+380 (93) 000 00 00</a>
-                <a href="javascript:void(0)">+380 (91) 000 00 00</a>
+                <a href="tel:+380930000000">+380 (93) 000 00 00</a>
+                <a href="tel:+380910000000">+380 (91) 000 00 00</a>
             </div>
         </div>
         <div class="userMenu">
             <div class="search">
-                <button type="submit" aria-label="Искать"><img src="../img/search.svg" width="26" height="26"></button>
+                <button type="submit" aria-label="Искать"><img src="img/search.svg" width="26" height="26"></button>
                 <input type="text" placeholder="Поиск" class="searchInput">
             </div>
-            <a class="profile" href="../subPages/404.html">
+            <a class="profile" href="404.html">
                 <span class="userIcon">
-                    <img src="../img/user.svg" alt="" width="30" height="30">
+                    <img src="img/chatIcon.svg" alt="" width="30" height="30">
                 </span>
             </a>
         </div>
@@ -59,12 +59,12 @@
             <div class="contentBorder cartContent">
                 <div class="cartHeader">
                     <span>Ваш заказ</span>
-                    <a href="../subPages/cart.html"><img src="../img/editIcon.svg" width="26" height="26"></a>
+                    <a href="cart.html"><img src="img/editIcon.svg" width="26" height="26"></a>
                 </div>
                 <div class="cartList">
                     <div class="emptyMessage">
                         <span>Ваша корзина пуста</span>
-                        <a href="../index.html">Перейти в каталог</a>
+                        <a href="index.html">Перейти в каталог</a>
                     </div>
                     <div class="cartItem">
                         <div class="itemDesc">
@@ -112,13 +112,13 @@
                     <div class="clientRow">
                         <span class="deliveryName">Антон</span>
                         <span class="clientPhone">+380 (__) ___-__-__</span>
-                        <a href="javascript:void(0)" class="editData"><img src="../img/editIcon.svg" class="editIcon" width="26" height="26"></a>
+                        <a href="javascript:void(0)" class="editData"><img src="img/editIcon.svg" class="editIcon" width="26" height="26"></a>
                     </div>
                     <div class="clientRow">
-                        <div class="deliveryHead">
+                        <div class="deliveryHead radioLabel">
                             <span>Доставка</span>
                             <label for="delivery">
-                                <input type="radio" name="deliveryType" id="delivery">
+                                <input type="radio" class="radioButton" name="deliveryType" id="delivery">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
@@ -131,36 +131,36 @@
                                 Время - 18:30
                             </span>
                             <a href="javascript:void(0)" class="editData">
-                                <img src="../img/editIcon.svg" class="editIcon" width="26" height="26">
+                                <img src="img/editIcon.svg" class="editIcon" width="26" height="26">
                             </a>
                         </div>
-                        <div class="pickupHead">
+                        <div class="pickupHead radioLabel">
                             <span>Самовывоз</span>
                             <label for="pickup">
-                                <input type="radio" name="deliveryType" id="pickup">
+                                <input type="radio" class="radioButton" name="deliveryType" id="pickup">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="pickupRow" id="pickupInfo">
                             <span class="pickupTarget">Точка самовывоза<br>Минск, улица Пушкина, 111, эт. 1, кв. 1</span>
                             <span class="deliveryTime">Время - 18:30</span>
-                            <a href="javascript:void(0)" class="editData"><img src="../img/editIcon.svg" class="editIcon" width="26" height="26"></a>
+                            <a href="javascript:void(0)" class="editData"><img src="img/editIcon.svg" class="editIcon" width="26" height="26"></a>
                         </div>
                     </div>
                 </div>
                 <div class="confirmButton">
-                    <a href="../subPages/payment.html">Подтвердить заказ на <span class="totalSum" data-currency="грн"> 25.10 грн.</span></a>
+                    <a href="./payment.html">Подтвердить заказ на <span class="totalSum" data-currency="грн"> 280.20 грн.</span></a>
                 </div>
             </div>
         </section>
     </main>
 </div>
 
-<script src="../libs/jQuery/jquery-3.7.1.min.js"></script>
-<script src="../libs/lazy/jquery.lazy.min.js"></script>
-<script src="../js/header.js"></script>
-<script src="../js/index.js"></script>
-<script src="../js/buttons.js"></script>
-<script src="../js/confirmation.js"></script>
+<script defer src="./libs/jQuery/jquery-3.7.1.min.js"></script>
+<script defer src="./libs/lazy/jquery.lazy.min.js"></script>
+<script defer src="./js/header.js"></script>
+<script defer src="./js/index.js"></script>
+<script defer src="./js/buttons.js"></script>
+<script defer src="./js/radioButton.js"></script>
 </body>
 </html>

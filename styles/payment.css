@@ -9,10 +9,10 @@
             flex-direction: column;
     gap: 30px;
   }
-  .wrapper main .confirmTitle {
+  .wrapper main .paymentTitle {
     margin-top: 30px;
   }
-  .wrapper main .confirmTitle .titleContent h1 {
+  .wrapper main .paymentTitle .titleContent h1 {
     font-weight: 600;
     font-size: 24px;
   }
@@ -27,6 +27,7 @@
             flex-direction: column;
     gap: 30px;
     padding: 15px;
+    border-radius: 10px;
   }
   .wrapper main .payMethod .payContent .payCashHead, .wrapper main .payMethod .payContent .payCardHead {
     display: -webkit-box;
@@ -59,7 +60,7 @@
     -webkit-transition: background-color 0.2s;
     transition: background-color 0.2s;
   }
-  .wrapper main .payMethod .payContent .payCashHead label input:checked ~ .targetInfo, .wrapper main .payMethod .payContent .payCardHead label input:checked ~ .targetInfo {
+  .wrapper main .payMethod .payContent .payCashHead label input:focus ~ .targetInfo, .wrapper main .payMethod .payContent .payCardHead label input:focus ~ .targetInfo {
     opacity: 1;
     -webkit-transition: opacity 0.3s;
     transition: opacity 0.3s;
@@ -117,9 +118,6 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     gap: 10px;
   }
   .wrapper main .payMethod .payContent .changeSelect .changeShortSelect label {
@@ -205,7 +203,7 @@
   .wrapper main .paymentConfirm {
     padding: 20px 0 25px 0;
   }
-  .wrapper main .paymentConfirm .confirmContent a {
+  .wrapper main .paymentConfirm .confirmContent button {
     background-color: var(--red);
     color: var(--white);
     display: -webkit-box;
@@ -226,23 +224,23 @@
     transition: 0.2s background-color, opacity;
     width: 100%;
   }
-  .wrapper main .paymentConfirm .confirmContent a:hover, .wrapper main .paymentConfirm .confirmContent a:focus {
+  .wrapper main .paymentConfirm .confirmContent button:hover, .wrapper main .paymentConfirm .confirmContent button:focus {
     background-color: var(--white);
     border: 1px var(--red) solid;
     color: var(--red);
     -webkit-transition: 0.2s background-color;
     transition: 0.2s background-color;
   }
-  .wrapper main .paymentConfirm .confirmContent a:hover.disable:hover, .wrapper main .paymentConfirm .confirmContent a:hover.disable:focus, .wrapper main .paymentConfirm .confirmContent a:focus.disable:hover, .wrapper main .paymentConfirm .confirmContent a:focus.disable:focus {
+  .wrapper main .paymentConfirm .confirmContent button:hover.disable:hover, .wrapper main .paymentConfirm .confirmContent button:hover.disable:focus, .wrapper main .paymentConfirm .confirmContent button:focus.disable:hover, .wrapper main .paymentConfirm .confirmContent button:focus.disable:focus {
     background-color: var(--red);
     color: var(--white);
   }
-  .wrapper main .paymentConfirm .confirmContent a.disable {
+  .wrapper main .paymentConfirm .confirmContent button.disable {
     opacity: 0.5;
     -webkit-transition: opacity 0.2s;
     transition: opacity 0.2s;
   }
-  .wrapper main .paymentConfirm .confirmContent a .totalSum {
+  .wrapper main .paymentConfirm .confirmContent button .totalSum {
     padding-left: 5px;
   }
 }

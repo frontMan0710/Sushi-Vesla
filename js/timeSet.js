@@ -12,7 +12,7 @@ $(function () {
     $(".deliveryTime .showMore, .pickupTime .showMore").hide().first().show()
     $(".showMore").on("click", function () {
         let $this = $(this)
-        let $buttons = $this.nextAll("button").slice(0, 6)
+        let $buttons = $this.nextAll("li").slice(0, 6)
         $buttons.addClass("visible")
         let $nextShowMore = $buttons.nextAll(".showMore").first()
         if ($nextShowMore.length) {

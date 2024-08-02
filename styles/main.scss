@@ -310,6 +310,13 @@
                     content: url("../img/cartHover.svg");
                   }
                 }
+                &.disable {
+                  span {
+                    &::before {
+                      content: url("../img/cart.svg");
+                    }
+                  }
+                }
               }
               span {
                 &::before {
@@ -599,9 +606,9 @@
                 .addToCart {
                   @include buttonAnc;
                   white-space: nowrap;
-                  width: clamp(170px, 30.59vw, 220px);
-                  font-size: clamp(12px, 1.94vw, 14px);
-                  padding: 0 10px;
+                  width: clamp(170px, 45.20vw, 325px);
+                  font-size: clamp(10px, 1.94vw, 14px);
+                  padding: 0 15px;
                 }
               }
               .catalogueCardPanel {
@@ -726,10 +733,13 @@
     position: fixed;
     box-shadow: 0 4px 50px 0 var(--red-opacity);
     z-index: var(--semantic-layer);
+    will-change: transform;
+    cursor: default;
     width: 55px;
     height: 55px;
     right: 15px;
     top: 50%;
+    transform: translateZ(0);
   }
   .categories {
     width: 100%;

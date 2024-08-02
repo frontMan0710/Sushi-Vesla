@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доставка</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/delivery.css">
+</head>
+<body>
+<header>
+    <div class="contentBorder headerContent">
+        <a href="index.html" class="logo">
+            <img src="img/logo.svg" alt="" width="225" height="80">
+        </a>
+        <ul class="headerNav">
+            <li><a href="javascript:void(0)">Меню</a></li>
+            <li><a href="javascript:void(0)">Акции</a></li>
+            <li><a href="javascript:void(0)">Новости</a></li>
+            <li><a href="javascript:void(0)">О нас</a></li>
+            <li><a href="javascript:void(0)">Карьера</a></li>
+            <li><a href="javascript:void(0)">Отзывы</a></li>
+        </ul>
+        <div class="callUs">
+            <a class="phone" href="javascript:void(0)">
+                <span class="phoneIcon">
+                    <img src="img/phone.svg" alt="" width="26" height="26">
+                </span>
+            </a>
+            <div class="phoneNumbers">
+                <a href="tel:+380930000000">+380 (93) 000 00 00</a>
+                <a href="tel:+380910000000">+380 (91) 000 00 00</a>
+            </div>
+        </div>
+        <div class="userMenu">
+            <div class="search">
+                <button type="submit" aria-label="Искать"><img src="img/search.svg" width="26" height="26"></button>
+                <input type="text" placeholder="Поиск" class="searchInput">
+            </div>
+            <a class="profile" href="404.html">
+                <span class="userIcon">
+                    <img src="img/chatIcon.svg" alt="" width="30" height="30">
+                </span>
+            </a>
+        </div>
+        <button type="button" class="burgerIcon">
+            <span></span>
+        </button>
+    </div>
+</header>
+<div class="wrapper">
+    <main>
+        <section class="address">
+            <div class="contentBorder addressContent">
+                <h1>Адрес доставки</h1>
+                <form action="">
+                    <div class="form-group">
+                        <label for="street">Улица</label>
+                        <input type="text" id="street" class="form-control" name="street">
+                    </div>
+                    <div class="form-group">
+                        <label for="house">Дом</label>
+                        <input type="number" id="house" class="form-control" name="house">
+                    </div>
+                    <div class="form-group">
+                        <label for="entrance">Подъезд</label>
+                        <input type="number" id="entrance" class="form-control" name="entrance">
+                    </div>
+                    <div class="form-group">
+                        <label for="place">Квартира</label>
+                        <input type="number" id="place" class="form-control" name="place">
+                    </div>
+                    <div class="form-group">
+                        <label for="codeOfDoor">Код от двери</label>
+                        <input type="text" id="codeOfDoor" class="form-control" name="codeOfDoor">
+                    </div>
+                    <div class="form-group">
+                        <label for="floor">Этаж</label>
+                        <input type="number" id="floor" class="form-control" name="floor">
+                    </div>
+                    <div class="form-group textarea">
+                        <label for="comment">Комментарий</label>
+                        <textarea id="comment" class="form-control" name="comment" aria-grabbed="false" placeholder="Оставьте ваше сообщение" cols="30" rows="10"></textarea>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="delivery">
+            <div class="contentBorder deliveryContent">
+                <div class="collapsible">
+                    <span>Выберите подходящее время:</span>
+                    <ul class="deliveryTime">
+                        <li class="visible">
+                            <label>
+                                <input type="radio" name="deliveryTime" checked>
+                                <span class="checkButton">10:45</span>
+                            </label>
+                        </li>
+                        <li class="visible">
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">11:00</span>
+                            </label>
+                        </li>
+                        <li class="visible">
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">11:15</span>
+                            </label>
+                        </li>
+                        <li class="visible">
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">11:30</span>
+                            </label>
+                        </li>
+                        <li class="visible">
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">11:45</span>
+                            </label>
+                        </li>
+                        <li class="showMore"><button type="button">...</button></li>
+                        <li>
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">12:00</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">12:15</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">12:30</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">12:45</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">13:00</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">13:15</span>
+                            </label>
+                        </li>
+                        <li class="showMore"><button type="button">...</button></li>
+                        <li>
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">13:30</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">13:45</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">14:00</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">14:15</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">14:30</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="deliveryTime">
+                                <span class="checkButton">14:45</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="deliveryFor">Заказать ко времени</button>
+                <button type="submit">Далее</button>
+            </div>
+        </section>
+    </main>
+</div>
+<script defer src="./libs/jQuery/jquery-3.7.1.min.js"></script>
+<script defer src="./libs/lazy/jquery.lazy.min.js"></script>
+<script defer src="./js/header.js"></script>
+<script defer src="./js/index.js"></script>
+<script defer src="./js/timeSet.js"></script>
+</body>
+</html>

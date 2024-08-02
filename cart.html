@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Корзина</title>
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../styles/cart.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/cart.css">
 </head>
 <body>
 <header>
     <div class="contentBorder headerContent">
-        <a href="../index.html" class="logo">
-            <img src="../img/logo.svg" alt="" width="225" height="80">
+        <a href="index.html" class="logo">
+            <img src="img/logo.svg" alt="" width="225" height="80">
         </a>
         <ul class="headerNav">
             <li class="active"><a href="javascript:void(0)">Меню</a></li>
@@ -24,22 +24,22 @@
         <div class="callUs">
             <a class="phone" href="javascript:void(0)">
                 <span class="phoneIcon">
-                    <img src="../img/phone.svg" alt="" width="26" height="26">
+                    <img src="img/phone.svg" alt="" width="26" height="26">
                 </span>
             </a>
             <div class="phoneNumbers">
-                <a href="javascript:void(0)">+380 (93) 000 00 00</a>
-                <a href="javascript:void(0)">+380 (91) 000 00 00</a>
+                <a href="tel:+380930000000">+380 (93) 000 00 00</a>
+                <a href="tel:+380910000000">+380 (91) 000 00 00</a>
             </div>
         </div>
         <div class="userMenu">
             <div class="search">
-                <button type="submit" aria-label="Искать"><img src="../img/search.svg" width="26" height="26"></button>
+                <button type="submit" aria-label="Искать"><img src="img/search.svg" width="26" height="26"></button>
                 <input type="text" placeholder="Поиск" class="searchInput">
             </div>
-            <a class="profile" href="../subPages/404.html">
+            <a class="profile" href="404.html">
                 <span class="userIcon">
-                    <img src="../img/user.svg" alt="" width="30" height="30">
+                    <img src="img/chatIcon.svg" alt="" width="30" height="30">
                 </span>
             </a>
         </div>
@@ -62,7 +62,7 @@
                 <div class="cartList">
                     <div class="emptyMessage">
                         <span>Ваша корзина пуста</span>
-                        <a href="../index.html">Перейти в каталог</a>
+                        <a href="index.html">Перейти в каталог</a>
                     </div>
                     <div class="cartItem">
                         <div class="itemDesc">
@@ -75,7 +75,7 @@
                         </div>
                         <span class="itemPrice" data-price="104.60" data-currency="грн">209.20 грн.</span>
                         <button type="button" class="removeItem">
-                            <img src="../img/removeTrash.svg" width="26" height="26" alt="">
+                            <img src="img/removeTrash.svg" width="26" height="26" alt="">
                         </button>
                         <div class="itemChanges">
                             <button type="button" class="decrease">−</button>
@@ -95,7 +95,7 @@
                         </div>
                         <span class="itemPrice" data-price="35.50" data-currency="грн">71.00 грн.</span>
                         <button type="button" class="removeItem">
-                            <img src="../img/removeTrash.svg" width="26" height="26" alt="">
+                            <img src="img/removeTrash.svg" width="26" height="26" alt="">
                         </button>
                         <div class="itemChanges">
                             <button type="button" class="decrease">−</button>
@@ -118,7 +118,7 @@
                 </div>
                 <div class="saucesList">
                     <div class="sauceItem">
-                        <img src="../img/sauce1.png" width="46" height="45" alt="">
+                        <img src="img/sauce1.png" width="46" height="45" alt="">
                         <span class="sauceName">Васаби</span>
                         <span class="itemPrice" data-price="9.50" data-currency="грн">9.50 грн</span>
                         <div class="itemChanges">
@@ -128,7 +128,7 @@
                         </div>
                     </div>
                     <div class="sauceItem">
-                        <img src="../img/sauce2.png" width="46" height="45" alt="">
+                        <img src="img/sauce2.png" width="46" height="45" alt="">
                         <span class="sauceName">Имбирь маринованный</span>
                         <span class="itemPrice" data-price="11.40" data-currency="грн">11.40 грн</span>
                         <div class="itemChanges">
@@ -138,7 +138,7 @@
                         </div>
                     </div>
                     <div class="sauceItem">
-                        <img src="../img/sauce3.png" width="46" height="45" alt="">
+                        <img src="img/sauce3.png" width="46" height="45" alt="">
                         <span class="sauceName">Соевый соус</span>
                         <span class="itemPrice" data-price="12.70" data-currency="грн">12.70 грн</span>
                         <div class="itemChanges">
@@ -157,7 +157,7 @@
                 </div>
                 <div class="deviceList">
                     <div class="deviceItem">
-                        <img src="../img/device1.png" width="46" height="45" alt="">
+                        <img src="img/device1.png" width="46" height="45" alt="">
                         <span class="deviceName">Палочки для суши</span>
                         <span class="itemPrice" data-price="9.50" data-currency="грн">9.50 грн</span>
                         <div class="itemChanges">
@@ -176,18 +176,18 @@
                     <span class="totalSum">25.10 грн</span>
                 </div>
                 <div class="deliveryButtons">
-                    <a href="../subPages/delivery.html">Доставка</a>
-                    <a href="../subPages/pickup.html">Самовывоз</a>
+                    <a href="delivery.html">Доставка</a>
+                    <a href="pickup.html">Самовывоз</a>
                 </div>
             </div>
         </section>
     </main>
 </div>
 
-<script src="../libs/jQuery/jquery-3.7.1.min.js"></script>
-<script src="../libs/lazy/jquery.lazy.min.js"></script>
-<script src="../js/header.js"></script>
-<script src="../js/index.js"></script>
-<script src="../js/buttons.js"></script>
+<script defer src="./libs/jQuery/jquery-3.7.1.min.js"></script>
+<script defer src="./libs/lazy/jquery.lazy.min.js"></script>
+<script defer src="./js/header.js"></script>
+<script defer src="./js/index.js"></script>
+<script defer src="./js/buttons.js"></script>
 </body>
 </html>

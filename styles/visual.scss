@@ -279,6 +279,8 @@
         background-color: var(--red);
         transition: background-color 0.2s;
       }
+    }
+    &:focus {
       & ~ .targetInfo {
         opacity: 1;
         transition: opacity 0.3s;
@@ -326,4 +328,36 @@
       transform: rotate(45deg);
     }
   }
+}
+@mixin timeSet-Radio {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &:checked {
+      &~.checkButton {
+        background-color: var(--red);
+        color: var(--white);
+        transition: background-color 0.3s, color 0.3s;
+      }
+    }
+  }
+  .checkButton {
+    background-color: inherit;
+    color: var(--red);
+    align-content: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+  }
+}
+@mixin timeSetButton {
+  @include whiteButton;
+  width: 41.66vw;
+  height: 35px;
 }

@@ -1,31 +1,22 @@
 $(function () {
-    var areHiddenElementsVisible = false
+    let areHiddenElementsVisible = false
     function adjustElements() {
-        let containerWidth = $(".categoryList").width()
+        const containerWidth = $(".categoryList").width()
         let totalWidth = 0
-        let firstRowTop = null
-        $(".categoryList .categoryCard").each(function() {
-            let $element = $(this)
-            let elementWidth = $element.outerWidth(true)
-            if (firstRowTop === null) {
-                firstRowTop = $element.offset().top
-            }
-            if (totalWidth + elementWidth > containerWidth || $element.offset().top !== firstRowTop) {
-                $element.hide().addClass("invisible")
-            } else {
-                $element.show().removeClass("invisible")
+        const $elements = $(".categoryList .categoryCard")
+        $elements.each(function () {
+            const $element = $(this)
+            const elementWidth = $element.outerWidth(true)
+            const isVisible = totalWidth + elementWidth <= containerWidth
+            $element.toggle(isVisible).toggleClass("invisible", !isVisible)
+            if (isVisible) {
                 totalWidth += elementWidth
             }
         })
     }
     function toggleHiddenElements() {
-        if (areHiddenElementsVisible) {
-            $(".invisible").hide()
-            areHiddenElementsVisible = false
-        } else {
-            $(".invisible").show()
-            areHiddenElementsVisible = true
-        }
+        $(".invisible").toggle()
+        areHiddenElementsVisible = !areHiddenElementsVisible
     }
     adjustElements()
     $(window).on("resize", adjustElements)

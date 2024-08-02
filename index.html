@@ -30,8 +30,8 @@
                 </span>
             </a>
             <div class="phoneNumbers">
-                <a href="javascript:void(0)">+380 (93) 000 00 00</a>
-                <a href="javascript:void(0)">+380 (91) 000 00 00</a>
+                <a href="tel:+380930000000">+380 (93) 000 00 00</a>
+                <a href="tel:+380910000000">+380 (91) 000 00 00</a>
             </div>
         </div>
         <div class="userMenu">
@@ -39,9 +39,9 @@
                 <button type="submit" aria-label="Искать"><img src="./img/search.svg" width="26" height="26"></button>
                 <input type="text" placeholder="Поиск" class="searchInput">
             </div>
-            <a class="profile" href="./subPages/404.html">
+            <a class="profile" href="./404.html">
                 <span class="userIcon">
-                    <img src="./img/user.svg" alt="" width="30" height="30">
+                    <img src="./img/chatIcon.svg" alt="" width="30" height="30">
                 </span>
             </a>
         </div>
@@ -121,6 +121,10 @@
                     <li class="categoryCard">
                         <img src="./img/category15.png" width="100" height="100" alt="">
                         <span>Напитки</span>
+                    </li>
+                    <li class="categoryCard">
+                        <img src="./img/category16.png" width="100" height="100" alt="">
+                        <span>Соусы</span>
                     </li>
                 </ul>
                 <ul class="categoryListMobile swiper-wrapper">
@@ -489,7 +493,7 @@
                 </div>
             </section>
         </main>
-        <a class="openCart" href="./subPages/cart.html">
+        <a class="openCart" href="cart.html">
             <img src="./img/cartMobile.svg" width="33" height="29" alt="">
         </a>
         <aside>
@@ -499,12 +503,12 @@
             </div>
             <div class="cart">
                 <h2>Корзина</h2>
-                <div class="cartList">
-                    <div class="emptyMessage">
+                <ul class="cartList">
+                    <li class="emptyMessage">
                         <span>Ваша корзина пуста</span>
                         <a href="javascript:void(0)" id="toCatalogue">Перейти к каталогу</a>
-                    </div>
-                    <div class="cartItem">
+                    </li>
+                    <li class="cartItem">
                         <div class="itemHeader">
                             <span class="itemName">Сет "Только мне" <span class="itemWeight">(554гр)</span></span>
                             <button class="remove"><img src="./img/cross.svg" width="10" height="10" alt=""></button>
@@ -520,8 +524,8 @@
                             <span class="counter">2</span>
                             <button type="button" class="increase">+</button>
                         </div>
-                    </div>
-                    <div class="cartItem">
+                    </li>
+                    <li class="cartItem">
                         <div class="itemHeader">
                             <span class="itemName">Сет "Море рыбы" <span class="itemWeight">(964гр)</span></span>
                             <button class="remove"><img src="./img/cross.svg" width="10" height="10" alt=""></button>
@@ -538,8 +542,8 @@
                             <span class="counter">2</span>
                             <button type="button" class="increase">+</button>
                         </div>
-                    </div>
-                    <div class="cartItem">
+                    </li>
+                    <li class="cartItem">
                         <div class="itemHeader">
                             <span class="itemName">Нигири с тунцом опаленным <span class="itemWeight">(1 шт - 38гр)</span></span>
                             <button class="remove"><img src="./img/cross.svg" width="10" height="10" alt=""></button>
@@ -553,27 +557,42 @@
                             <span class="counter">2</span>
                             <button type="button" class="increase">+</button>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                    <li class="cartItem">
+                        <div class="itemHeader">
+                            <span class="itemName">Калифорния маки <span class="itemWeight">(1/2 порции 4шт - 554гр)</span></span>
+                            <button class="remove"><img src="./img/cross.svg" width="10" height="10" alt=""></button>
+                        </div>
+                        <p class="itemDetails">
+                            Крабовые палочки, авокадо, огурец, майонез, икра летучей рыбы оранжевая, васаби 0,5 г
+                        </p>
+                        <span class="itemPrice" data-price="31.50" data-currency="грн">63.00 грн.</span>
+                        <div class="itemChanges">
+                            <button type="button" class="decrease">−</button>
+                            <span class="counter">2</span>
+                            <button type="button" class="increase">+</button>
+                        </div>
+                    </li>
+                </ul>
                 <div class="cartFooter">
                     <div class="totalPrice">
                         <span>Сумма заказа</span>
                         <span class="totalSum" data-currency="грн">707.40 грн.</span>
                     </div>
-                    <button class="checkout"><span>Оформить заказ</span></button>
+                    <a href="./confirmation.html" class="checkout"><span>Оформить заказ</span></a>
                 </div>
             </div>
         </aside>
     </div>
 </div>
 
-<script src="./libs/jQuery/jquery-3.7.1.min.js"></script>
-<script src="./libs/lazy/jquery.lazy.min.js"></script>
-<script src="./libs/swiper/unpkg.com_swiper@8.4.7_swiper-bundle.min.js"></script>
-<script src="./js/header.js"></script>
-<script src="./js/index.js"></script>
-<script src="./js/main.js"></script>
-<script src="./js/scroll.js"></script>
-<script src="./js/buttons.js"></script>
+<script defer src="./libs/jQuery/jquery-3.7.1.min.js"></script>
+<script defer src="./libs/lazy/jquery.lazy.min.js"></script>
+<script defer src="./libs/swiper/unpkg.com_swiper@8.4.7_swiper-bundle.min.js"></script>
+<script defer src="./js/header.js"></script>
+<script defer src="./js/main.js"></script>
+<script defer src="./js/index.js"></script>
+<script defer src="./js/buttons.js"></script>
+<script defer src="./js/scroll.js"></script>
 </body>
 </html>

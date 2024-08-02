@@ -20,21 +20,32 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 15px;
-            label {
+            .form-group {
               display: flex;
               flex-direction: column;
               gap: 8px;
-              span {
+              width: max-content;
+              &.textarea {
+                width: 100%;
+              }
+              label {
                 font-weight: 600;
                 font-size: 12px;
                 &::after {
                   content: "*";
                 }
-              }
-              &[for="entrance"], &[for="codeOfDoor"] {
-                span {
+                &[for="entrance"], &[for="codeOfDoor"] {
                   &::after {
                     content: none;
+                  }
+                }
+                &[for="comment"] {
+                  width: 100%;
+                  &~#comment {
+                    resize: none;
+                    height: max-content;
+                    min-height: 105px;
+                    width: 100%;
                   }
                 }
               }
@@ -57,14 +68,6 @@
               }
               #entrance, #place, #codeOfDoor, #floor {
                 width: 41.66vw;
-              }
-              &[for="comment"] {
-                width: 100%;
-                #comment {
-                  resize: none;
-                  height: max-content;
-                  min-height: 105px;
-                }
               }
             }
           }
@@ -89,13 +92,15 @@
               justify-content: space-between;
               flex-wrap: wrap;
               gap: 15px;
-              button {
+              li {
                 display: none;
+                overflow: hidden;
+                label {
+                  @include timeSet-Radio;
+                }
               }
-              button.visible, .showMore {
-                @include whiteButton;
-                width: 41.66vw;
-                height: 35px;
+              li.visible, .showMore button {
+                @include timeSetButton;
               }
             }
           }
@@ -104,7 +109,7 @@
             width: 100%;
             height: 40px;
           }
-          a {
+          button[type='submit'] {
             @include buttonAnc;
             width: 100%;
           }
