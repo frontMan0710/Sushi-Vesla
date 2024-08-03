@@ -55,6 +55,7 @@
 }
 @mixin logo {
   display: flex;
+  cursor: default;
   img {
     width: 100%;
     height: 100%;
@@ -295,6 +296,7 @@
       .logo {
         @include logo;
         position: absolute;
+        cursor: default;
         width: 107px;
         height: 40px;
         left: 0;

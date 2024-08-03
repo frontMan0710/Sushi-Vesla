@@ -57,8 +57,8 @@
                     <button type="button" data-tab="list">Список</button>
                     <button type="button" data-tab="map">Карта</button>
                 </div>
-                <div class="targetList tabContent" id="list">
-                    <div class="targetItem">
+                <ul class="targetList tabContent" id="list">
+                    <li class="targetItem radioLabel">
                         <span class="targetName">БЦ Словацкий</span>
                         <span class="targetAddress">Адрес: ул. Словацкого, 4-6</span>
                         <span class="targetWorkTime">Режим работы: 10:00 - 22:00</span>
@@ -68,8 +68,8 @@
                             <span class="checkmark"></span>
                             <span class="targetInfo">Точка по адресу ул. Словацкого, 4-6 откроется сегодня в 10:00. Оформите отложенный заказ</span>
                         </label>
-                    </div>
-                    <div class="targetItem">
+                    </li>
+                    <li class="targetItem radioLabel">
                         <span class="targetName">Мира</span>
                         <span class="targetAddress">Адрес: пр-т. Мира, 10</span>
                         <span class="targetWorkTime">Режим работы: 12:00 - 23:00</span>
@@ -79,8 +79,8 @@
                             <span class="checkmark"></span>
                             <span class="targetInfo">Точка по адресу пр-т. Мира, 10 откроется сегодня в 12:00. Оформите отложенный заказ</span>
                         </label>
-                    </div>
-                    <div class="targetItem">
+                    </li>
+                    <li class="targetItem radioLabel">
                         <span class="targetName">Александра Борисенка</span>
                         <span class="targetAddress">Адрес: ул. Александра Борисенка, 1</span>
                         <span class="targetWorkTime">Режим работы: 10:00 - 23:00</span>
@@ -90,8 +90,8 @@
                             <span class="checkmark"></span>
                             <span class="targetInfo">Точка по адресу ул. Александра Борисенка, 1 откроется сегодня в 10:00. Оформите отложенный заказ</span>
                         </label>
-                    </div>
-                </div>
+                    </li>
+                </ul>
                 <div class="targetMap tabContent" id="map" style="display:none;">
                     <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10125.827288737073!2d26.237996917382816!3d50.61862999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472f134d9d4b6e83%3A0x40fd5175bd4ced0f!2sNew%20York%20Street%20Pizza!5e0!3m2!1sru!2sua!4v1721572703695!5m2!1sru!2sua"
@@ -229,5 +229,6 @@
 <script defer src="./js/header.js"></script>
 <script defer src="./js/timeSet.js"></script>
 <script defer src="./js/pickup.js"></script>
+<script defer src="./js/radioButton.js"></script>
 </body>
 </html>

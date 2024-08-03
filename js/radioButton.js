@@ -6,7 +6,6 @@ function isChecked(event) {
     }
 }
 $(function () {
-    $(".confirmButton a, .confirmButton button").addClass("disable")
     $(".radioButton").on("click", function () {
         $(".confirmButton a, .confirmButton button").removeClass("disable")
     })

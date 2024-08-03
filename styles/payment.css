@@ -159,6 +159,7 @@
         -ms-flex-align: center;
             align-items: center;
     gap: 20px;
+    position: relative;
   }
   .wrapper main .paymentConditions .conditionsContent label {
     position: relative;
@@ -195,10 +196,69 @@
   }
   .wrapper main .paymentConditions .conditionsContent .conditions {
     font-weight: 500;
+    width: 100%;
     font-size: 14px;
   }
   .wrapper main .paymentConditions .conditionsContent .conditions a {
     color: var(--red);
+  }
+  .wrapper main .paymentConditions .conditionsContent a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .wrapper main .paymentConditions .conditionsContent a:focus ~ .conditionsInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .wrapper main .paymentConditions .conditionsContent .conditionsInfo {
+    position: absolute;
+    font-weight: 500;
+    opacity: 0;
+    max-height: 209px;
+    width: clamp(200px, 41.72vw, 300px);
+    font-size: clamp(10px, 1.94vw, 14px);
+    padding: 10px;
+    right: -31px;
+    bottom: 16px;
+    border-radius: 4px;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    background-color: var(--white);
+    color: var(--black);
+    border: 2px var(--black) solid;
+    display: none;
+    right: -11px;
+    bottom: 45px;
+  }
+  .wrapper main .paymentConditions .conditionsContent .conditionsInfo::after {
+    content: "";
+    background-color: inherit;
+    border-right: inherit;
+    border-bottom: inherit;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    bottom: -9px;
+    right: 15px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .wrapper main .paymentConditions .conditionsContent .conditionsInfo p {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 12;
+    -webkit-box-orient: vertical;
   }
   .wrapper main .paymentConfirm {
     padding: 20px 0 25px 0;
@@ -240,6 +300,13 @@
     -webkit-transition: opacity 0.2s;
     transition: opacity 0.2s;
   }
+}
+@media screen and (max-width: 719px) and (max-width: 719px) {
+  .wrapper main .paymentConfirm .confirmContent button {
+    cursor: default;
+  }
+}
+@media screen and (max-width: 719px) {
   .wrapper main .paymentConfirm .confirmContent button .totalSum {
     padding-left: 5px;
   }

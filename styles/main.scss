@@ -522,9 +522,19 @@
           position: relative;
           width: 100%;
           height: 60px;
+          &::before {
+            content: "→";
+            position: absolute;
+            z-index: var(--header-layer);
+            font-weight: 500;
+            font-size: 16px;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
           &::after {
             content: "";
-            box-shadow: 0 0 50px 20px var(--grey-light);
+            box-shadow: 0 0 50px 50px var(--grey-light);
             position: absolute;
             z-index: var(--semantic-layer);
             height: 100%;
@@ -730,16 +740,16 @@
 @media screen and (max-width: 1119px) {
   a.openCart {
     @include roundIcon;
-    position: fixed;
     box-shadow: 0 4px 50px 0 var(--red-opacity);
     z-index: var(--semantic-layer);
     will-change: transform;
+    position: fixed;
     cursor: default;
     width: 55px;
     height: 55px;
     right: 15px;
     top: 50%;
-    transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
   }
   .categories {
     width: 100%;

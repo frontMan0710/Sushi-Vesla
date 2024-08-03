@@ -107,11 +107,42 @@
           }
           .conditions {
             font-weight: 500;
+            width: 100%;
             font-size: 14px;
             a {
               color: var(--red);
             }
           }
+          a {
+            display: flex;
+            align-items: center;
+            &:focus {
+              & ~ .conditionsInfo {
+                display: flex;
+                opacity: 1;
+                transition: opacity 0.3s;
+              }
+            }
+          }
+          .conditionsInfo {
+            @include targetAlert;
+            background-color: var(--white);
+            color: var(--black);
+            border: 2px var(--black) solid;
+            display: none;
+            right: -11px;
+            bottom: 45px;
+            p {
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 12;
+              -webkit-box-orient: vertical;
+            }
+          }
+          position: relative;
         }
       }
       .paymentConfirm {
