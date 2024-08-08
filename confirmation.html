@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
+    <link rel="stylesheet" href="./vendor/swiper/unpkg.com_swiper@8.4.7_swiper-bundle.min.css">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/confirmation.css">
 </head>
@@ -20,6 +21,17 @@
             <li><a href="javascript:void(0)">О нас</a></li>
             <li><a href="javascript:void(0)">Карьера</a></li>
             <li><a href="javascript:void(0)">Отзывы</a></li>
+            <li class="callUs">
+                <button class="phone">
+                    <span class="phoneIcon">
+                        <img src="img/phone.svg" alt="" width="26" height="26">
+                    </span>
+                </button>
+                <div class="phoneNumbers">
+                    <a href="tel:+380930000000">+380 (93) 000 00 00</a>
+                    <a href="tel:+380910000000">+380 (91) 000 00 00</a>
+                </div>
+            </li>
         </ul>
         <div class="callUs">
             <a class="phone" href="javascript:void(0)">
@@ -49,118 +61,540 @@
     </div>
 </header>
 <div class="wrapper">
-    <main>
-        <section class="confirmTitle">
-            <div class="contentBorder titleContent">
-                <h1>Подтверждение</h1>
-            </div>
-        </section>
-        <section class="cart">
-            <div class="contentBorder cartContent">
-                <div class="cartHeader">
-                    <span>Ваш заказ</span>
-                    <a href="cart.html"><img src="img/editIcon.svg" width="26" height="26"></a>
+    <div class="contentBorder mainContent">
+        <main>
+            <section class="timeSet">
+                <div class="timeTitle">
+                    <h1>Приборы и соусы</h1>
+                    <span>Посмотреть всё</span>
                 </div>
-                <div class="cartList">
-                    <div class="emptyMessage">
-                        <span>Ваша корзина пуста</span>
-                        <a href="index.html">Перейти в каталог</a>
-                    </div>
-                    <div class="cartItem">
-                        <div class="itemDesc">
-                            <span class="itemName">Сет "Только мне"</span>
-                            <ul class="itemComposition">
-                                <li>Сяке ясай маки 8 шт</li>
-                                <li>Тояма маки 8 шт</li>
-                                <li>Авокадо маки 8 шт</li>
-                            </ul>
+                <ul class="timeSelect">
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime" checked>
+                            <span class="checkButton">10:45</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">11:00</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">11:15</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">11:30</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">11:45</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">12:00</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">12:15</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">12:30</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">12:45</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">13:00</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">13:15</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">13:30</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">13:45</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">14:00</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">14:15</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">14:30</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">14:45</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">15:00</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">15:15</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">15:30</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">15:45</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">16:00</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">16:15</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">16:30</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="deliveryTime">
+                            <span class="checkButton">16:45</span>
+                        </label>
+                    </li>
+                </ul>
+            </section>
+            <section class="categories">
+                <div class="sectionTitle">
+                    <h1>Приборы и соусы</h1>
+                    <span>Посмотреть всё</span>
+                </div>
+                <ul class="categoryList">
+                    <li class="categoryCard">
+                        <a href="javascript:void(0)">
+                            <img src="./img/device1.png" width="100" height="100" alt="">
+                            <span>Палочки для суши</span>
+                        </a>
+                    </li>
+                    <li class="categoryCard">
+                        <a href="javascript:void(0)">
+                            <img src="./img/sauce1.png" width="100" height="100" alt="">
+                            <span>Соевый соус</span>
+                        </a>
+                    </li>
+                    <li class="categoryCard">
+                        <a href="javascript:void(0)">
+                            <img src="./img/sauce2.png" width="100" height="100" alt="">
+                            <span>Гари</span>
+                        </a>
+                    </li>
+                    <li class="categoryCard">
+                        <a href="javascript:void(0)">
+                            <img src="./img/sauce3.png" width="100" height="100" alt="">
+                            <span>Васаби</span>
+                        </a>
+                    </li>
+                    <li class="categoryCard">
+                        <a href="javascript:void(0)">
+                            <img src="./img/sauce1.png" width="100" height="100" alt="">
+                            <span>Унаги-соус</span>
+                        </a>
+                    </li>
+                    <li class="categoryCard">
+                        <a href="javascript:void(0)">
+                            <img src="./img/sauce1.png" width="100" height="100" alt="">
+                            <span>Понзу</span>
+                        </a>
+                    </li>
+                    <li class="categoryCard">
+                        <a href="javascript:void(0)">
+                            <img src="./img/sauce1.png" width="100" height="100" alt="">
+                            <span>Терияки соус</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section class="confirmation">
+                <div class="sectionTitle">
+                    <h1>Подтверждение</h1>
+                </div>
+                <div class="confirmationForm">
+                    <form action="" method="post">
+                        <div class="flex-container">
+                            <div class="form-group flex-item">
+                                <input type="text" id="name" name="name" placeholder="Введите Ваше Имя" required>
+                            </div>
+                            <div class="form-group flex-item">
+                                <input type="text" id="phone" name="phone" placeholder="Введите Ваш номер телефона" required>
+                            </div>
                         </div>
-                        <span class="itemPrice" data-price="104.60" data-currency="грн">209.20 грн.</span>
-                    </div>
-                    <div class="cartItem">
-                        <div class="itemDesc">
-                            <span class="itemName">Острый суп с жареным лососем</span>
-                            <ul class="itemComposition">
-                                <li>Жареный лосось</li>
-                                <li>яичная лапша</li>
-                                <li>зелёный лук</li>
-                                <li>острый соус</li>
-                            </ul>
+                        <div class="form-group">
+                            <div class="radio-group radioLabel">
+                                <span>Наличными</span>
+                                <label>
+                                    <input type="radio" name="payment" value="cash" checked required>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="radio-group radioLabel">
+                                <span>Картой курьеру</span>
+                                <label>
+                                    <input type="radio" name="payment" value="card" required>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
                         </div>
-                        <span class="itemPrice" data-price="35.50" data-currency="грн">71.00 грн.</span>
+                        <div class="form-group">
+                            <div class="radio-group radioLabel" data-tab="deliveryForm">
+                                <span>Доставка</span>
+                                <label>
+                                    <input type="radio" name="delivery" value="delivery" checked required>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="radio-group radioLabel" data-tab="pickupForm">
+                                <span>Самовывоз</span>
+                                <label>
+                                    <input type="radio" name="delivery" value="pickup" required>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="tabContent" id="deliveryForm">
+                            <div class="form-group">
+                                <label for="street">Улица</label>
+                                <input type="text" id="street" class="form-control" name="street">
+                            </div>
+                            <div class="form-group">
+                                <label for="house">Дом</label>
+                                <input type="number" id="house" class="form-control" name="house">
+                            </div>
+                            <div class="form-group">
+                                <label for="entrance">Подъезд</label>
+                                <input type="number" id="entrance" class="form-control" name="entrance">
+                            </div>
+                            <div class="form-group">
+                                <label for="place">Квартира</label>
+                                <input type="number" id="place" class="form-control" name="place">
+                            </div>
+                            <div class="form-group">
+                                <label for="codeOfDoor">Код от двери</label>
+                                <input type="text" id="codeOfDoor" class="form-control" name="codeOfDoor">
+                            </div>
+                            <div class="form-group">
+                                <label for="floor">Этаж</label>
+                                <input type="number" id="floor" class="form-control" name="floor">
+                            </div>
+                            <div class="form-group textarea">
+                                <label for="comment">Комментарий</label>
+                                <textarea id="comment" class="form-control" name="comment" aria-grabbed="false" placeholder="Оставьте ваше сообщение" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <ul class="tabContent" id="pickupForm">
+                            <li class="targetItem radioLabel">
+                                <span class="targetName">БЦ Словацкий</span>
+                                <span class="targetAddress">Адрес: ул. Словацкого, 4-6</span>
+                                <span class="targetWorkTime">Режим работы: 10:00 - 22:00</span>
+                                <span class="targetDeliveryTime">Суши - 15 мин, WOK - 15 мин</span>
+                                <label class="targetSelect">
+                                    <input type="radio" name="target">
+                                    <span class="checkmark"></span>
+                                    <span class="targetInfo">Точка по адресу ул. Словацкого, 4-6 откроется сегодня в 10:00. Оформите отложенный заказ</span>
+                                </label>
+                            </li>
+                            <li class="targetItem radioLabel">
+                                <span class="targetName">Мира</span>
+                                <span class="targetAddress">Адрес: пр-т. Мира, 10</span>
+                                <span class="targetWorkTime">Режим работы: 12:00 - 23:00</span>
+                                <span class="targetDeliveryTime">Суши - 15 мин, WOK - 15 мин</span>
+                                <label class="targetSelect">
+                                    <input type="radio" name="target">
+                                    <span class="checkmark"></span>
+                                    <span class="targetInfo">Точка по адресу пр-т. Мира, 10 откроется сегодня в 12:00. Оформите отложенный заказ</span>
+                                </label>
+                            </li>
+                            <li class="targetItem radioLabel">
+                                <span class="targetName">Александра Борисенка</span>
+                                <span class="targetAddress">Адрес: ул. Александра Борисенка, 1</span>
+                                <span class="targetWorkTime">Режим работы: 10:00 - 23:00</span>
+                                <span class="targetDeliveryTime">Суши - 15 мин, WOK - 15 мин</span>
+                                <label class="targetSelect">
+                                    <input type="radio" name="target">
+                                    <span class="checkmark"></span>
+                                    <span class="targetInfo">Точка по адресу ул. Александра Борисенка, 1 откроется сегодня в 10:00. Оформите отложенный заказ</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <button type="submit" class="checkout">Оплатить заказ на 280.20 грн.</button>
+                    </form>
+                    <div class="bannerWrapper">
+                        <img src="./img/confirmationBanner.jpg" width="690" height="517">
                     </div>
                 </div>
-                <div class="orderInfo">
-                    <div class="orderSum">
-                        <span>Сумма к оплате</span>
-                        <span>
+            </section>
+
+            <section class="confirmTitle">
+                <div class="contentBorder titleContent">
+                    <h1>Подтверждение</h1>
+                </div>
+            </section>
+            <section class="cart">
+                <div class="contentBorder cartContent">
+                    <div class="cartHeader">
+                        <span>Ваш заказ</span>
+                        <a href="cart.html"><img src="img/editIcon.svg" width="26" height="26"></a>
+                    </div>
+                    <div class="cartList">
+                        <div class="emptyMessage">
+                            <span>Ваша корзина пуста</span>
+                            <a href="index.html">Перейти в каталог</a>
+                        </div>
+                        <div class="cartItem">
+                            <div class="itemDesc">
+                                <span class="itemName">Сет "Только мне"</span>
+                                <ul class="itemComposition">
+                                    <li>Сяке ясай маки 8 шт</li>
+                                    <li>Тояма маки 8 шт</li>
+                                    <li>Авокадо маки 8 шт</li>
+                                </ul>
+                            </div>
+                            <span class="itemPrice" data-price="104.60" data-currency="грн">209.20 грн.</span>
+                        </div>
+                        <div class="cartItem">
+                            <div class="itemDesc">
+                                <span class="itemName">Острый суп с жареным лососем</span>
+                                <ul class="itemComposition">
+                                    <li>Жареный лосось</li>
+                                    <li>яичная лапша</li>
+                                    <li>зелёный лук</li>
+                                    <li>острый соус</li>
+                                </ul>
+                            </div>
+                            <span class="itemPrice" data-price="35.50" data-currency="грн">71.00 грн.</span>
+                        </div>
+                    </div>
+                    <div class="orderInfo">
+                        <div class="orderSum">
+                            <span>Сумма к оплате</span>
+                            <span>
                             <span class="totalSum">280.20 грн.</span>
                             <br>
                             <span class="promoMessage"> (промокод на 37.60 грн.)</span>
                         </span>
-                    </div>
-                    <div class="promoCode">
-                        <input type="text" placeholder="Введите промокод">
-                        <button type="submit">Применить</button>
+                        </div>
+                        <div class="promoCode">
+                            <input type="text" placeholder="Введите промокод">
+                            <button type="submit">Применить</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="orderConfirm">
-            <div class="contentBorder confirmContent">
-                <div class="clientData">
-                    <div class="clientRow">
-                        <span class="deliveryName">Антон</span>
-                        <span class="clientPhone">+380 (__) ___-__-__</span>
-                        <a href="javascript:void(0)" class="editData"><img src="img/editIcon.svg" class="editIcon" width="26" height="26"></a>
-                    </div>
-                    <div class="clientRow">
-                        <div class="deliveryHead radioLabel">
-                            <span>Доставка</span>
-                            <label for="delivery">
-                                <input type="radio" class="radioButton" name="deliveryType" id="delivery" checked>
-                                <span class="checkmark"></span>
-                            </label>
+            </section>
+            <section class="orderConfirm">
+                <div class="contentBorder confirmContent">
+                    <div class="clientData">
+                        <div class="clientRow">
+                            <span class="deliveryName">Антон</span>
+                            <span class="clientPhone">+380 (__) ___-__-__</span>
+                            <a href="javascript:void(0)" class="editData"><img src="img/editIcon.svg" class="editIcon" width="26" height="26"></a>
                         </div>
-                        <div class="deliveryRow" id="deliveryInfo">
+                        <div class="clientRow">
+                            <div class="deliveryHead radioLabel">
+                                <span>Доставка</span>
+                                <label for="delivery">
+                                    <input type="radio" class="radioButton" name="deliveryType" id="delivery" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="deliveryRow" id="deliveryInfo">
                             <span class="deliveryAddress">
                                 Адрес доставки<br>
                                 Минск, улица Пушкина, 111, эт. 1, кв. 1
                             </span>
-                            <span class="deliveryTime">
+                                <span class="deliveryTime">
                                 Время - 18:30
                             </span>
-                            <a href="javascript:void(0)" class="editData">
-                                <img src="img/editIcon.svg" class="editIcon" width="26" height="26">
-                            </a>
-                        </div>
-                        <div class="pickupHead radioLabel">
-                            <span>Самовывоз</span>
-                            <label for="pickup">
-                                <input type="radio" class="radioButton" name="deliveryType" id="pickup">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div class="pickupRow" id="pickupInfo">
-                            <span class="pickupTarget">Точка самовывоза<br>Минск, улица Пушкина, 111, эт. 1, кв. 1</span>
-                            <span class="deliveryTime">Время - 18:30</span>
-                            <a href="javascript:void(0)" class="editData"><img src="img/editIcon.svg" class="editIcon" width="26" height="26"></a>
+                                <a href="javascript:void(0)" class="editData">
+                                    <img src="img/editIcon.svg" class="editIcon" width="26" height="26">
+                                </a>
+                            </div>
+                            <div class="pickupHead radioLabel">
+                                <span>Самовывоз</span>
+                                <label for="pickup">
+                                    <input type="radio" class="radioButton" name="deliveryType" id="pickup">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="pickupRow" id="pickupInfo">
+                                <span class="pickupTarget">Точка самовывоза<br>Минск, улица Пушкина, 111, эт. 1, кв. 1</span>
+                                <span class="deliveryTime">Время - 18:30</span>
+                                <a href="javascript:void(0)" class="editData"><img src="img/editIcon.svg" class="editIcon" width="26" height="26"></a>
+                            </div>
                         </div>
                     </div>
+                    <div class="confirmButton">
+                        <a href="./payment.html">Подтвердить заказ на <span class="totalSum" data-currency="грн"> 280.20 грн.</span></a>
+                    </div>
                 </div>
-                <div class="confirmButton">
-                    <a href="./payment.html">Подтвердить заказ на <span class="totalSum" data-currency="грн"> 280.20 грн.</span></a>
+            </section>
+        </main>
+        <button type="button" class="openCart">
+            <img src="./img/cartMobile.svg" width="33" height="29" alt="">
+        </button>
+        <aside>
+            <div class="promoCode">
+                <input type="text" placeholder="Введите промокод">
+                <button>Ввести</button>
+            </div>
+            <div class="cart">
+                <h2>Корзина</h2>
+                <ul class="cartList">
+                    <li class="emptyMessage">
+                        <span>Ваша корзина пуста</span>
+                        <a href="./index.html" id="toCatalogue">Перейти к каталогу</a>
+                    </li>
+                    <li class="cartItem">
+                        <div class="itemHeader">
+                            <span class="itemName">Сет "Только мне" <span class="itemWeight">(554гр)</span></span>
+                            <button class="remove"><img src="./img/cross.svg" width="10" height="10" alt=""></button>
+                        </div>
+                        <ul class="itemDetails">
+                            <li><span>Сяке ясай маки 8 шт</span></li>
+                            <li><span>Тояма маки 8 шт</span></li>
+                            <li><span>Авокадо маки 8 шт</span></li>
+                        </ul>
+                        <span class="itemPrice" data-price="104.60" data-currency="грн">209.20 грн.</span>
+                        <div class="itemChanges">
+                            <button type="button" class="decrease">−</button>
+                            <span class="counter">2</span>
+                            <button type="button" class="increase">+</button>
+                        </div>
+                    </li>
+                    <li class="cartItem">
+                        <div class="itemHeader">
+                            <span class="itemName">Сет "Море рыбы" <span class="itemWeight">(964гр)</span></span>
+                            <button class="remove"><img src="./img/cross.svg" width="10" height="10" alt=""></button>
+                        </div>
+                        <ul class="itemDetails">
+                            <li><span>Манго сяке маки 8 шт.</span></li>
+                            <li><span>Магуро фреш маки 8 шт.</span></li>
+                            <li><span>Манго тай маки 8 шт.</span></li>
+                            <li><span>Умаи фреш маки 8 шт.</span></li>
+                        </ul>
+                        <span class="itemPrice" data-price="212.30" data-currency="грн">424.60 грн.</span>
+                        <div class="itemChanges">
+                            <button type="button" class="decrease">−</button>
+                            <span class="counter">2</span>
+                            <button type="button" class="increase">+</button>
+                        </div>
+                    </li>
+                    <li class="cartItem">
+                        <div class="itemHeader">
+                            <span class="itemName">Нигири с тунцом опаленным <span class="itemWeight">(1 шт - 38гр)</span></span>
+                            <button class="remove"><img src="./img/cross.svg" width="10" height="10" alt=""></button>
+                        </div>
+                        <p class="itemDetails">
+                            Тунец опаленный, стружка тунца, майонез, соус тайский сладкий чили, васаби 0,5 г
+                        </p>
+                        <span class="itemPrice" data-price="36.80" data-currency="грн">73.60 грн.</span>
+                        <div class="itemChanges">
+                            <button type="button" class="decrease">−</button>
+                            <span class="counter">2</span>
+                            <button type="button" class="increase">+</button>
+                        </div>
+                    </li>
+                    <li class="cartItem">
+                        <div class="itemHeader">
+                            <span class="itemName">Калифорния маки <span class="itemWeight">(1/2 порции 4шт - 554гр)</span></span>
+                            <button class="remove"><img src="./img/cross.svg" width="10" height="10" alt=""></button>
+                        </div>
+                        <p class="itemDetails">
+                            Крабовые палочки, авокадо, огурец, майонез, икра летучей рыбы оранжевая, васаби 0,5 г
+                        </p>
+                        <span class="itemPrice" data-price="31.50" data-currency="грн">63.00 грн.</span>
+                        <div class="itemChanges">
+                            <button type="button" class="decrease">−</button>
+                            <span class="counter">2</span>
+                            <button type="button" class="increase">+</button>
+                        </div>
+                    </li>
+                </ul>
+                <div class="cartFooter">
+                    <div class="totalPrice">
+                        <span>Сумма заказа</span>
+                        <span class="totalSum" data-currency="грн">707.40 грн.</span>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </aside>
+    </div>
 </div>
 
 <script defer src="./vendor/jQuery/jquery-3.7.1.min.js"></script>
+<script defer src="./vendor/swiper/unpkg.com_swiper@8.4.7_swiper-bundle.min.js"></script>
 <script defer src="./vendor/lazy/jquery.lazy.min.js"></script>
 <script defer src="./js/header-dist.js"></script>
-<script defer src="./js/lazyload-dist.js"></script>
+<script defer src="./js/categoryList-dist.js"></script>
+<script defer src="./js/cart-dist.js"></script>
+<script defer src="./js/confirmation-dist.js"></script>
 <script defer src="./js/buttons-dist.js"></script>
 <script defer src="./js/radioButton-dist.js"></script>
+<script defer src="./js/lazyload-dist.js"></script>
 </body>
 </html>

@@ -83,6 +83,7 @@ a {
     --bold: "Montserrat Bold", sans-serif;
 
     --semantic-layer: 1;
+    --upper-semantic-layer: 2;
     --header-layer: 2;
     --popup-layer: 3;
 }
@@ -90,6 +91,9 @@ a {
     width: clamp(675px, 93.75vw, 1800px);
     height: 100%;
     margin: 0 auto;
+}
+.tabContent {
+    display: none;
 }
 @media screen and (max-width: 719px) {
     .contentBorder {

@@ -16,60 +16,7 @@
             font-size: 24px;
           }
           form {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
-            .form-group {
-              display: flex;
-              flex-direction: column;
-              gap: 8px;
-              width: max-content;
-              &.textarea {
-                width: 100%;
-              }
-              label {
-                font-weight: 600;
-                font-size: 12px;
-                &::after {
-                  content: "*";
-                }
-                &[for="entrance"], &[for="codeOfDoor"] {
-                  &::after {
-                    content: none;
-                  }
-                }
-                &[for="comment"] {
-                  width: 100%;
-                  &~#comment {
-                    resize: none;
-                    height: max-content;
-                    min-height: 105px;
-                    width: 100%;
-                  }
-                }
-              }
-              input, textarea {
-                border: 1px var(--grey-dark) solid;
-                border-radius: 4px;
-                padding: 16px;
-                &:focus {
-                  outline: none;
-                }
-              }
-              input {
-                height: 35px;
-              }
-              #street {
-                width: 70vw;
-              }
-              #house {
-                width: 13.33vw;
-              }
-              #entrance, #place, #codeOfDoor, #floor {
-                width: 41.66vw;
-              }
-            }
+            @include deliveryForm;
           }
         }
       }

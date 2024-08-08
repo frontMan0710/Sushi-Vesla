@@ -186,30 +186,39 @@
         transform: translateY(-50%);
       }
       .headerNav {
-        display: none;
-        top: 0;
+        background-color: var(--white);
+        display: flex;
+        align-items: center;
+        position: absolute;
+        gap: 32px;
+        height: 90px;
+        width: 100%;
+        top: 90px;
         left: 0;
-        &.active {
-          background-color: var(--white);
-          display: flex;
-          align-items: center;
+        &::before, &::after {
+          content: "";
           position: absolute;
-          gap: 32px;
-          height: 90px;
+          background-color: inherit;
+          height: inherit;
           width: 100%;
-          top: 90px;
-          li {
-            font-family: var(--normal);
-            color: var(--black);
-            height: inherit;
-            align-content: center;
-            font-weight: 400;
-            line-height: 29px;
-            width: max-content;
-            font-size: clamp(16px, 1.66vw, 24px);
-            &.active {
-              border-bottom: 2px var(--red) solid;
-            }
+        }
+        &::before {
+          left: -100%;
+        }
+        &::after {
+          right: -100%;
+        }
+        li {
+          font-family: var(--normal);
+          color: var(--black);
+          height: inherit;
+          align-content: center;
+          font-weight: 400;
+          line-height: 29px;
+          width: max-content;
+          font-size: clamp(16px, 1.66vw, 24px);
+          &.active {
+            border-bottom: 2px var(--red) solid;
           }
         }
       }
@@ -310,19 +319,12 @@
         flex-direction: column;
         gap: 10px;
         position: fixed;
-        z-index: -1;
-        height: 100vh;
-        width: 100%;
-        min-width: 100vw;
-        top: -100%;
+        z-index: var(--header-layer);
+        height: 100lvh;
+        width: 100vw;
+        top: 80px;
         left: 0;
         padding: 30px 0 30px 0;
-        transition: top 0.4s;
-        &.active {
-          z-index: -1;
-          top: 80px;
-          transition: top 0.5s;
-        }
         li {
           font-family: var(--semiBold);
           color: var(--black);
@@ -335,36 +337,40 @@
             color: var(--red);
           }
           &:last-child {
-            border-bottom: 2px var(--red) solid;
+            border-top: 2px var(--red) solid;
             padding-bottom: 20px;
+          }
+          &.callUs {
+            background-color: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding-top: 20px;
+            button {
+              background-color: inherit;
+              .phoneIcon {
+                @include roundIcon;
+                width: 50px;
+                height: 50px;
+              }
+            }
+            .phoneNumbers {
+              font-family: var(--normal);
+              color: var(--black);
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              text-align: center;
+              gap: 10px;
+              width: max-content;
+              height: inherit;
+            }
           }
         }
       }
       .callUs {
-        display: flex;
-        align-items: center;
-        height: 100%;
-        a {
-          .phoneIcon {
-            @include roundIcon;
-            width: 50px;
-            height: 50px;
-          }
-        }
-        .phoneNumbers {
-          display: none;
-          &.active {
-            font-family: var(--normal);
-            color: var(--black);
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            gap: 10px;
-            width: 184px;
-            height: inherit;
-          }
-        }
+        display: none;
       }
       .userMenu {
         display: none;

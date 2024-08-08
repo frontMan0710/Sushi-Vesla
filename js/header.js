@@ -1,8 +1,9 @@
 $(function () {
     if ($(window).width() < 1440) {
+        $(".headerNav").hide()
         $(".burgerIcon").on("click", function () {
             $(this).toggleClass("active")
-            $(".headerNav").toggleClass("active")
+            $(".headerNav").slideToggle(300)
             if ($(window).width() < 720) {
                 $("body").toggleClass("lock")
             }
@@ -17,11 +18,12 @@ $(function () {
             $(".search").toggleClass("active")
             $(".phoneNumbers").removeClass("active")
         })
+        $(".userMenu .search").remove()
     } else {
         $(".headerContent .burgerIcon").remove()
     }
     if ($(window).width() >= 720) {
-        $(".phone").attr("href", "javascript:void(0)")
+        $(".headerNav li.callUs").remove()
     }
     let $header = $("header")
     if ($header) {
