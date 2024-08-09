@@ -390,15 +390,12 @@
   @include roundIcon;
   box-shadow: 0 4px 50px 0 var(--red-opacity);
   z-index: var(--semantic-layer);
-  will-change: transform;
   position: fixed;
   cursor: default;
   width: 55px;
   height: 55px;
   right: 15px;
   bottom: 50%;
-  transition: all 0.4s;
-  transform: translateY(50%);
 }
 @mixin inputField {
   border: 1px var(--grey-dark) solid;

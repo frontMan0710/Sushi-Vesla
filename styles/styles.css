@@ -41,6 +41,8 @@ body {
 }
 body.lock {
     overflow: hidden;
+    -webkit-overflow-scrolling: unset;
+    -ms-overflow-y: hidden;
 }
 header {
     background-color: var(--white);
