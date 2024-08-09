@@ -10,5 +10,7 @@ $(function () {
     }
     if ($(window).width() < 720) {
         $("button.openCart").remove()
+    } else {
+        $("a.openCart").remove()
     }
 })

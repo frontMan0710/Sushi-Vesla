@@ -89,6 +89,9 @@ a {
     --upper-semantic-layer: 2;
     --header-layer: 2;
     --popup-layer: 3;
+
+    --vh: 100vh;
+    --vw: 100vw;
 }
 .contentBorder {
     width: clamp(675px, 93.75vw, 1800px);

@@ -259,6 +259,7 @@
           transition: right 0.4s;
         }
       }
+
       aside {
         @include aside;
         position: fixed !important; //redefine style

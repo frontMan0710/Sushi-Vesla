@@ -8,20 +8,6 @@ $(function () {
     })
 })
 $(function () {
-    var $target = $(".catalogueList .catalogueCard")
-    $(window).on("scroll", function() {
-        var scrollTop = $(window).scrollTop()
-        var windowHeight = $(window).height()
-        $target.each(function() {
-            var $el = $(this)
-            var targetOffset = $el.offset().top
-            if (scrollTop + windowHeight >= targetOffset && $el.css("visibility") === "hidden") {
-                $el.css("visibility", "visible").css("opacity", "1")
-            }
-        })
-    })
-})
-$(function () {
     $(".lazy").Lazy({
         bind: "event",
         threshold: 0,
