@@ -28,6 +28,7 @@
     font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
     border: 0;
+    outline: none;
     margin: 0;
     padding: 0;
 }

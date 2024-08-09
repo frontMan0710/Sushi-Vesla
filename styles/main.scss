@@ -259,9 +259,6 @@
           transition: right 0.4s;
         }
       }
-      a.openCart {
-        display: none;
-      }
       aside {
         @include aside;
         position: fixed !important; //redefine style
@@ -350,7 +347,7 @@
                 .addToCart {
                   @include buttonAnc;
                   white-space: nowrap;
-                  width: clamp(170px, 45.20vw, 325px);
+                  width: clamp(164px, 45.20vw, 325px);
                   font-size: clamp(10px, 1.94vw, 14px);
                   padding: 0 15px;
                 }
@@ -467,9 +464,6 @@
             }
           }
         }
-      }
-      button.openCart {
-        display: none;
       }
       a.openCart {
         @include openCart;

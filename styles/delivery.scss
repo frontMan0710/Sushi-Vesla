@@ -17,6 +17,19 @@
           }
           form {
             @include deliveryForm;
+            width: 100%;
+            .form-group {
+              width: max-content;
+              #street {
+                width: clamp(215px, 67.17vw, 483px);
+              }
+              #house {
+                width: clamp(41px, 12.79vw, 92px);
+              }
+              #entrance, #place, #codeOfDoor, #floor {
+                width: clamp(128px, 40.05vw, 288px);
+              }
+            }
           }
         }
       }

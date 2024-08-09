@@ -19,10 +19,12 @@
               font-size: 24px;
             }
             button {
+              background-color: var(--white);
+              color: var(--black);
               border: 1px var(--black) solid;
               opacity: 0.6;
               font-weight: 600;
-              width: 41.66vw;
+              width: calc(50% - 10px);
               height: 35px;
               font-size: 14px;
               border-radius: 10px;

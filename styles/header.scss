@@ -332,7 +332,7 @@
           font-weight: 600;
           line-height: 29px;
           width: 100%;
-          font-size: 24px;
+          font-size: clamp(20px, 6.4vw, 24px);
           &.active {
             color: var(--red);
           }

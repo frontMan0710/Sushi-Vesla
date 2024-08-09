@@ -14,13 +14,20 @@ $(function () {
     $(window).on("resize", function () {
         if ($(window).width() < 1120) {
             $(".openCart").fadeOut(0)
-            $(window).on("scroll", function () {
-                $(".openCart").fadeIn(500)
+            $(window).off("scroll.cartScroll")
+            $(window).on("scroll.cartScroll", function () {
+                if (!$(".openCart").is(":visible")) {
+                    $(".openCart").fadeIn(500)
+                }
             })
         } else {
             $(".openCart").remove()
         }
+        if ($(window).width() < 720) {
+            $("button.openCart").remove()
+        }
     })
+    $(window).trigger("resize")
 })
 $(function () {
     $(".lazy").Lazy({

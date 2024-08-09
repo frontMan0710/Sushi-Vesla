@@ -106,10 +106,17 @@
               display: flex;
               align-items: center;
               justify-content: space-between;
+              gap: 15px;
               width: 100%;
+              @media (max-width: 360px) {
+                gap: 8px;
+              }
               .itemPrice, .sauceName, .deviceName {
                 font-size: clamp(12px, 2.22vw, 16px);
                 &.sauceName, &.deviceName {
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
                   hyphens: auto;
                   width: clamp(100px, 17.38vw, 125px);
                 }
