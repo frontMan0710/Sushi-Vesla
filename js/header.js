@@ -27,10 +27,9 @@ $(function () {
     }
     let $header = $("header")
     if ($header.length) {
-        let headerHeight = $header.outerHeight(true)
-        $(".wrapper").css("padding-top", headerHeight + 20 + "px")
+        $(".wrapper").css("padding-top", $header.height() + 20 + "px")
         if ($(window).width() < 720) {
-            $(".wrapper").css("padding-top", headerHeight + "px")
+            $(".wrapper").css("padding-top", $header.height() + "px")
         }
     }
 })

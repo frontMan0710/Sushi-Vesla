@@ -1,4 +1,13 @@
 $(function () {
+    let $element = $(".openCart").fadeOut(0)
+    $(window).on("scroll", function() {
+        if (!$element.is(":visible")) {
+            $element.fadeIn(500)
+            $(window).off("scroll")
+        }
+    })
+})
+$(function () {
     var $target = $(".catalogueList .catalogueCard")
     $(window).on("scroll", function() {
         var scrollTop = $(window).scrollTop()
@@ -11,19 +20,6 @@ $(function () {
             }
         })
     })
-    $(window).on("resize", function() {
-        if ($(window).width() < 1120) {
-            $(".openCart").fadeOut(0)
-            $(window).on("scroll", function () {
-                if (!$(".openCart").is(":visible")) {
-                    $(".openCart").fadeIn(500)
-                    $(window).off("scroll")
-                }
-            })
-        } else {
-            $(".openCart").remove()
-        }
-    }).trigger("resize")
 })
 $(function () {
     $(".lazy").Lazy({
