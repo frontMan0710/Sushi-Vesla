@@ -396,6 +396,7 @@
   height: 55px;
   right: 15px;
   bottom: 50%;
+  transition: bottom 0.5s, top 0.5s;
 }
 @mixin inputField {
   border: 1px var(--grey-dark) solid;

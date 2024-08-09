@@ -18,6 +18,7 @@
               @include promoCode;
               position: relative;
               button {
+                background-color: inherit;
                 font-size: clamp(12px, 1.96vw, 14px);
               }
             }

@@ -103,6 +103,11 @@ a {
 .tabContent {
     display: none;
 }
+.wrapper, .mainContent, main {
+    height: auto;
+    max-height: max-content;
+    padding: 0;
+}
 @media screen and (max-width: 719px) {
     .contentBorder {
         width: 88.88vw;
