@@ -1,8 +1,10 @@
 $(function () {
     if ($(window).width() < 1440) {
         $(".headerNav").hide()
+        $("header").css({"overflow":"hidden", "max-height":"80px"})
         $(".burgerIcon").on("click", function () {
             $(this).toggleClass("active")
+            $("header").css({"overflow":"auto", "max-height":"auto"})
             $(".headerNav").slideToggle(300)
             if ($(window).width() < 720) {
                 $("body").toggleClass("lock")

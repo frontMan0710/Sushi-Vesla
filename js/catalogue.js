@@ -8,6 +8,12 @@ $(function () {
     })
 })
 $(function () {
+    $(window).on("resize", function () {
+        let windowHeight = $(window).height()
+        $(".openCart").css("bottom", (windowHeight / 2) + "px")
+    })
+})
+$(function () {
     $(".lazy").Lazy({
         bind: "event",
         threshold: 0,

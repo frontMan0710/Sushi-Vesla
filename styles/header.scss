@@ -306,8 +306,8 @@
         @include logo;
         position: absolute;
         cursor: default;
-        width: 107px;
-        height: 40px;
+        max-width: 107px;
+        max-height: 40px;
         left: 0;
         top: 50%;
         transform: translateY(-50%);
@@ -321,7 +321,7 @@
         position: fixed;
         z-index: var(--header-layer);
         height: 100vh;
-        max-height: 100lvh;
+        max-height: 100vh;
         width: 100vw;
         top: 80px;
         left: 0;

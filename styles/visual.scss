@@ -354,6 +354,7 @@
     background-color: inherit;
     color: var(--red);
     align-content: center;
+    -webkit-align-content: center;
     text-align: center;
     font-weight: 600;
     width: 100%;
@@ -395,7 +396,7 @@
   width: 55px;
   height: 55px;
   right: 15px;
-  bottom: 50%;
+  //bottom: 50vh;
   transition: bottom 0.5s, top 0.5s;
 }
 @mixin inputField {
