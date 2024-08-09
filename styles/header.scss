@@ -320,7 +320,8 @@
         gap: 10px;
         position: fixed;
         z-index: var(--header-layer);
-        height: 100lvh;
+        height: 100vh;
+        max-height: 100lvh;
         width: 100vw;
         top: 80px;
         left: 0;

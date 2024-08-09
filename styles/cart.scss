@@ -2,9 +2,6 @@
 @media screen and (max-width: 719px) {
   .wrapper {
     main {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
       .cart {
         .cartContent {
           .cartHeader {
@@ -88,6 +85,7 @@
         }
       }
       .sauces, .devices {
+        margin-top: 30px;
         .saucesContent, .devicesContent {
           display: flex;
           flex-direction: column;
@@ -135,6 +133,7 @@
       .orderDelivery {
         background-color: var(--grey-light);
         padding: 20px 0 25px 0;
+        margin-top: 30px;
         .deliveryContent {
           display: flex;
           flex-direction: column;

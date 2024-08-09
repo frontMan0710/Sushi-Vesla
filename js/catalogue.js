@@ -11,23 +11,19 @@ $(function () {
             }
         })
     })
-    $(window).on("resize", function () {
+    $(window).on("resize", function() {
         if ($(window).width() < 1120) {
             $(".openCart").fadeOut(0)
-            $(window).off("scroll.cartScroll")
-            $(window).on("scroll.cartScroll", function () {
+            $(window).on("scroll", function () {
                 if (!$(".openCart").is(":visible")) {
                     $(".openCart").fadeIn(500)
+                    $(window).off("scroll")
                 }
             })
         } else {
             $(".openCart").remove()
         }
-        if ($(window).width() < 720) {
-            $("button.openCart").remove()
-        }
-    })
-    $(window).trigger("resize")
+    }).trigger("resize")
 })
 $(function () {
     $(".lazy").Lazy({

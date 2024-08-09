@@ -2,9 +2,6 @@
 @media screen and (max-width: 719px) {
   .wrapper {
     main {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
       padding-top: 30px;
       .targets {
         .targetsContent {
@@ -67,6 +64,7 @@
         }
       }
       .pickup {
+        margin-top: 30px;
         .pickupContent {
           display: flex;
           flex-direction: column;
