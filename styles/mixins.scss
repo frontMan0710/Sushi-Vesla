@@ -1,3 +1,132 @@
+@import "vars.scss";
+@mixin header {
+  & * {
+    z-index: inherit;
+  }
+  background-color: $color-white;
+  position: fixed;
+  z-index: $ui4-layer;
+  width: 100%;
+  @media #{$ui-mobile-retina} {
+    margin-top: 0;
+    -webkit-margin-before: 0;
+  }
+}
+@mixin roundIcon {
+  background-color: $color-red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+@mixin burgerIcon {
+  @include roundIcon;
+  span {
+    background-color: $color-white;
+    position: relative;
+    width: 14px;
+    height: 3px;
+    margin-right: 4px;
+    transition: background-color 0.4s;
+    &::before, &::after {
+      content: "";
+      background-color: $color-white;
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      left: 0;
+      transition: 0.3s;
+    }
+    &::before {
+      bottom: -6px;
+    }
+    &::after {
+      top: -6px;
+    }
+  }
+  &.active {
+    span {
+      background-color: transparent;
+      transition: background-color 0.2s;
+      &::before, &::after {
+        left: -1px;
+        transition: 0.3s;
+      }
+      &::before {
+        transform: rotate(-45deg);
+        bottom: -0;
+      }
+      &::after {
+        transform: rotate(45deg);
+        top: -0;
+      }
+    }
+  }
+}
+@mixin logo {
+  display: flex;
+  cursor: default;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+@mixin headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  gap: 30px;
+}
+@mixin searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 50px;
+}
+@mixin window {
+  html, body {
+    scroll-behavior: smooth;
+    transition: height 0.3s;
+    -webkit-transition: height 0.3s;
+    &>body {
+      width: 100%;
+      height: 100%;
+      &.lock {
+        overflow: hidden;
+        @media #{$ui-mobile-retina} {
+          -webkit-overflow-scrolling: touch;
+          -ms-overflow-y: hidden;
+        }
+      }
+    }
+  }
+}
+@mixin main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: clamp(682px, 73.4375vw, 1410px);
+  & * {
+    z-index: $ui1-layer;
+  }
+  @media #{$ui-tablet} {
+    width: 100%;
+  }
+}
+@mixin wrapper {
+  @include webkit-reset;
+  background-color: $color-white-mixed;
+  width: 100%;
+  height: auto;
+  max-height: max-content;
+}
+@mixin webkit-reset {
+  width: 100%;
+  margin-top: 0;
+  -webkit-margin-before: 0;
+}
 @mixin section {
   display: flex;
   flex-direction: column;
@@ -15,15 +144,15 @@
     width: 37px;
     height: 37px;
     border-radius: 50%;
-    font-size: 24px;
-    @media screen and (max-width: 719px){
+    font-size: $font-24-static;
+    @media #{$ui-mobile} {
       &.decrease, &.increase {
-        background-color: var(--red);
-        color: var(--white);
+        background-color: $color-red;
+        color: $color-white;
         border: none;
         width: clamp(25px, 4.17vw, 30px);
         height: 40px;
-        font-size: 18px;
+        font-size: $font-18-static;
         border-radius: 5px;
       }
       &.decrease {
@@ -38,26 +167,26 @@
   }
   .counter {
     font-weight: 600;
-    font-size: 18px;
+    font-size: $font-18-static;
   }
   .decrease {
-    background-color: var(--white);
-    color: var(--red);
-    border: 3px var(--red) solid;
-    @media screen and (min-width: 720px) {
+    background-color: $color-white;
+    color: $color-red;
+    border: 3px $color-red solid;
+    @media #{$ui-tablet-min} {
       &.disable {
-        color: var(--grey);
-        border: 3px var(--grey) solid;
+        color: $color-lightgrey;
+        border: 3px $color-lightgrey solid;
       }
     }
   }
   .increase {
-    background-color: var(--red);
-    color: var(--white);
+    background-color: $color-red;
+    color: $color-white;
   }
 }
 @mixin roundIcon {
-  background-color: var(--red);
+  background-color: $color-red;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,21 +194,21 @@
 }
 @mixin hoverForRed {
   &:hover, &:focus {
-    background-color: var(--white);
-    border: 1px var(--red) solid;
-    color: var(--red);
+    background-color: $color-white;
+    border: 1px $color-red solid;
+    color: $color-red;
     transition: 0.2s background-color;
     &.disable {
       &:hover, &:focus {
-        background-color: var(--red);
-        color: var(--white);
+        background-color: $color-red;
+        color: $color-white;
       }
     }
   }
 }
 @mixin hoverShadow {
   &:hover {
-    box-shadow: 5px 5px 10px 0 var(--dark);
+    box-shadow: 5px 5px 10px 0 $color-darkgrey;
     transition: 0.3s;
   }
 }
@@ -89,16 +218,16 @@
   height: 35px;
   input {
     font-family: var(--medium);
-    color: var(--red);
-    border: 1px var(--red) solid;
+    color: $color-red;
+    border: 1px $color-red solid;
     outline: none;
     height: inherit;
     width: 100%;
     padding: 10px;
-    font-size: 14px;
+    font-size: $font-14-static;
     border-radius: 10px;
     &::placeholder {
-      color: var(--red);
+      color: $color-red;
       font-weight: 500;
       transition: 0.2s opacity;
     }
@@ -112,8 +241,8 @@
   button {
     @include hoverForRed;
     font-family: var(--semiBold);
-    background-color: var(--red);
-    color: var(--white);
+    background-color: $color-red;
+    color: $color-white;
     position: absolute;
     cursor: pointer;
     font-weight: 600;
@@ -121,17 +250,17 @@
     height: inherit;
     top: 0;
     right: 0;
-    font-size: 16px;
+    font-size: $font-16-static;
     border-radius: 10px;
     transition: 0.2s background-color;
-    @media screen and (max-width: 719px) {
-      background-color: var(--white);
-      color: var(--red);
-      border: 1px var(--red) solid;
+    @media #{$ui-mobile} {
+      background-color: $color-white;
+      color: $color-red;
+      border: 1px $color-red solid;
       cursor: default;
       &:focus {
-        background-color: var(--red);
-        color: var(--white);
+        background-color: $color-red;
+        color: $color-white;
         border: none;
         transition: 0.2s background-color;
       }
@@ -140,29 +269,29 @@
 }
 @mixin buttonAnc {
   @include hoverForRed;
-  background-color: var(--red);
-  color: var(--white);
+  background-color: $color-red;
+  color: $color-white;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   font-weight: 600;
   height: 40px;
-  font-size: 14px;
+  font-size: $font-16-static;
   border-radius: 10px;
   transition: 0.2s background-color, opacity;
   &.disable {
     opacity: 0.5;
     transition: opacity 0.2s;
   }
-  @media (max-width: 719px) {
+  @media #{$ui-mobile} {
     cursor: default;
   }
 }
 @mixin catalogueCard {
   @include hoverShadow;
-  background-color: var(--white);
-  border: 1px var(--dark-opacity) solid;
+  background-color: $color-white;
+  border: 1px $color-dark-opacity solid;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -180,7 +309,7 @@
   }
   span {
     font-weight: 600;
-    font-size: 16px;
+    font-size: $font-16-static;
   }
   .catalogueCardPanel {
     display: flex;
@@ -192,7 +321,7 @@
       text-align: left;
       font-weight: 600;
       width: 50%;
-      font-size: 16px;
+      font-size: $font-16-static;
       li {
         display: flex;
         align-items: flex-end;
@@ -203,7 +332,7 @@
           white-space: nowrap;
           text-overflow: ellipsis;
           font-weight: 500;
-          font-size: 12px;
+          font-size: $font-12-static;
         }
       }
     }
@@ -212,10 +341,10 @@
       width: 118px;
       .decrease {
         &.disable {
-          color: var(--black-opacity);
-          border: 3px var(--black-opacity) solid;
+          color: $color-dark;
+          border: 3px $color-dark solid;
           &~.counter {
-            color: var(--black-opacity);
+            color: $color-dark;
           }
         }
       }
@@ -223,14 +352,14 @@
   }
 }
 @mixin whiteButton {
-  background-color: var(--white);
-  color: var(--red);
-  border: 1px var(--red) solid;
+  background-color: $color-white;
+  color: $color-red;
+  border: 1px $color-red solid;
   display: inline-block;
   font-weight: 600;
-  font-size: 14px;
+  font-size: $font-14-static;
   border-radius: 10px;
-  @media (max-width: 719px) {
+  @media #{$ui-mobile} {
     cursor: default;
   }
 }
@@ -242,7 +371,7 @@
   span {
     font-weight: 600;
     line-height: 30px;
-    font-size: 16px;
+    font-size: $font-16-static;
   }
   a {
     @include buttonAnc;
@@ -255,7 +384,7 @@
   opacity: 0;
   max-height: 209px;
   width: clamp(200px, 41.72vw, 300px);
-  font-size: clamp(10px, 1.94vw, 14px);
+  font-size: $font-14-mobile;
   padding: 10px;
   right: -31px;
   bottom: 16px;
@@ -280,7 +409,7 @@
     opacity: 0;
     &:checked {
       & ~ .checkmark {
-        background-color: var(--red);
+        background-color: $color-red;
         transition: background-color 0.2s;
       }
     }
@@ -292,7 +421,7 @@
     }
   }
   .checkmark {
-    border: 2px var(--red) solid;
+    border: 2px $color-red solid;
     position: absolute;
     height: 15px;
     width: 15px;
@@ -314,7 +443,7 @@
     }
   }
   .checkmark {
-    border: 2px var(--red) solid;
+    border: 2px $color-red solid;
     position: absolute;
     width: 18px;
     height: 18px;
@@ -322,7 +451,7 @@
     left: 0;
     &::after {
       content: "";
-      border: solid var(--red);
+      border: solid $color-red;
       border-width: 0 2px 2px 0;
       position: absolute;
       display: none;
@@ -344,22 +473,23 @@
     height: 0;
     &:checked {
       &~.checkButton {
-        background-color: var(--red);
-        color: var(--white);
+        background-color: $color-red;
+        color: $color-white;
         transition: background-color 0.3s, color 0.3s;
       }
     }
   }
   .checkButton {
     background-color: inherit;
-    color: var(--red);
+    color: $color-red;
     align-content: center;
     -webkit-align-content: center;
     text-align: center;
+    line-height: 100%;
     font-weight: 600;
     width: 100%;
     height: 100%;
-    font-size: 14px;
+    font-size: $font-14-static;
   }
 }
 @mixin timeSetButton {
@@ -370,7 +500,7 @@
 @mixin collapsibleArrow {
   position: relative;
   font-weight: 400;
-  font-size: 18px;
+  font-size: $font-18-static;
   margin-right: 30px;
   cursor: pointer;
   &::after {
@@ -389,18 +519,18 @@
 }
 @mixin openCart {
   @include roundIcon;
-  box-shadow: 0 4px 50px 0 var(--red-opacity);
-  z-index: var(--semantic-layer);
+  box-shadow: 0 4px 50px 0 $color-darkred;
+  z-index: $ui3-layer;
   position: fixed;
   cursor: default;
   width: 55px;
   height: 55px;
   right: 15px;
-  //bottom: 50vh;
-  transition: bottom 0.5s, top 0.5s;
+  bottom: calc(50vh - (55px / 2));
+  transition: bottom 0.3s, top 0.3s;
 }
 @mixin inputField {
-  border: 1px var(--grey-dark) solid;
+  border: 1px $color-grey solid;
   outline: none;
   padding-left: 15px;
   border-radius: 4px;
@@ -434,15 +564,15 @@
     }
     .categoryCard {
       @include hoverShadow;
-      background-color: var(--white);
-      border: 1px var(--dark-opacity) solid;
+      background-color: $color-white;
+      border: 1px $color-dark-opacity solid;
       width: clamp(120px, 7.18vw, 138px);
       height: 190px;
       padding: 19px;
       border-radius: 20px;
       &.active {
-        background-color: var(--red);
-        color: var(--white);
+        background-color: $color-red;
+        color: $color-white;
         a {
           font-weight: 600;
         }
@@ -454,27 +584,27 @@
         text-align: center;
         cursor: pointer;
         gap: 20px;
-        font-size: clamp(14px, 0.83vw, 16px);
+        font-size: $font-16-desktop;
       }
     }
   }
-  @media (max-width: 719px) {
+  @media #{$ui-mobile} {
     height: 60px;
     &::before {
       content: "→";
       position: absolute;
-      z-index: var(--header-layer);
+      z-index: $ui2-layer;
       font-weight: 500;
-      font-size: 16px;
+      font-size: $font-16-static;
       right: 0;
       top: 50%;
       transform: translateY(-50%);
     }
     &::after {
       content: "";
-      box-shadow: 0 0 50px 50px var(--grey-light);
+      box-shadow: 0 0 50px 50px $color-white-mixed;
       position: absolute;
-      z-index: var(--semantic-layer);
+      z-index: $ui1-layer;
       height: 100%;
       width: 10px;
       right: -10px;
@@ -485,16 +615,16 @@
     }
     .categoryListMobile {
       li {
-        color: var(--black);
+        color: $color-black;
         display: flex;
         align-items: center;
         text-align: center;
         font-weight: 500;
-        font-size: 14px;
+        font-size: $font-14-static;
         height: 100%;
         max-width: max-content;
         &.active {
-          color: var(--red);
+          color: $color-red;
           white-space: nowrap;
         }
       }
@@ -503,8 +633,10 @@
 }
 @mixin aside {
   font-family: var(--medium);
+  display: flex;
+  flex-direction: column;
   position: sticky;
-  z-index: unset;
+  z-index: $ui3-layer;
   width: 360px;
   height: 100%;
   top: 87px;
@@ -515,8 +647,8 @@
     @include promoCode;
   }
   .cart {
-    background-color: var(--white);
-    box-shadow: 10px 10px 10px 0 var(--dark-opacity);
+    background-color: $color-white;
+    box-shadow: 10px 10px 10px 0 $color-dark-opacity;
     width: 100%;
     height: calc(100vh - 202px);
     padding: 20px 15px;
@@ -525,7 +657,7 @@
     h2 {
       font-weight: 700;
       line-height: 22px;
-      font-size: 18px;
+      font-size: $font-18-static;
       margin: 0 0 15px 10px;
     }
     .cartList {
@@ -534,11 +666,11 @@
       text-align: left;
       overflow-y: scroll;
       &::-webkit-scrollbar {
-        background-color: var(--white);
+        background-color: $color-white;
         width: 5px;
       }
       &::-webkit-scrollbar-thumb {
-        background-color: var(--grey);
+        background-color: $color-lightgrey;
         border-radius: 10px;
       }
       max-height: calc(100% - 151px);
@@ -552,11 +684,11 @@
         }
         a {
           height: 50px;
-          font-size: 18px;
+          font-size: $font-18-static;
         }
       }
       .cartItem {
-        background-color: var(--grey-light);
+        background-color: $color-white-mixed;
         display: flex;
         flex-direction: column;
         position: relative;
@@ -569,11 +701,11 @@
           .itemName, {
             font-family: var(--bold);
             font-weight: 700;
-            font-size: 18px;
+            font-size: $font-18-static;
             .itemWeight {
               font-family: var(--medium);
               font-weight: 500;
-              font-size: 14px;
+              font-size: $font-14-static;
             }
           }
           .remove {
@@ -588,17 +720,17 @@
           white-space: normal;
           font-weight: 500;
           width: 180px;
-          font-size: 14px;
+          font-size: $font-14-static;
         }
         ul {
           li {
             font-weight: 500;
-            font-size: 14px;
+            font-size: $font-14-static;
           }
         }
         .itemPrice {
           font-weight: 700;
-          font-size: 18px;
+          font-size: $font-18-static;
         }
         .itemChanges {
           @include itemChanges;
@@ -616,7 +748,7 @@
       margin-top: 15px;
       padding-top: 15px;
       .totalPrice {
-        color: var(--black);
+        color: $color-black;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -630,7 +762,7 @@
         @include buttonAnc;
         width: 100%;
         height: 50px;
-        font-size: 18px;
+        font-size: $font-18-static;
         &:hover {
           span {
             &::before {
@@ -656,15 +788,6 @@
     }
   }
 }
-@mixin main {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  width: clamp(682px, 73.4375vw, 1410px);
-  @media (max-width: 1119px) {
-    width: 100%;
-  }
-}
 @mixin deliveryForm {
   display: flex;
   justify-content: space-between;
@@ -680,7 +803,7 @@
     }
     label {
       font-weight: 600;
-      font-size: 12px;
+      font-size: $font-12-static;
       &::after {
         content: "*";
       }
@@ -700,7 +823,7 @@
       }
     }
     input, textarea {
-      border: 1px var(--grey-dark) solid;
+      border: 1px $color-grey solid;
       border-radius: 4px;
       padding: 16px;
       &:focus {
@@ -720,7 +843,7 @@
   padding: 20px 15px;
   span {
     line-height: 15px;
-    font-size: clamp(12px, 1.94vw, 14px);
+    font-size: $font-14-mobile;
     &.targetName, &.targetDeliveryTime {
       font-weight: 500;
     }
@@ -732,9 +855,9 @@
     right: 30px;
     .targetInfo {
       @include targetAlert;
-      background-color: var(--white);
-      color: var(--red);
-      border: 2px var(--red) solid;
+      background-color: $color-white;
+      color: $color-red;
+      border: 2px $color-red solid;
     }
   }
 }

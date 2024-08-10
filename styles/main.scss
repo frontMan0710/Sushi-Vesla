@@ -1,7 +1,9 @@
-@import "visual";
-@media screen and (min-width: 1120px) {
+@import "mixins";
+@import "vars";
+@media #{$ui-desktop-interval} {
+  @include window;
   .wrapper {
-    background-color: var(--grey-light);
+    @include wrapper;
     padding-bottom: 150px;
     .mainContent {
       display: flex;
@@ -30,15 +32,15 @@
             .catalogueCard {
               @include catalogueCard;
               .modalWrapper {
-                background-color: var(--black-opacity);
+                background-color: $color-dark;
                 position: fixed;
-                z-index: var(--popup-layer);
+                z-index: $ui5-layer;
                 width: 100%;
                 height: 100%;
                 top: 0;
                 left: 0;
                 .modal {
-                  background-color: var(--white);
+                  background-color: $color-white;
                   display: flex;
                   align-items: center;
                   justify-content: space-between;
@@ -81,11 +83,11 @@
                       gap: 15px;
                       .prodName {
                         font-weight: 700;
-                        font-size: clamp(18px, 1.25vw, 24px);
+                        font-size: $font-24-desktop;
                       }
                       .prodDesc, .weight, .energyValue span, .energyValue li span {
                         font-weight: 400;
-                        font-size: clamp(12px, 0.72vw, 14px);
+                        font-size: $font-14-desktop;
                       }
                       .energyValue {
                         display: flex;
@@ -127,9 +129,10 @@
     }
   }
 }
-@media screen and (max-width: 1119px) and (min-width: 720px) {
+@media #{$ui-tablet-interval} {
+  @include window;
   .wrapper {
-    background-color: var(--grey-light);
+    @include wrapper;
     padding-bottom: 150px;
     .mainContent {
       display: flex;
@@ -159,15 +162,15 @@
             .catalogueCard {
               @include catalogueCard;
               .modalWrapper {
-                background-color: var(--black-opacity);
+                background-color: $color-dark;
                 position: fixed;
-                z-index: var(--popup-layer);
+                z-index: $ui5-layer;
                 width: 100%;
                 height: 100%;
                 top: 0;
                 left: 0;
                 .modal {
-                  background-color: var(--white);
+                  background-color: $color-white;
                   display: flex;
                   align-items: center;
                   justify-content: space-between;
@@ -210,11 +213,11 @@
                       gap: 15px;
                       .prodName {
                         font-weight: 700;
-                        font-size: clamp(18px, 1.25vw, 24px);
+                        font-size: $font-24-desktop;
                       }
                       .prodDesc, .weight, .energyValue span, .energyValue li span {
                         font-weight: 400;
-                        font-size: clamp(12px, 0.72vw, 14px);
+                        font-size: $font-14-desktop;
                       }
                       .energyValue {
                         display: flex;
@@ -263,7 +266,6 @@
       aside {
         @include aside;
         position: fixed !important; //redefine style
-        z-index: var(--header-layer);
         top: 125px !important; //redefine style
         right: -360px;
         transition: right 0.3s;
@@ -282,9 +284,10 @@
     }
   }
 }
-@media screen and (max-width: 719px) and (min-width: 320px) {
+@media #{$ui-mobile-interval} {
+  @include window;
   .wrapper {
-    background-color: var(--grey-light);
+    @include wrapper;
     padding-bottom: 80px;
     .mainContent {
       main {
@@ -297,7 +300,7 @@
         .promoCodeMobile {
           @include promoCode;
           position: relative;
-          font-size: clamp(12px, 2.22vw, 16px);
+          font-size: $font-16-mobile;
           button {
             width: max-content;
             font-size: inherit;
@@ -305,11 +308,11 @@
             border-radius: 5px;
           }
           input {
-            color: var(--black);
+            color: $color-black;
             font-size: inherit;
             border-radius: 5px;
             &::placeholder {
-              color: var(--black-opacity);
+              color: $color-dark;
             }
           }
         }
@@ -338,7 +341,7 @@
                 width: 100%;
                 .prodNameMobile {
                   font-weight: 600;
-                  font-size: clamp(14px, 2.22vw, 16px);
+                  font-size: $font-16-mobile;
                 }
                 .prodDesc {
                   text-align: left;
@@ -349,7 +352,7 @@
                   @include buttonAnc;
                   white-space: nowrap;
                   width: clamp(164px, 45.20vw, 325px);
-                  font-size: clamp(10px, 1.94vw, 14px);
+                  font-size: $font-14-mobile;
                   padding: 0 15px;
                 }
               }
@@ -359,10 +362,10 @@
                 }
               }
               .modalWrapper {
-                background-color: var(--white);
+                background-color: $color-white;
                 position: fixed;
                 overflow: auto;
-                z-index: var(--popup-layer);
+                z-index: $ui5-layer;
                 width: 100%;
                 height: 100%;
                 top: 0;
@@ -380,7 +383,7 @@
                   margin: 0 auto;
                   .mobileProdName {
                     font-weight: 600;
-                    font-size: 24px;
+                    font-size: $font-24-mobile;
                   }
                   .mobileProdName {
                     width: 100%;
@@ -441,10 +444,10 @@
                       font-weight: 600;
                       line-height: 40px;
                       width: 100%;
-                      font-size: 24px;
+                      font-size: $font-24-mobile;
                       margin: 0 auto;
                       span {
-                        font-size: 18px;
+                        font-size: $font-18-static;
                       }
                     }
                     .mobileAddCart {

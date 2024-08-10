@@ -1,15 +1,19 @@
 $(function () {
     if ($(window).width() < 1440) {
         $(".headerNav").hide()
-        $("header").css({"overflow":"hidden", "max-height":"80px"})
         $(".burgerIcon").on("click", function () {
             $(this).toggleClass("active")
-            $("header").css({"overflow":"auto", "max-height":"auto"})
             $(".headerNav").slideToggle(300)
             if ($(window).width() < 720) {
                 $("body").toggleClass("lock")
             }
         })
+        if (/iPhone/i.test(navigator.userAgent)) {
+            $("header").css({"overflow-y":"hidden", "max-height":"80px"})
+            $(".burgerIcon").on("click", function () {
+                $("header").css({"overflow-y":"auto", "max-height":"auto"})
+            })
+        }
         $(".phone").on("click", function () {
             if ($(window).width() >= 720) {
                 $(".phoneNumbers").toggleClass("active")

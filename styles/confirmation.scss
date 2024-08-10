@@ -1,5 +1,6 @@
-@import "visual";
-@media screen and (min-width: 1120px) {
+@import "mixins";
+@import "vars";
+@media #{$ui-desktop-interval} {
   .wrapper {
     background-color: var(--grey-light);
     padding-bottom: 150px;
@@ -113,11 +114,11 @@
                     border: 1px var(--grey-dark) solid;
                     outline: none;
                     width: 100%;
-                    font-size: clamp(14px, 0.83vw, 16px);
+                    font-size: $font-16-desktop;
                     padding-left: 15px;
                     border-radius: 4px;
                     &::placeholder {
-                      font-size: clamp(12px, 0.83vw, 16px);
+                      font-size: $font-16-desktop;
                     }
                   }
                 }
@@ -134,7 +135,7 @@
                   padding-left: 15px;
                   span {
                     font-weight: 500;
-                    font-size: clamp(14px, 0.83vw, 16px);
+                    font-size: $font-16-desktop;
                   }
                   label {
                     @include radioButton;
@@ -153,7 +154,7 @@
                   width: max-content;
                   label {
                     font-weight: 600;
-                    font-size: clamp(14px, 0.83vw, 16px);
+                    font-size: $font-16-desktop;
                   }
                   #street {
                     width: clamp(200px, 27.08vw, 520px);
@@ -170,7 +171,7 @@
                 .targetItem {
                   @include pickupTarget;
                   width: 100%;
-                  font-size: clamp(14px, 0.83vw, 16px);
+                  font-size: $font-16-desktop;
                 }
               }
               .checkout {
@@ -188,7 +189,7 @@
     }
   }
 }
-@media screen and (max-width: 1119px) and (min-width: 720px) {
+@media #{$ui-tablet-interval} {
   .wrapper {
     background-color: var(--grey-light);
     padding-bottom: 150px;
@@ -264,7 +265,7 @@
                   input {
                     @include inputField;
                     width: 100%;
-                    font-size: 14px;
+                    font-size: $font-14-static;
                     &::placeholder {
                       font-size: 12px;
                     }
@@ -284,7 +285,7 @@
                   padding-left: 15px;
                   span {
                     font-weight: 500;
-                    font-size: clamp(14px, 0.83vw, 16px);
+                    font-size: $font-16-desktop;
                   }
                   label {
                     @include radioButton;
@@ -304,7 +305,7 @@
                   width: max-content;
                   label {
                     font-weight: 600;
-                    font-size: 14px;
+                    font-size: $font-14-static;
                   }
                   #street, #house, #entrance, #place, #codeOfDoor, #floor {
                     width: clamp(327px, 45.39vw, 508px);
@@ -320,7 +321,7 @@
                 .targetItem {
                   @include pickupTarget;
                   width: calc(50% - 10px);
-                  font-size: 14px;
+                  font-size: $font-14-static;
                 }
               }
               .checkout {
@@ -344,7 +345,6 @@
       aside {
         @include aside;
         position: fixed !important; //redefine style
-        z-index: var(--header-layer);
         top: 125px !important; //redefine style
         right: -360px;
         transition: right 0.3s;
@@ -363,7 +363,7 @@
     }
   }
 }
-@media screen and (max-width: 719px) {
+@media #{$ui-mobile-interval} {
   .wrapper {
     .mainContent {
       main {
@@ -376,7 +376,7 @@
           .titleContent {
             h1 {
               font-weight: 600;
-              font-size: 24px;
+              font-size: $font-24-static;
             }
           }
         }
@@ -395,7 +395,7 @@
               width: 100%;
               span {
                 font-weight: 500;
-                font-size: 18px;
+                font-size: $font-18-static;
               }
             }
             .cartList {
@@ -419,16 +419,16 @@
                   font-weight: 600;
                   .itemName {
                     max-width: 195px;
-                    font-size: clamp(12px, 1.94vw, 14px);
+                    font-size: $font-14-mobile;
                   }
                   .itemComposition {
-                    font-size: clamp(12px, 1.94vw, 14px);
+                    font-size: $font-14-mobile;
                   }
                 }
                 .itemPrice {
                   white-space: nowrap;
                   font-weight: 600;
-                  font-size: clamp(12px, 1.94vw, 14px);
+                  font-size: $font-14-mobile;
                 }
                 .removeItem, .itemChanges {
                   position: absolute;
@@ -452,19 +452,19 @@
               text-align: center;
               gap: 15px;
               font-weight: 600;
-              font-size: 16px;
+              font-size: $font-16-static;
               padding-top: 20px;
               .orderSum {
-                font-size: clamp(12px, 1.94vw, 14px);
+                font-size: $font-14-mobile;
               }
               .promoCode {
                 @include promoCode;
                 position: relative;
                 input {
-                  font-size: clamp(12px, 1.94vw, 14px);
+                  font-size: $font-14-mobile;
                 }
                 button {
-                  font-size: clamp(12px, 1.96vw, 14px);
+                  font-size: $font-14-mobile;
                   width: 108px;
                 }
               }
@@ -496,7 +496,7 @@
                 width: 100%;
                 span {
                   font-weight: 500;
-                  font-size: clamp(12px, 1.94vw, 14px);
+                  font-size: $font-14-mobile;
                 }
                 label {
                   @include radioButton;
@@ -519,7 +519,7 @@
               position: relative;
               span {
                 font-weight: 600;
-                font-size: clamp(12px, 1.94vw, 14px);
+                font-size: $font-14-mobile;
               }
               .editData {
                 position: absolute;

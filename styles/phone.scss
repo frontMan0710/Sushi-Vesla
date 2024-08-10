@@ -1,5 +1,6 @@
-@import "visual";
-@media screen and (max-width: 719px) {
+@import "mixins";
+@import "vars";
+@media screen and #{$ui-mobile} {
   .wrapper {
     main {
       display: flex;
@@ -15,7 +16,7 @@
           p {
             text-align: center;
             font-weight: 600;
-            font-size: 16px;
+            font-size: $font-16-static;
           }
           form {
             display: flex;
@@ -41,7 +42,7 @@
               align-content: center;
               text-align: center;
               font-weight: 600;
-              font-size: 14px;
+              font-size: $font-14-static;
             }
             button {
               @include buttonAnc;

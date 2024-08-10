@@ -1,5 +1,6 @@
-@import "visual";
-@media screen and (max-width: 719px) {
+@import "mixins";
+@import "vars";
+@media screen and #{$ui-mobile} {
   .wrapper {
     main {
       display: flex;
@@ -10,7 +11,7 @@
         .titleContent {
           h1 {
             font-weight: 600;
-            font-size: 24px;
+            font-size: $font-24-static;
           }
         }
       }
@@ -30,7 +31,7 @@
             width: 100%;
             span {
               font-weight: 500;
-              font-size: clamp(12px, 1.94vw, 14px);
+              font-size: $font-14-mobile;
             }
             label {
               @include radioButton;
@@ -85,7 +86,7 @@
                   font-weight: 500;
                   height: 35px;
                   width: auto;
-                  font-size: clamp(12px, 1.94vw, 14px);
+                  font-size: $font-14-mobile;
                   padding: 5px 10px;
                   border-radius: 5px;
                 }
@@ -108,7 +109,7 @@
           .conditions {
             font-weight: 500;
             width: 100%;
-            font-size: 14px;
+            font-size: $font-14-static;
             a {
               color: var(--red);
             }

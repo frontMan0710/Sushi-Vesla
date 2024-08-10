@@ -1,0 +1,56 @@
+
+$ui-desktop-min: "(min-width: 1120px)";
+$ui-desktop-interval: "screen and (min-width: 1120px)";
+
+$ui-tablet: "(max-width: 1119px)";
+$ui-tablet-min: "(min-width: 720px)";
+$ui-tablet-interval: "screen and (max-width: 1119px) and (min-width: 721px)";
+
+$ui-mobile: "(max-width: 719px)";
+$ui-mobile-min: "(min-width: 320px)";
+$ui-mobile-interval: "only screen and (max-width: 719px) and (min-width: 320px)";
+
+$ui-mouse-device: "(hover: hover) and (pointer: fine)";
+$ui-touch-device: "(hover: none) and (pointer: coarse)";
+
+$ui-mobile-retina: "(-webkit-min-device-pixel-ratio: 2)";
+
+
+$color-black: rgba(0, 0, 0, 1);
+$color-dark: rgba(0, 0, 0, 0.3);
+$color-darkgrey: rgba(0, 0, 0, 0.1);
+$color-dark-opacity: rgba(0, 0, 0, 0.05);
+$color-red: rgba(227, 30, 36, 1);
+$color-darkred: rgba(227, 30, 36, 0.5);
+$color-white: rgba(255, 255, 255, 1);
+$color-white-mixed: rgba(248, 249, 252, 1);
+$color-grey: rgba(161, 164, 177, 1);
+$color-lightgrey: rgba(229, 229, 229, 1);
+
+$ui1-layer: 1; // По умолчанию
+$ui2-layer: 2; // Для перекрывающих элементов в общем потоке
+$ui3-layer: 3; // Для сайдбара
+$ui4-layer: 4; // Для хедера
+$ui5-layer: 5; // Для модалов
+
+$font-24-static: 24px;
+$font-24-desktop: clamp(18px, 1.25vw, 24px);
+$font-24-tablet: clamp(16px, 1.66vw, 24px);
+$font-24-mobile: clamp(20px, 6.4vw, 24px);
+
+$font-18-static: 18px;
+$font-18-desktop: clamp(16px, 0.93vw, 18px);
+$font-18-tablet: clamp(16px, 1.6vw, 18px);
+$font-18-mobile: clamp(16px, 2.5vw, 18px);
+
+$font-16-static: 16px;
+$font-16-desktop: clamp(14px, 0.83vw, 16px);
+$font-16-tablet: clamp(14px, 1.42vw, 16px);
+$font-16-mobile: clamp(12px, 2.22vw, 16px);
+
+$font-14-static: 14px;
+$font-14-desktop: clamp(12px, 0.72vw, 14px);
+$font-14-desktop: clamp(12px, 1.25vw, 14px);
+$font-14-mobile: clamp(12px, 1.94vw, 14px);
+
+$font-12-static: 12px;

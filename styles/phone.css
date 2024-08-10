@@ -64,9 +64,9 @@
     border-radius: 10px;
   }
   .wrapper main .phone .phoneContent form a {
-    background-color: var(--white);
-    color: var(--red);
-    border: 1px var(--red) solid;
+    background-color: rgb(255, 255, 255);
+    color: rgb(227, 30, 36);
+    border: 1px rgb(227, 30, 36) solid;
     display: inline-block;
     font-weight: 600;
     font-size: 14px;
@@ -85,8 +85,8 @@
 }
 @media screen and (max-width: 719px) {
   .wrapper main .phone .phoneContent form button {
-    background-color: var(--red);
-    color: var(--white);
+    background-color: rgb(227, 30, 36);
+    color: rgb(255, 255, 255);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -99,21 +99,21 @@
     cursor: pointer;
     font-weight: 600;
     height: 40px;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 10px;
     -webkit-transition: 0.2s background-color, opacity;
     transition: 0.2s background-color, opacity;
   }
   .wrapper main .phone .phoneContent form button:hover, .wrapper main .phone .phoneContent form button:focus {
-    background-color: var(--white);
-    border: 1px var(--red) solid;
-    color: var(--red);
+    background-color: rgb(255, 255, 255);
+    border: 1px rgb(227, 30, 36) solid;
+    color: rgb(227, 30, 36);
     -webkit-transition: 0.2s background-color;
     transition: 0.2s background-color;
   }
   .wrapper main .phone .phoneContent form button:hover.disable:hover, .wrapper main .phone .phoneContent form button:hover.disable:focus, .wrapper main .phone .phoneContent form button:focus.disable:hover, .wrapper main .phone .phoneContent form button:focus.disable:focus {
-    background-color: var(--red);
-    color: var(--white);
+    background-color: rgb(227, 30, 36);
+    color: rgb(255, 255, 255);
   }
   .wrapper main .phone .phoneContent form button.disable {
     opacity: 0.5;

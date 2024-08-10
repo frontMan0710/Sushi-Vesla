@@ -1,5 +1,6 @@
-@import "visual";
-@media screen and (max-width: 719px) {
+@import "mixins";
+@import "vars";
+@media screen and #{$ui-mobile} {
   .wrapper {
     main {
       .cart {
@@ -12,14 +13,14 @@
             height: 135px;
             h1 {
               font-weight: 600;
-              font-size: 24px;
+              font-size: $font-24-static;
             }
             .promoCode {
               @include promoCode;
               position: relative;
               button {
                 background-color: inherit;
-                font-size: clamp(12px, 1.96vw, 14px);
+                font-size: $font-14-mobile;
               }
             }
           }
@@ -51,13 +52,13 @@
                   font-size: clamp(18px, 3.05vw, 22px);
                 }
                 .itemComposition {
-                  font-size: clamp(12px, 1.94vw, 14px);
+                  font-size: $font-14-mobile;
                 }
               }
               .itemPrice {
                 white-space: nowrap;
                 font-weight: 600;
-                font-size: clmap(16px, 2.5vw, 18px);
+                font-size: $font-18-mobile;
               }
               .removeItem, .itemChanges {
                 position: absolute;
@@ -80,7 +81,7 @@
             text-align: center;
             gap: 15px;
             font-weight: 600;
-            font-size: 16px;
+            font-size: $font-16-static;
             padding-top: 15px;
           }
         }
@@ -111,7 +112,7 @@
                 gap: 8px;
               }
               .itemPrice, .sauceName, .deviceName {
-                font-size: clamp(12px, 2.22vw, 16px);
+                font-size: $font-16-mobile;
                 &.sauceName, &.deviceName {
                   overflow: hidden;
                   white-space: nowrap;
