@@ -108,9 +108,6 @@
   flex-direction: column;
   gap: 40px;
   width: clamp(682px, 73.4375vw, 1410px);
-  & * {
-    z-index: $ui1-layer;
-  }
   @media #{$ui-tablet} {
     width: 100%;
   }
@@ -121,6 +118,15 @@
   width: 100%;
   height: auto;
   max-height: max-content;
+  @media #{$ui-header} {
+    padding-top: 142px;
+  }
+  @media #{$ui-header-interval} {
+    padding-top: 110px;
+  }
+  @media #{$ui-mobile-interval} {
+    padding-top: 80px;
+  }
 }
 @mixin webkit-reset {
   width: 100%;

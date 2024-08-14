@@ -1,6 +1,7 @@
 @import "mixins";
 @import "vars";
 @media screen and #{$ui-mobile-min} {
+  @include window;
   .contentWrapper {
     display: flex;
     align-items: center;

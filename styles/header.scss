@@ -1,5 +1,6 @@
 @import "mixins";
-@media screen and (min-width: 1440px) {
+@import "vars";
+@media screen and #{$ui-header} {
   header {
     @include header;
     height: 122px;
@@ -29,6 +30,9 @@
           font-size: clamp(16px, 1.25vw, 24px);
           &.active {
             border-bottom: 2px var(--red) solid;
+          }
+          &.callUs {
+            display: none;
           }
         }
       }
@@ -93,16 +97,19 @@
           }
         }
       }
+      button.burgerIcon {
+        display: none;
+      }
     }
   }
 }
-@media screen and (max-width: 1439px) and (min-width: 720px) {
+@media screen and #{$ui-header-interval} {
   header {
     @include header;
     height: 90px;
     .headerContent {
       @include headerContent;
-      border-bottom: 1px var(--grey) solid;
+      border-bottom: 1px $color-lightgrey solid;
       .logo {
         @include logo;
         position: absolute;
@@ -113,15 +120,22 @@
       }
       .headerNav {
         background-color: $color-white;
+        color: $color-white;
         display: flex;
         align-items: center;
+        &.active {
+          color: $color-black;
+          top: 90px;
+          transition: top 0.3s, color 0.9s;
+        }
         position: absolute;
-        z-index: inherit;
+        z-index: $ui3-layer;
         gap: 32px;
         height: 90px;
         width: 100%;
-        top: 90px;
+        top: -90px;
         left: 0;
+        transition: top 0.3s;
         &::before, &::after {
           content: "";
           position: absolute;
@@ -137,7 +151,7 @@
         }
         li {
           font-family: var(--normal);
-          color: $color-black;
+          color: inherit;
           height: inherit;
           align-content: center;
           font-weight: 400;
@@ -146,6 +160,9 @@
           font-size: clamp(16px, 1.66vw, 24px);
           &.active {
             border-bottom: 2px var(--red) solid;
+          }
+          &.callUs {
+            display: none;
           }
         }
       }
@@ -190,31 +207,6 @@
         }
         .search {
           display: none;
-          &.active {
-            background-color: $color-lightgrey;
-            display: flex;
-            overflow: hidden;
-            width: 280px;
-            height: 50px;
-            border-radius: 20px;
-            button, input {
-              background-color: inherit;
-              height: inherit;
-            }
-            button {
-              @include searchButton;
-            }
-            input {
-              font-family: var(--normal);
-              color: $color-black;
-              outline: none;
-              font-size: $font-18-static;
-              padding-left: 12px;
-              &::placeholder {
-                color: $color-dark;
-              }
-            }
-          }
         }
       }
       .burgerIcon {
@@ -225,22 +217,19 @@
     }
   }
 }
-@media screen and (max-width: 719px) and (min-width: 320px) {
+@media #{$ui-mobile-interval} {
   header {
     @include header;
-    box-shadow: 0 4px 10px 0 var(--dark);
+    box-shadow: 0 4px 10px 0 $color-darkgrey;
     height: 80px;
     .headerContent {
       @include headerContent;
+      justify-content: space-between;
       .logo {
         @include logo;
-        position: absolute;
         cursor: default;
         max-width: 107px;
         max-height: 40px;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
       }
       .headerNav {
         background-color: $color-white;
@@ -249,26 +238,31 @@
         flex-direction: column;
         gap: 10px;
         position: fixed;
-        z-index: var(--header-layer);
-        height: 100vh;
-        max-height: 100vh;
+        overflow: hidden;
+        z-index: inherit;
         width: 100vw;
-        top: 80px;
+        height: 0;
+        max-height: 100vh;
         left: 0;
-        padding: 30px 0 30px 0;
+        top: 80px;
+        transition: height 0.3s ease-in, padding-top 0.3s, padding-bottom 0.3s;
+        &.active {
+          height: 100vh;
+          padding: 30px 0 30px 0;
+          transition: height 0.6s ease-out, padding-top 0.3s, padding-bottom 0.3s;
+        }
         li {
-          font-family: var(--semiBold);
           color: $color-black;
           text-align: center;
           font-weight: 600;
           line-height: 29px;
           width: 100%;
-          font-size: clamp(20px, 6.4vw, 24px);
+          font-size: $font-24-mobile;
           &.active {
             color: $color-red;
           }
           &:last-child {
-            border-top: 2px var(--red) solid;
+            border-top: 2px $color-red solid;
             padding-bottom: 20px;
           }
           &.callUs {

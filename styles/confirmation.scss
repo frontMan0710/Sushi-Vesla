@@ -1,7 +1,9 @@
 @import "mixins";
 @import "vars";
 @media #{$ui-desktop-interval} {
+  @include window;
   .wrapper {
+    @include wrapper;
     background-color: var(--grey-light);
     padding-bottom: 150px;
     .mainContent {
@@ -182,6 +184,13 @@
             }
           }
         }
+
+        .confirmTitle, .cart, .orderConfirm {
+          display: none;
+        }
+      }
+      .openCart {
+        display: none;
       }
       aside {
         @include aside;
@@ -190,7 +199,9 @@
   }
 }
 @media #{$ui-tablet-interval} {
+  @include window;
   .wrapper {
+    @include wrapper;
     background-color: var(--grey-light);
     padding-bottom: 150px;
     .mainContent {
@@ -332,6 +343,10 @@
             }
           }
         }
+
+        .confirmTitle, .cart, .orderConfirm {
+          display: none;
+        }
       }
       .openCart {
         @include openCart;
@@ -364,13 +379,19 @@
   }
 }
 @media #{$ui-mobile-interval} {
+  @include window;
   .wrapper {
+    @include wrapper;
     .mainContent {
       main {
         display: flex;
         flex-direction: column;
         gap: 30px;
         padding: 20px 0 25px 0;
+        .timeSet, .categories, .confirmation {
+          display: none;
+        }
+
         .confirmTitle {
           margin-top: 30px;
           .titleContent {
@@ -541,6 +562,9 @@
       }
     }
     .openCart {
+      display: none;
+    }
+    aside {
       display: none;
     }
   }

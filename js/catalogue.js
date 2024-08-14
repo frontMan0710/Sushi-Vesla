@@ -1,11 +1,13 @@
 $(function () {
-    let $element = $(".openCart").fadeOut(0)
-    $(window).on("scroll", function() {
-        if (!$element.is(":visible")) {
-            $element.fadeIn(500)
-            $(window).off("scroll")
-        }
-    })
+    if ($(window).width() < 1120) {
+        let $element = $(".openCart").fadeOut(0)
+        $(window).on("scroll", function() {
+            if (!$element.is(":visible")) {
+                $element.fadeIn(500)
+                $(window).off("scroll")
+            }
+        })
+    }
 })
 $(function () {
     $(".lazy").Lazy({
@@ -37,4 +39,7 @@ $(function () {
         }
     })
     $(".modalWrapper").hide()
+    if ($(window).width() < 720) {
+        $(".modal .close img").attr("src", "./img/mobileClose.svg")
+    }
 })

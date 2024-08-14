@@ -1,10 +1,11 @@
-
 $ui-desktop-min: "(min-width: 1120px)";
 $ui-desktop-interval: "screen and (min-width: 1120px)";
+$ui-header: "(min-width: 1440px)";
+$ui-header-interval: "(max-width: 1439px) and (min-width: 720px)";
 
 $ui-tablet: "(max-width: 1119px)";
 $ui-tablet-min: "(min-width: 720px)";
-$ui-tablet-interval: "screen and (max-width: 1119px) and (min-width: 721px)";
+$ui-tablet-interval: "screen and (max-width: 1119px) and (min-width: 720px)";
 
 $ui-mobile: "(max-width: 719px)";
 $ui-mobile-min: "(min-width: 320px)";

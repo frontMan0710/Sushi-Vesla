@@ -37,26 +37,26 @@
     gap: 15px;
   }
   .wrapper main .phone .phoneContent form input {
-    border: 1px var(--grey-dark) solid;
+    border: 1px rgb(161, 164, 177) solid;
     width: 100%;
     height: 35px;
     padding-left: 15px;
     border-radius: 4px;
   }
   .wrapper main .phone .phoneContent form input::-webkit-input-placeholder {
-    color: var(--grey-dark);
+    color: rgb(161, 164, 177);
   }
   .wrapper main .phone .phoneContent form input::-moz-placeholder {
-    color: var(--grey-dark);
+    color: rgb(161, 164, 177);
   }
   .wrapper main .phone .phoneContent form input:-ms-input-placeholder {
-    color: var(--grey-dark);
+    color: rgb(161, 164, 177);
   }
   .wrapper main .phone .phoneContent form input::-ms-input-placeholder {
-    color: var(--grey-dark);
+    color: rgb(161, 164, 177);
   }
   .wrapper main .phone .phoneContent form input::placeholder {
-    color: var(--grey-dark);
+    color: rgb(161, 164, 177);
   }
   .wrapper main .phone .phoneContent form a, .wrapper main .phone .phoneContent form button {
     width: 100%;

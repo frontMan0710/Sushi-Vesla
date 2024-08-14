@@ -1,7 +1,9 @@
 @import "mixins";
 @import "vars";
 @media screen and #{$ui-mobile} {
+  @include window;
   .wrapper {
+    @include wrapper;
     main {
       padding-top: 30px;
       .targets {

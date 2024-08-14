@@ -1,7 +1,9 @@
 @import "mixins";
 @import "vars";
 @media screen and #{$ui-mobile} {
+  @include window;
   .wrapper {
+    @include wrapper;
     main {
       display: flex;
       flex-direction: column;
@@ -17,7 +19,7 @@
       }
       .payMethod {
         .payContent {
-          background-color: var(--grey-light);
+          background-color: $color-white-mixed;
           display: flex;
           flex-direction: column;
           gap: 30px;
@@ -45,19 +47,19 @@
             flex-direction: column;
             gap: 15px;
             #changeSum {
-              color: var(--red);
-              border: 1px var(--grey-dark) solid;
+              color: $color-red;
+              border: 1px $color-grey solid;
               font-weight: 500;
               width: 100%;
               height: 35px;
               padding-left: 15px;
               border-radius: 4px;
               &:focus {
-                border-color: var(--red);
+                border-color: $color-red;
                 outline: none;
               }
               &::placeholder {
-                color: var(--grey-dark);
+                color: $color-grey;
               }
             }
             .changeShortSelect {
@@ -73,14 +75,14 @@
                   height: 0;
                   &:checked {
                     &~.checkButton {
-                      color: var(--red);
-                      border-color: var(--red);
+                      color: $color-red;
+                      border-color: $color-red;
                     }
                   }
                 }
                 .checkButton {
-                  border: 1px var(--black) solid;
-                  color: var(--black);
+                  border: 1px $color-black solid;
+                  color: $color-black;
                   align-content: center;
                   white-space: nowrap;
                   font-weight: 500;
@@ -111,7 +113,7 @@
             width: 100%;
             font-size: $font-14-static;
             a {
-              color: var(--red);
+              color: $color-red;
             }
           }
           a {
@@ -127,9 +129,9 @@
           }
           .conditionsInfo {
             @include targetAlert;
-            background-color: var(--white);
-            color: var(--black);
-            border: 2px var(--black) solid;
+            background-color: $color-white;
+            color: $color-black;
+            border: 2px $color-black solid;
             display: none;
             right: -11px;
             bottom: 45px;
