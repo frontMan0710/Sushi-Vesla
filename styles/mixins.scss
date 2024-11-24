@@ -156,6 +156,7 @@
         background-color: $color-red;
         color: $color-white;
         border: none;
+        cursor: default;
         width: clamp(25px, 4.17vw, 30px);
         height: 40px;
         font-size: $font-18-static;

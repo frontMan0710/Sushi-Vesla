@@ -23,7 +23,7 @@ $(function () {
         if ($modal.length) {
             $("body").addClass("lock")
             $modal.addClass("active")
-            $modal.show()
+            //$modal.show()
         }
         if ($(".modal.active")) {
             $("a.openCart").removeClass("active")
@@ -33,12 +33,12 @@ $(function () {
         let $modal = $(this).closest(".modalWrapper")
         $("body").removeClass("lock")
         $modal.removeClass("active")
-        $modal.hide()
+        //$modal.hide()
         if ($modal) {
             $("a.openCart").addClass("active")
         }
     })
-    $(".modalWrapper").hide()
+    //$(".modalWrapper").hide()
     if ($(window).width() < 720) {
         $(".modal .close img").attr("src", "./img/mobileClose.svg")
     }
